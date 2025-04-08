@@ -23,6 +23,7 @@
 
 import React from "react";
 import { NavLink } from "react-router-dom";
+
 // Chakra imports
 import {
   Box,
@@ -210,6 +211,27 @@ function SignIn() {
               mb='24px'>
               Sign In
             </Button>
+            {/* <Button
+              fontSize="sm"
+              variant="brand"
+              fontWeight="500"
+              w="100%"
+              h="50"
+              mb="24px"
+              onMouseDown={(e) => {
+                // Asegura que se vea el _active
+                e.currentTarget.classList.add("pressed");
+              }}
+              onMouseUp={(e) => {
+                // Opcional: quitar clase personalizada
+                e.currentTarget.classList.remove("pressed");
+                // Forzar blur para que se vuelva a activar _active en cada click
+                e.currentTarget.blur();
+              }}
+            >
+              Sign In
+            </Button> */}
+
           </FormControl>
           <Flex
             flexDirection='column'

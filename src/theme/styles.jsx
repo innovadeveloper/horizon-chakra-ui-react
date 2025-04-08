@@ -8,7 +8,7 @@ export const globalStyles = {
       300: "#bfbfbf",
       400: "#a6a6a6",
       500: "#000000", // Negro como color principal
-      600: "#000000",
+      600: "#474242",
       700: "#000000",
       800: "#000000",
       900: "#000000",
