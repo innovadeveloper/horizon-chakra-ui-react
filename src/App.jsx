@@ -3,6 +3,7 @@ import React from 'react'
 import { Box, ChakraProvider, ColorModeScript, extendTheme, AspectRatio, Center} from '@chakra-ui/react'
 import Layout from './components/layout'
 import { Flex } from "@chakra-ui/react"
+// import D from '@/components/footer'
 
 // Configuración del tema
 const theme = extendTheme({
