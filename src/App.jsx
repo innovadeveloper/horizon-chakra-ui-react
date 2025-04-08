@@ -1,38 +1,41 @@
-// src/App.jsx
-import React from 'react'
-import { Box, ChakraProvider, ColorModeScript, extendTheme, AspectRatio, Center} from '@chakra-ui/react'
-import Layout from './components/layout'
-import { Flex } from "@chakra-ui/react"
-// import D from '@/components/footer'
+import './assets/css/App.css';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import {} from 'react-router-dom';
+import AuthLayout from '@layouts/layouts/auth';
+import AdminLayout from './layouts/admin';
+import RTLLayout from './layouts/rtl';
+import {
+  ChakraProvider,
+  // extendTheme
+} from '@chakra-ui/react';
+import initialTheme from './theme/theme'; //  { themeGreen }
+import { useState } from 'react';
 
-// Configuración del tema
-const theme = extendTheme({
-  config: {
-    initialColorMode: 'light', // O 'dark' según lo que quieras
-    useSystemColorMode: false, // Si deseas que se adapte al sistema, cámbialo a true
-  },
-})
+// import D from '@/compo'
+// import A from '@components/'
+// Chakra imports
 
-const App = () => {
+export default function Main() {
+  // eslint-disable-next-line
+  const [currentTheme, setCurrentTheme] = useState(initialTheme);
   return (
-    // ChakraProvider con el tema extendido
-    <ChakraProvider theme={theme}>
-      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-      {/* <Layout>
-        <h1>B</h1>
-        <p>E</p>
-      </Layout> */}
-      {DemoAspectRatio()}
-    </ChakraProvider >
-  )
+    <ChakraProvider theme={currentTheme}>
+      <Routes>
+        <Route path="auth/*" element={<AuthLayout />} />
+        <Route
+          path="admin/*"
+          element={
+            <AdminLayout theme={currentTheme} setTheme={setCurrentTheme} />
+          }
+        />
+        <Route
+          path="rtl/*"
+          element={
+            <RTLLayout theme={currentTheme} setTheme={setCurrentTheme} />
+          }
+        />
+        <Route path="/" element={<Navigate to="/admin" replace />} />
+      </Routes>
+    </ChakraProvider>
+  );
 }
-
-const DemoAspectRatio = () => {
-  return (
-    <AspectRatio bg="blackAlpha.100" ratio={2 / 1}>
-      <Center fontSize="xl">2 / 1</Center>
-    </AspectRatio>
-  )
-}
-
-export default App

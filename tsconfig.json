@@ -1,16 +1,20 @@
 {
     "compilerOptions": {
-        "baseUrl": ".", // Base de las rutas
-        "paths": {
-            "@/*": [
-                "src/*"
-            ]
-        },
-        "allowJs": true,
-        "checkJs": false,
-        "jsx": "react-jsx"
+      "baseUrl": ".", // Esto es importante para que los paths funcionen
+      "paths": {
+        "@/*": ["src/*"],
+        "@assets/*": ["src/assets/*"],
+        "@components/*": ["src/components/*"],
+        "@contexts/*": ["src/contexts/*"],
+        "@layouts/*": ["src/layouts/*"],
+        "@theme/*": ["src/theme/*"],
+        "@variables/*": ["src/variables/*"],
+        "@views/*": ["src/views/*"]
+      },
+      "allowJs": true,
+      "checkJs": false,
+      "jsx": "react-jsx"
     },
-    "include": [
-        "src"
-    ]
-}
+    "include": ["src"]
+  }
+  
