@@ -1,14 +1,14 @@
 // Chakra imports
 import { Portal, Box, useDisclosure } from '@chakra-ui/react';
-import Footer from 'components/footer/FooterAdmin.js';
+import Footer from '@components/footer/FooterAdmin.jsx';
 // Layout components
-import Navbar from 'components/navbar/NavbarRTL.js';
-import Sidebar from 'components/sidebar/Sidebar.js';
-import { RtlProvider } from 'components/rtlProvider/RtlProvider.js';
-import { SidebarContext } from 'contexts/SidebarContext';
+import Navbar from '@components/navbar/NavbarRTL.jsx';
+import Sidebar from '@components/sidebar/Sidebar.jsx';
+import { RtlProvider } from '@components/rtlProvider/RtlProvider.jsx';
+import { SidebarContext } from '@contexts/SidebarContext';
 import React, { useState } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import routes from 'routes.js';
+import routes from '@/routes.jsx';
 
 // Custom Chakra theme
 export default function Dashboard(props) {

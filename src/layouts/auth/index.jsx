@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import routes from 'routes.js';
+import routes from '@/routes.jsx';
 
 // Chakra imports
 import { Box, useColorModeValue } from '@chakra-ui/react';
 
 // Layout components
-import { SidebarContext } from 'contexts/SidebarContext';
+import { SidebarContext } from '@contexts/SidebarContext';
 
 // Custom Chakra theme
 export default function Auth() {
