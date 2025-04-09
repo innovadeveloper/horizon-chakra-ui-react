@@ -9,7 +9,8 @@
         "@layouts/*": ["src/layouts/*"],
         "@theme/*": ["src/theme/*"],
         "@variables/*": ["src/variables/*"],
-        "@views/*": ["src/views/*"]
+        "@views/*": ["src/views/*"],
+        "@helpers/*": ["src/helpers/*"]
       },
       "allowJs": true,
       "checkJs": false,

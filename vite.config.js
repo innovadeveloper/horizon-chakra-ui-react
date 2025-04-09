@@ -11,6 +11,7 @@ const layouts = path.resolve(__dirname, "src/layouts");
 const theme = path.resolve(__dirname, "src/theme");
 const variables = path.resolve(__dirname, "src/variables");
 const views = path.resolve(__dirname, "src/views");
+const helpers = path.resolve(__dirname, "src/helpers");
 
 export default defineConfig({
   plugins: [react()],
@@ -24,6 +25,7 @@ export default defineConfig({
       "@theme": theme,
       "@variables": variables,
       "@views": views,
+      "@helpers": helpers,
     },
   },
 });
