@@ -98,7 +98,7 @@ function SignIn() {
             color={textColorSecondary}
             fontWeight='400'
             fontSize='md'>
-              Ingresa tu email y password para ingresar
+            Ingresa tu email y password para ingresar
           </Text>
         </Box>
         <Flex
@@ -117,20 +117,23 @@ function SignIn() {
             mb='26px'
             py='15px'
             h='50px'
+            variant='brand'
+            data-element='prueba'
             borderRadius='16px'
-            bg={googleBg}
-            color={googleText}
+            // bg={googleBg}
+            // color={googleText}
             fontWeight='500'
-            _hover={googleHover}
-            _active={googleActive}
-            _focus={googleActive}>
+            // _hover={googleHover}
+            // _active={googleActive}
+            // _focus={googleActive}
+            >
             <Icon as={FcGoogle} w='20px' h='20px' me='10px' />
             Iniciar sesión con Google
           </Button>
           <Flex align='center' mb='25px'>
             <HSeparator />
             <Text color='gray.400' mx='14px'>
-              or
+              o
             </Text>
             <HSeparator />
           </Flex>
@@ -195,7 +198,7 @@ function SignIn() {
                   fontWeight='normal'
                   color={textColor}
                   fontSize='sm'>
-                    Mantener la sesión iniciada
+                  Mantener la sesión iniciada
                   {/* Keep me logged in */}
                 </FormLabel>
               </FormControl>
@@ -205,7 +208,7 @@ function SignIn() {
                   fontSize='sm'
                   w='124px'
                   fontWeight='500'>
-                    ¿Olvidaste la contraseña?
+                  ¿Olvidaste la contraseña?
                   {/* Forgot password? */}
                 </Text>
               </NavLink>
@@ -219,7 +222,7 @@ function SignIn() {
               mb='24px'>
               Ingresar
             </Button>
-            <Button
+            {/* <Button
               fontSize='sm'
               variant='darkMode'
               fontWeight='500'
@@ -227,10 +230,10 @@ function SignIn() {
               h='50'
               mb='24px'>
               Ingresar
-            </Button>
+            </Button> */}
             {/* <Button
               fontSize="sm"
-              variant="brand"
+              variant="darkMode"
               fontWeight="500"
               w="100%"
               h="50"

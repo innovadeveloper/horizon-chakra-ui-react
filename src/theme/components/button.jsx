@@ -1,4 +1,22 @@
-import { mode } from "@chakra-ui/theme-tools";
+import { mode, transparentize } from '@chakra-ui/theme-tools';
+
+const bgDefault = (props) => {
+  return mode(
+    "black.100",
+    transparentize('navy.600', 0.5)(props.theme)   // 30% opacidad en dark
+  )(props)
+}
+
+const bgPressed = (props) => {
+  return mode(
+    "black.200",
+    transparentize('navy.500', 0.5)(props.theme)   // 30% opacidad en dark
+  )(props)
+}
+
+const colorDefault = (props) => mode("white", "white")(props)
+
+
 export const buttonStyles = {
   components: {
     Button: {
@@ -19,33 +37,59 @@ export const buttonStyles = {
           borderRadius: "16px",
         }),
         brand: (props) => ({
-          bg: mode("brand.500", "brand.400")(props),
-          color: mode("white", "white")(props),
+          bg: bgDefault(props),
+          color: colorDefault(props),
+          backdropFilter: 'blur(10px)', // 👈 efecto de blur en el fondo
           _focus: {
-            bg: mode("brand.500", "brand.400")(props),
+            bg: bgDefault(props),
           },
           _active: {
-            // bg: mode("brand.500", "brand.400")(props),
-            bg: mode("brand.600", "brand.200")(props),
+            bg : bgPressed(props)
           },
           _hover: {
-            bg: mode("brand.500", "brand.400")(props),
-          },
-        }),
-        darkMode: (props) => ({
-          bg: mode("brand.500", "brand.400")(props),
-          color: mode("white.100", "black.200")(props),
-          _focus: {
-            bg: mode("brand.500", "brand.400")(props),
-          },
-          _active: {
             // bg: mode("brand.500", "brand.400")(props),
-            bg: mode("brand.600", "brand.200")(props),
-          },
-          _hover: {
-            bg: mode("brand.500", "brand.400")(props),
           },
         }),
+        // darkMode: (props) => ({
+        //   // light,
+        //   bg: mode("brand.500", "brand.400")(props),
+        //   color: mode("white.100", "black.200")(props),
+        //   _focus: {
+        //     bg: mode("brand.500", "brand.400")(props),
+        //   },
+        //   _active: {
+        //     // bg: mode("brand.500", "brand.400")(props),
+        //     bg: mode("brand.600", "brand.200")(props),
+        //   },
+        //   _hover: {
+        //     bg: mode("brand.500", "brand.400")(props),
+        //   },
+        // }),
+        // darkMode: (props) => ({
+        //   bg: bgDefault(props),
+        //   color: colorDefault(props),
+        //   backdropFilter: 'blur(10px)', // 👈 efecto de blur en el fondo
+        //   _focus: {
+        //     bg: bgDefault(props),
+        //   },
+        //   _active: {
+        //     bg : bgPressed(props)
+        //     // bg: mode('brand.600', // 40% de opacidad en light mode
+        //     //   transparentize('brand.400', 0.26)(props.theme)  // 30% de opacidad en dark mode
+        //     // )(props),            // bg: bgDefault(props),
+        //   },
+        //   _hover: {
+        //     // bg: mode(
+        //     //   transparentize('brand.500', 0.6)(props.theme),
+        //     //   transparentize('brand.400', 0.5)(props.theme)
+        //     // ),
+        //     // bg: mode("brand.500", "brand.400")(props),
+        //     // bg: mode(
+        //     //   transparentize('brand.600', 0.4)(props.theme), // 40% de opacidad en light mode
+        //     //   transparentize('brand.400', 0.3)(props.theme)  // 30% de opacidad en dark mode
+        //     // )(props),            // bg: bgDefault(props),
+        //   },
+        // }),
         darkBrand: (props) => ({
           bg: mode("brand.900", "brand.400")(props),
           color: "white",

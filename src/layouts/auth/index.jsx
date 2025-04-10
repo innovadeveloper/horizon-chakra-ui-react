@@ -30,6 +30,7 @@ export default function Auth() {
       }
     });
   };
+  // COLOR DE FONDO, BACKGROUND
   const authBg = useColorModeValue('white', 'navy.900');
   document.documentElement.dir = 'ltr';
   return (
