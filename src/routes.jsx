@@ -7,7 +7,12 @@ import {
   MdHome,
   MdLock,
   MdOutlineShoppingCart,
+  MdSms,
+  MdLocalPolice,
+  MdPhoneAndroid,
+  MdDashboard
 } from 'react-icons/md';
+import { FaUsersCog } from "react-icons/fa";
 
 // Admin Imports
 import MainDashboard from '@views/admin/default';
@@ -23,19 +28,19 @@ import SignInCentered from '@views/auth/signIn';
 
 const routes = [
   {
-    name: 'Main Dashboard',
+    name: 'Dashboard',
     layout: RoutePaths.DASHBOARD.LAYOUT,
     path: RoutePaths.DASHBOARD.PATH,
-    icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
+    icon: <Icon as={MdDashboard} width="20px" height="20px" color="inherit" />,
     component: <MainDashboard />,
   },
   {
-    name: 'NFT Marketplace',
+    name: 'Mis Dispositivos',
     layout: RoutePaths.MARKET_PLACE.LAYOUT,
     path: RoutePaths.MARKET_PLACE.PATH,
     icon: (
       <Icon
-        as={MdOutlineShoppingCart}
+        as={MdPhoneAndroid}
         width="20px"
         height="20px"
         color="inherit"
@@ -45,33 +50,26 @@ const routes = [
     secondary: true,
   },
   {
-    name: 'Data Tables',
-    icon: <Icon as={MdBarChart} width="20px" height="20px" color="inherit" />,
+    name: 'Mis Políticas',
+    icon: <Icon as={MdLocalPolice} width="20px" height="20px" color="inherit" />,
     layout: RoutePaths.DATA_TABLES.LAYOUT,
     path: RoutePaths.DATA_TABLES.PATH,
     component: <DataTables />,
   },
   {
-    name: 'Profile',
+    name: 'Perfiles de usuario',
     layout: RoutePaths.PROFILE.LAYOUT,
     path: RoutePaths.PROFILE.PATH,
-    icon: <Icon as={MdPerson} width="20px" height="20px" color="inherit" />,
+    icon: <Icon as={FaUsersCog} width="20px" height="20px" color="inherit" />,
     component: <Profile />,
   },
   {
-    name: 'Sign In',
+    name: 'Mensajería',
     layout: RoutePaths.LOGIN.LAYOUT,
     path: RoutePaths.LOGIN.PATH,
-    icon: <Icon as={MdLock} width="20px" height="20px" color="inherit" />,
+    icon: <Icon as={MdSms} width="20px" height="20px" color="inherit" />,
     component: <SignInCentered />,
   },
-  // {
-  //   name: 'RTL Admin',
-  //   layout: '/rtl',
-  //   path: '/rtl-default',
-  //   icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
-  //   component: <RTL />,
-  // },
 ];
 
 export default routes;
