@@ -20,7 +20,21 @@ export const buttonStyles = {
         }),
         brand: (props) => ({
           bg: mode("brand.500", "brand.400")(props),
-          color: "white",
+          color: mode("white", "white")(props),
+          _focus: {
+            bg: mode("brand.500", "brand.400")(props),
+          },
+          _active: {
+            // bg: mode("brand.500", "brand.400")(props),
+            bg: mode("brand.600", "brand.200")(props),
+          },
+          _hover: {
+            bg: mode("brand.500", "brand.400")(props),
+          },
+        }),
+        darkMode: (props) => ({
+          bg: mode("brand.500", "brand.400")(props),
+          color: mode("white.100", "black.200")(props),
           _focus: {
             bg: mode("brand.500", "brand.400")(props),
           },

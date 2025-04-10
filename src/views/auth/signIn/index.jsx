@@ -44,7 +44,13 @@ import {
 import { HSeparator } from "@components/separator/Separator";
 import DefaultAuth from "@layouts/auth/Default";
 // Assets
-import illustration from "@assets/img/auth/auth.png";
+// import illustration from "@assets/img/auth/auth.png";
+
+//  https://unsplash.com/es/s/fotos/pos
+//  https://unsplash.com/es/s/fotos/smartphone-isometric-vector
+// import illustration from "@assets/img/auth/auth-bg.avif";
+import illustration from "@assets/img/auth/auth-bg2.avif";
+
 import { FcGoogle } from "react-icons/fc";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { RiEyeCloseLine } from "react-icons/ri";
@@ -92,7 +98,7 @@ function SignIn() {
             color={textColorSecondary}
             fontWeight='400'
             fontSize='md'>
-            Enter your email and password to sign in!
+              Ingresa tu email y password para ingresar
           </Text>
         </Box>
         <Flex
@@ -119,7 +125,7 @@ function SignIn() {
             _active={googleActive}
             _focus={googleActive}>
             <Icon as={FcGoogle} w='20px' h='20px' me='10px' />
-            Sign in with Google
+            Iniciar sesión con Google
           </Button>
           <Flex align='center' mb='25px'>
             <HSeparator />
@@ -144,7 +150,7 @@ function SignIn() {
               fontSize='sm'
               ms={{ base: "0px", md: "0px" }}
               type='email'
-              placeholder='mail@simmmple.com'
+              placeholder='yourmail@company.com'
               mb='24px'
               fontWeight='500'
               size='lg'
@@ -161,7 +167,7 @@ function SignIn() {
               <Input
                 isRequired={true}
                 fontSize='sm'
-                placeholder='Min. 8 characters'
+                placeholder='Min. 8 caracteres'
                 mb='24px'
                 size='lg'
                 type={show ? "text" : "password"}
@@ -189,7 +195,8 @@ function SignIn() {
                   fontWeight='normal'
                   color={textColor}
                   fontSize='sm'>
-                  Keep me logged in
+                    Mantener la sesión iniciada
+                  {/* Keep me logged in */}
                 </FormLabel>
               </FormControl>
               <NavLink to='/auth/forgot-password'>
@@ -198,7 +205,8 @@ function SignIn() {
                   fontSize='sm'
                   w='124px'
                   fontWeight='500'>
-                  Forgot password?
+                    ¿Olvidaste la contraseña?
+                  {/* Forgot password? */}
                 </Text>
               </NavLink>
             </Flex>
@@ -209,7 +217,16 @@ function SignIn() {
               w='100%'
               h='50'
               mb='24px'>
-              Sign In
+              Ingresar
+            </Button>
+            <Button
+              fontSize='sm'
+              variant='darkMode'
+              fontWeight='500'
+              w='100%'
+              h='50'
+              mb='24px'>
+              Ingresar
             </Button>
             {/* <Button
               fontSize="sm"
@@ -240,14 +257,14 @@ function SignIn() {
             maxW='100%'
             mt='0px'>
             <Text color={textColorDetails} fontWeight='400' fontSize='14px'>
-              Not registered yet?
+              ¿No registrado aún?
               <NavLink to='/auth/sign-up'>
                 <Text
                   color={textColorBrand}
                   as='span'
                   ms='5px'
                   fontWeight='500'>
-                  Create an Account
+                  Crea una cuenta
                 </Text>
               </NavLink>
             </Text>

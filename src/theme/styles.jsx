@@ -12,6 +12,11 @@ export const globalStyles = {
       700: "#000000",
       800: "#000000",
       900: "#000000",
+
+      1000: "#000000",  // negro
+      1100: "#343434",  // semi negro
+      1200: "#ffffff",  // blanco
+      1300: "#eaeaea",  // semi blanco
     },
     brandScheme: {
       100: "#f2f2f2",
@@ -77,6 +82,14 @@ export const globalStyles = {
     },
     gray: {
       100: "#FAFCFE",
+    },
+    black: {
+      100: "#000000",
+      200: "#343434",
+    },
+    white: {
+      100: "#ffffff",
+      200: "#eaeaea",
     },
   },
   styles: {
