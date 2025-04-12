@@ -14,12 +14,16 @@ import {
   Thead,
   Tr,
   useColorModeValue,
+  Button,
+  Icon,
+  useColorMode
 } from '@chakra-ui/react';
 import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
   getSortedRowModel,
+  getPaginationRowModel,
   useReactTable,
 } from '@tanstack/react-table';
 // Custom components
@@ -27,6 +31,7 @@ import Card from '@components/card/Card';
 import Menu from '@components/menu/MainMenu';
 import { AndroidLogo, AppleLogo, WindowsLogo } from '@components/icons/Icons';
 import * as React from 'react';
+
 // Assets
 
 const columnHelper = createColumnHelper();
@@ -35,6 +40,10 @@ const columnHelper = createColumnHelper();
 export default function ComplexTable(props) {
   const { tableData } = props;
   const [sorting, setSorting] = React.useState([]);
+  const [pagination, setPagination] = React.useState({
+    pageIndex: 0,
+    pageSize: 5,
+  });
   const textTitleColor = useColorModeValue('gray.600', 'white');
   const contentFontSize = { sm: '12px', lg: '14px' };
   const columnTitleColor = "gray.400";
@@ -159,10 +168,13 @@ export default function ComplexTable(props) {
     columns,
     state: {
       sorting,
+      pagination
     },
+    onPaginationChange: setPagination,
     onSortingChange: setSorting,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
     debugTable: true,
   });
   return (
@@ -247,6 +259,24 @@ export default function ComplexTable(props) {
           </Tbody>
         </Table>
       </Box>
+      <Flex mt="4" justify="space-between" align="center">
+        <Button
+          onClick={() => table.previousPage()}
+          isDisabled={!table.getCanPreviousPage()}
+        >
+          Anterior
+        </Button>
+        <Text>
+          Página {table.getState().pagination.pageIndex + 1} de{" "}
+          {table.getPageCount()}
+        </Text>
+        <Button
+          onClick={() => table.nextPage()}
+          isDisabled={!table.getCanNextPage()}
+        >
+          Siguiente
+        </Button>
+      </Flex>
     </Card>
   );
 }
