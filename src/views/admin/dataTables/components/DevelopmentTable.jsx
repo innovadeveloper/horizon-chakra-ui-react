@@ -35,7 +35,9 @@ const columnHelper = createColumnHelper();
 export default function ComplexTable(props) {
   const { tableData } = props;
   const [sorting, setSorting] = React.useState([]);
-  const textTitleColor = useColorModeValue('black', 'white');
+  const textTitleColor = useColorModeValue('gray.600', 'white');
+  const contentFontSize = { sm: '12px', lg: '14px' };
+  const columnTitleColor = "gray.400";
   const textColor = useColorModeValue('secondaryGray.900', 'white');
   const iconColor = useColorModeValue('secondaryGray.500', 'white');
   const borderColor = useColorModeValue('gray.200', 'whiteAlpha.100');
@@ -47,14 +49,14 @@ export default function ComplexTable(props) {
         <Text
           justifyContent="space-between"
           align="center"
-          fontSize={{ sm: '10px', lg: '12px' }}
-          color="gray.400"
+          fontSize={{ sm: '10px', lg: '14px' }}
+          color={columnTitleColor}
         >
           DISPOSITIVO
         </Text>
       ),
       cell: (info) => (
-        
+
         <Flex>
           <Flex height="10" w="30px" align="center" justify="center">
             <AndroidLogo
@@ -65,11 +67,12 @@ export default function ComplexTable(props) {
           </Flex>
           <Flex height="10" grow="1" ml="10px" direction="column">
             <Text
-              fontWeight="500"
-              fontSize={{ sm: '12px', lg: '14px' }}
+              fontFamily="poppins"
+              fontWeight="700"
+              fontSize={contentFontSize}
               color={textTitleColor}>{info.getValue().modelName}</Text>
             <Text
-              fontSize={{ sm: '10px', lg: '12px' }}
+              fontSize={contentFontSize}
               color={textColor}>{info.getValue().brandName}</Text>
           </Flex>
         </Flex>
@@ -83,7 +86,7 @@ export default function ComplexTable(props) {
           justifyContent="space-between"
           align="center"
           fontSize={{ sm: '10px', lg: '12px' }}
-          color="gray.400"
+          color={columnTitleColor}
         >
           POLITICA
         </Text>
@@ -98,9 +101,9 @@ export default function ComplexTable(props) {
           >
             {info.getValue()}
           </Text> */}
-            <Text
-              fontSize={{ sm: '10px', lg: '12px' }}
-              color={textColor}>{info.getValue()}</Text>
+          <Text
+            fontSize={contentFontSize}
+            color={textColor}>{info.getValue()}</Text>
         </Flex>
       ),
     }),
@@ -111,13 +114,13 @@ export default function ComplexTable(props) {
           justifyContent="space-between"
           align="center"
           fontSize={{ sm: '10px', lg: '12px' }}
-          color="gray.400"
+          color={columnTitleColor}
         >
           ONLINE
         </Text>
       ),
       cell: (info) => (
-        <Text color={textColor} fontSize="sm" fontWeight="700">
+        <Text color={textColor} fontSize={contentFontSize}>
           {info.getValue() ? "v" : "x"}
         </Text>
       ),
@@ -129,14 +132,14 @@ export default function ComplexTable(props) {
           justifyContent="space-between"
           align="center"
           fontSize={{ sm: '10px', lg: '12px' }}
-          color="gray.400"
+          color={columnTitleColor}
         >
           REGISTRO
         </Text>
       ),
       cell: (info) => (
         <Flex align="center">
-          <Text me="10px" color={textColor} fontSize="sm" fontWeight="700">
+          <Text me="10px" color={textColor} fontSize={contentFontSize}>
             {info.getValue()}
           </Text>
           {/* <Progress
@@ -170,15 +173,15 @@ export default function ComplexTable(props) {
       overflowX={{ sm: 'scroll', lg: 'hidden' }}
     >
       <Flex px="25px" mb="8px" justifyContent="space-between" align="center">
-        <Text
+        {/* <Text
           color={textColor}
           fontSize="22px"
           fontWeight="700"
           lineHeight="100%"
         >
           Development Table
-        </Text>
-        <Menu />
+        </Text> */}
+        {/* <Menu /> */}
       </Flex>
       <Box>
         <Table variant="simple" color="gray.500" mb="24px" mt="12px">

@@ -1,6 +1,17 @@
 import { mode } from "@chakra-ui/theme-tools";
+import "@fontsource/poppins/100.css"
+import "@fontsource/poppins/300.css"
+import "@fontsource/poppins/400.css"
+import "@fontsource/poppins/500.css"
+import "@fontsource/poppins/700.css"
+import "@fontsource/poppins/900.css"
+
 
 export const globalStyles = {
+  fonts: {
+    heading: `'Poppins', 'sans-serif'`,
+    body: `'Poppins', 'sans-serif'`,
+  },
   colors: {
     brand: {
       100: "#f2f2f2",
@@ -97,14 +108,17 @@ export const globalStyles = {
       body: {
         overflowX: "hidden",
         bg: mode("secondaryGray.100", "brand.500")(props), // Claro: blanco, oscuro: negro
-        fontFamily: "DM Sans",
+        fontFamily: "Poppins",
         letterSpacing: "-0.5px",
+        // fontWeight: 300, // 👈 peso por defecto
+        // fontSize: "42px", // 👈 tamaño por defecto
       },
       input: {
         color: "gray.700",
       },
       html: {
-        fontFamily: "DM Sans",
+        // fontFamily: "DM Sans",
+        fontFamily: "Poppins",
       },
     }),
   },
