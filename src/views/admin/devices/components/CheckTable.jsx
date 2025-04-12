@@ -1,12 +1,10 @@
-'use client';
 /* eslint-disable */
 
 import {
-  Box,
-  Center,
   Flex,
-  Progress,
+  Box,
   Table,
+  Checkbox,
   Tbody,
   Td,
   Text,
@@ -15,6 +13,8 @@ import {
   Tr,
   useColorModeValue,
 } from '@chakra-ui/react';
+import * as React from 'react';
+
 import {
   createColumnHelper,
   flexRender,
@@ -22,27 +22,23 @@ import {
   getSortedRowModel,
   useReactTable,
 } from '@tanstack/react-table';
+
 // Custom components
 import Card from '@components/card/Card';
 import Menu from '@components/menu/MainMenu';
-import { AndroidLogo, AppleLogo, WindowsLogo } from '@components/icons/Icons';
-import * as React from 'react';
-// Assets
 
 const columnHelper = createColumnHelper();
 
 // const columns = columnsDataCheck;
-export default function ComplexTable(props) {
+export default function CheckTable(props) {
   const { tableData } = props;
   const [sorting, setSorting] = React.useState([]);
-  const textTitleColor = useColorModeValue('black', 'white');
   const textColor = useColorModeValue('secondaryGray.900', 'white');
-  const iconColor = useColorModeValue('secondaryGray.500', 'white');
   const borderColor = useColorModeValue('gray.200', 'whiteAlpha.100');
   let defaultData = tableData;
   const columns = [
-    columnHelper.accessor('device', {
-      id: 'device',
+    columnHelper.accessor('name', {
+      id: 'name',
       header: () => (
         <Text
           justifyContent="space-between"
@@ -50,62 +46,24 @@ export default function ComplexTable(props) {
           fontSize={{ sm: '10px', lg: '12px' }}
           color="gray.400"
         >
-          DISPOSITIVO
-        </Text>
-      ),
-      cell: (info) => (
-        
-        <Flex>
-          <Flex height="10" w="30px" align="center" justify="center">
-            <AndroidLogo
-              color={iconColor}
-              h="18px"
-              w="16px"
-            />
-          </Flex>
-          <Flex height="10" grow="1" ml="10px" direction="column">
-            <Text
-              fontWeight="500"
-              fontSize={{ sm: '12px', lg: '14px' }}
-              color={textTitleColor}>{info.getValue().modelName}</Text>
-            <Text
-              fontSize={{ sm: '10px', lg: '12px' }}
-              color={textColor}>{info.getValue().brandName}</Text>
-          </Flex>
-        </Flex>
-
-      ),
-    }),
-    columnHelper.accessor('policy', {
-      id: 'policy',
-      header: () => (
-        <Text
-          justifyContent="space-between"
-          align="center"
-          fontSize={{ sm: '10px', lg: '12px' }}
-          color="gray.400"
-        >
-          POLITICA
+          NAME
         </Text>
       ),
       cell: (info) => (
         <Flex align="center">
-          {/* <Text
-            justifyContent="space-between"
-            align="center"
-            fontSize={{ sm: '10px', lg: '12px' }}
-            color="gray.400"
-          >
-            {info.getValue()}
-          </Text> */}
-            <Text
-              fontSize={{ sm: '10px', lg: '12px' }}
-              color={textColor}>{info.getValue()}</Text>
+          <Checkbox
+            defaultChecked={info.getValue()[1]}
+            colorScheme="brandScheme"
+            me="10px"
+          />
+          <Text color={textColor} fontSize="sm" fontWeight="700">
+            {info.getValue()[0]}
+          </Text>
         </Flex>
       ),
     }),
-    columnHelper.accessor('isOnline', {
-      id: 'isOnline',
+    columnHelper.accessor('progress', {
+      id: 'progress',
       header: () => (
         <Text
           justifyContent="space-between"
@@ -113,17 +71,17 @@ export default function ComplexTable(props) {
           fontSize={{ sm: '10px', lg: '12px' }}
           color="gray.400"
         >
-          ONLINE
+          PROGRESS
         </Text>
       ),
       cell: (info) => (
         <Text color={textColor} fontSize="sm" fontWeight="700">
-          {info.getValue() ? "v" : "x"}
+          {info.getValue()}
         </Text>
       ),
     }),
-    columnHelper.accessor('createAt', {
-      id: 'createAt',
+    columnHelper.accessor('quantity', {
+      id: 'quantity',
       header: () => (
         <Text
           justifyContent="space-between"
@@ -131,22 +89,31 @@ export default function ComplexTable(props) {
           fontSize={{ sm: '10px', lg: '12px' }}
           color="gray.400"
         >
-          REGISTRO
+          QUANTITY
         </Text>
       ),
       cell: (info) => (
-        <Flex align="center">
-          <Text me="10px" color={textColor} fontSize="sm" fontWeight="700">
-            {info.getValue()}
-          </Text>
-          {/* <Progress
-            variant="table"
-            colorScheme="brandScheme"
-            h="8px"
-            w="63px"
-            value={info.getValue()}
-          /> */}
-        </Flex>
+        <Text color={textColor} fontSize="sm" fontWeight="700">
+          {info.getValue()}
+        </Text>
+      ),
+    }),
+    columnHelper.accessor('date', {
+      id: 'date',
+      header: () => (
+        <Text
+          justifyContent="space-between"
+          align="center"
+          fontSize={{ sm: '10px', lg: '12px' }}
+          color="gray.400"
+        >
+          DATE
+        </Text>
+      ),
+      cell: (info) => (
+        <Text color={textColor} fontSize="sm" fontWeight="700">
+          {info.getValue()}
+        </Text>
       ),
     }),
   ];
@@ -173,10 +140,11 @@ export default function ComplexTable(props) {
         <Text
           color={textColor}
           fontSize="22px"
+          mb="4px"
           fontWeight="700"
           lineHeight="100%"
         >
-          Development Table
+          Check Table
         </Text>
         <Menu />
       </Flex>

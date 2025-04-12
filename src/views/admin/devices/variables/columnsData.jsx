@@ -1,19 +1,19 @@
 export const columnsDataDevelopment = [
   {
-    Header: "DISPOSITIVO",
-    accessor: "device",
+    Header: "NAME",
+    accessor: "name",
   },
   {
-    Header: "POLITICA",
-    accessor: "policy",
+    Header: "TECH",
+    accessor: "tech",
   },
   {
-    Header: "CONEXION",
-    accessor: "isConnected",
+    Header: "DATE",
+    accessor: "date",
   },
   {
-    Header: "CREACION",
-    accessor: "createAt",
+    Header: "PROGRESS",
+    accessor: "progress",
   },
 ];
 

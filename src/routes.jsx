@@ -19,6 +19,7 @@ import MainDashboard from '@views/admin/default';
 import NFTMarketplace from '@views/admin/marketplace';
 import Profile from '@views/admin/profile';
 import DataTables from '@views/admin/dataTables';
+import Devices from '@views/admin/devices';
 import RTL from '@views/admin/rtl';
 import Redirect from '@layouts/redirect/Redirect';
 import { RoutePaths } from "@variables/constants"
@@ -36,8 +37,8 @@ const routes = [
   },
   {
     name: 'Mis Dispositivos',
-    layout: RoutePaths.MARKET_PLACE.LAYOUT,
-    path: RoutePaths.MARKET_PLACE.PATH,
+    layout: RoutePaths.MY_DEVICES.LAYOUT,
+    path: RoutePaths.MY_DEVICES.PATH,
     icon: (
       <Icon
         as={MdPhoneAndroid}
@@ -46,7 +47,7 @@ const routes = [
         color="inherit"
       />
     ),
-    component: <NFTMarketplace />,
+    component: <Devices />,
     secondary: true,
   },
   {
@@ -54,7 +55,7 @@ const routes = [
     icon: <Icon as={MdLocalPolice} width="20px" height="20px" color="inherit" />,
     layout: RoutePaths.DATA_TABLES.LAYOUT,
     path: RoutePaths.DATA_TABLES.PATH,
-    component: <DataTables />,
+    component: <Devices />,
   },
   {
     name: 'Perfiles de usuario',
