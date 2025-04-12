@@ -42,11 +42,11 @@ export default function ComplexTable(props) {
   const [sorting, setSorting] = React.useState([]);
   const [pagination, setPagination] = React.useState({
     pageIndex: 0,
-    pageSize: 5,
+    pageSize: 10,
   });
   const textTitleColor = useColorModeValue('gray.600', 'white');
   const contentFontSize = { sm: '12px', lg: '14px' };
-  const columnTitleColor = "gray.400";
+  const columnTitleColor = "white";
   const textColor = useColorModeValue('secondaryGray.900', 'white');
   const iconColor = useColorModeValue('secondaryGray.500', 'white');
   const borderColor = useColorModeValue('gray.200', 'whiteAlpha.100');
@@ -196,11 +196,27 @@ export default function ComplexTable(props) {
         {/* <Menu /> */}
       </Flex>
       <Box>
+        {/* <Table variant="simple" color="gray.500" mb="24px" mt="12px">
+          <Thead>
+            <Tr bg="black">
+              <Th color="white" borderTopLeftRadius="md" borderBottomLeftRadius="md">Nombre</Th>
+              <Th color="white">Edad</Th>
+              <Th color="white">Email</Th>
+              <Th color="white" borderTopRightRadius="md" borderBottomRightRadius="md">País</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+          </Tbody>
+        </Table> */}
+
         <Table variant="simple" color="gray.500" mb="24px" mt="12px">
           <Thead>
             {table.getHeaderGroups().map((headerGroup) => (
-              <Tr key={headerGroup.id}>
-                {headerGroup.headers.map((header) => {
+              <Tr key={headerGroup.id} bg="black">
+                {headerGroup.headers.map((header, index) => {
+                  const isFirst = index === 0;
+                  const isLast = index === headerGroup.headers.length - 1;
+
                   return (
                     <Th
                       key={header.id}
@@ -208,6 +224,11 @@ export default function ComplexTable(props) {
                       pe="10px"
                       borderColor={borderColor}
                       cursor="pointer"
+                      borderTopLeftRadius={isFirst ? "md" : undefined}
+                      borderBottomLeftRadius={isFirst ? "md" : undefined}
+
+                      borderTopRightRadius={isLast ? "md" : undefined}
+                      borderBottomRightRadius={isLast ? "md" : undefined}
                       onClick={header.column.getToggleSortingHandler()}
                     >
                       <Flex
