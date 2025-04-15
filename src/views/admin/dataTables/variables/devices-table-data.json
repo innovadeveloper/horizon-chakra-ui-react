@@ -1,201 +1,223 @@
-[{
-        "policy": "Kiosko",
-        "isOnline": true,
-        "createAt": "23/04/18",
-        "deviceType": "Android",
-        "device": {
-            "modelName": "H20",
-            "brandName": "Honor"
-        }
+[
+    {
+      "id": 1,
+      "policy": "Kiosko",
+      "isOnline": true,
+      "createAt": "23/04/18",
+      "deviceType": "Android",
+      "device": {
+        "modelName": "H20",
+        "brandName": "Honor"
+      }
     },
     {
-        "policy": "Kiosko",
-        "isOnline": false,
-        "createAt": "22/11/09",
-        "deviceType": "Android",
-        "device": {
-            "modelName": "Galaxy S21",
-            "brandName": "Samsung"
-        }
+      "id": 2,
+      "policy": "Kiosko",
+      "isOnline": false,
+      "createAt": "22/11/09",
+      "deviceType": "Android",
+      "device": {
+        "modelName": "Galaxy S21",
+        "brandName": "Samsung"
+      }
     },
     {
-        "policy": "Work Restaurant",
-        "isOnline": true,
-        "createAt": "21/09/20",
-        "deviceType": "iOS",
-        "device": {
-            "modelName": "iPhone 13",
-            "brandName": "Apple"
-        }
+      "id": 3,
+      "policy": "Work Restaurant",
+      "isOnline": true,
+      "createAt": "21/09/20",
+      "deviceType": "iOS",
+      "device": {
+        "modelName": "iPhone 13",
+        "brandName": "Apple"
+      }
     },
     {
-        "policy": "Work Win",
-        "isOnline": true,
-        "createAt": "23/01/15",
-        "deviceType": "Android",
-        "device": {
-            "modelName": "Pixel 6",
-            "brandName": "Google"
-        }
+      "id": 4,
+      "policy": "Work Win",
+      "isOnline": true,
+      "createAt": "23/01/15",
+      "deviceType": "Android",
+      "device": {
+        "modelName": "Pixel 6",
+        "brandName": "Google"
+      }
     },
     {
-        "policy": "Kiosko",
-        "isOnline": false,
-        "createAt": "22/03/02",
-        "deviceType": "Android",
-        "device": {
-            "modelName": "Redmi Note 11",
-            "brandName": "Xiaomi"
-        }
+      "id": 5,
+      "policy": "Kiosko",
+      "isOnline": false,
+      "createAt": "22/03/02",
+      "deviceType": "Android",
+      "device": {
+        "modelName": "Redmi Note 11",
+        "brandName": "Xiaomi"
+      }
     },
     {
-        "policy": "Work Restaurant",
-        "isOnline": true,
-        "createAt": "21/12/11",
-        "deviceType": "Android",
-        "device": {
-            "modelName": "P50",
-            "brandName": "Huawei"
-        }
+      "id": 6,
+      "policy": "Work Restaurant",
+      "isOnline": true,
+      "createAt": "21/12/11",
+      "deviceType": "Android",
+      "device": {
+        "modelName": "P50",
+        "brandName": "Huawei"
+      }
     },
     {
-        "policy": "Kiosko",
-        "isOnline": false,
-        "createAt": "22/10/30",
-        "deviceType": "iOS",
-        "device": {
-            "modelName": "iPhone 14 Pro",
-            "brandName": "Apple"
-        }
+      "id": 7,
+      "policy": "Kiosko",
+      "isOnline": false,
+      "createAt": "22/10/30",
+      "deviceType": "iOS",
+      "device": {
+        "modelName": "iPhone 14 Pro",
+        "brandName": "Apple"
+      }
     },
     {
-        "policy": "Work Win",
-        "isOnline": true,
-        "createAt": "23/06/04",
-        "deviceType": "Android",
-        "device": {
-            "modelName": "Nord 2",
-            "brandName": "OnePlus"
-        }
+      "id": 8,
+      "policy": "Work Win",
+      "isOnline": true,
+      "createAt": "23/06/04",
+      "deviceType": "Android",
+      "device": {
+        "modelName": "Nord 2",
+        "brandName": "OnePlus"
+      }
     },
     {
-        "policy": "Work Restaurant",
-        "isOnline": false,
-        "createAt": "23/02/28",
-        "deviceType": "Android",
-        "device": {
-            "modelName": "Find X5",
-            "brandName": "Oppo"
-        }
+      "id": 9,
+      "policy": "Work Restaurant",
+      "isOnline": false,
+      "createAt": "23/02/28",
+      "deviceType": "Android",
+      "device": {
+        "modelName": "Find X5",
+        "brandName": "Oppo"
+      }
     },
     {
-        "policy": "Kiosko",
-        "isOnline": true,
-        "createAt": "22/08/18",
-        "deviceType": "Android",
-        "device": {
-            "modelName": "Razr 5G",
-            "brandName": "Motorola"
-        }
+      "id": 10,
+      "policy": "Kiosko",
+      "isOnline": true,
+      "createAt": "22/08/18",
+      "deviceType": "Android",
+      "device": {
+        "modelName": "Razr 5G",
+        "brandName": "Motorola"
+      }
     },
     {
-        "policy": "Work Win",
-        "isOnline": true,
-        "createAt": "23/05/12",
-        "deviceType": "Android",
-        "device": {
-            "modelName": "Mate 40",
-            "brandName": "Huawei"
-        }
+      "id": 11,
+      "policy": "Work Win",
+      "isOnline": true,
+      "createAt": "23/05/12",
+      "deviceType": "Android",
+      "device": {
+        "modelName": "Mate 40",
+        "brandName": "Huawei"
+      }
     },
     {
-        "policy": "Kiosko",
-        "isOnline": false,
-        "createAt": "21/07/25",
-        "deviceType": "Android",
-        "device": {
-            "modelName": "Galaxy A52",
-            "brandName": "Samsung"
-        }
+      "id": 12,
+      "policy": "Kiosko",
+      "isOnline": false,
+      "createAt": "21/07/25",
+      "deviceType": "Android",
+      "device": {
+        "modelName": "Galaxy A52",
+        "brandName": "Samsung"
+      }
     },
     {
-        "policy": "Work Restaurant",
-        "isOnline": true,
-        "createAt": "22/03/31",
-        "deviceType": "iOS",
-        "device": {
-            "modelName": "iPhone SE",
-            "brandName": "Apple"
-        }
+      "id": 13,
+      "policy": "Work Restaurant",
+      "isOnline": true,
+      "createAt": "22/03/31",
+      "deviceType": "iOS",
+      "device": {
+        "modelName": "iPhone SE",
+        "brandName": "Apple"
+      }
     },
     {
-        "policy": "Work Win",
-        "isOnline": true,
-        "createAt": "23/08/10",
-        "deviceType": "Android",
-        "device": {
-            "modelName": "Zenfone 9",
-            "brandName": "Asus"
-        }
+      "id": 14,
+      "policy": "Work Win",
+      "isOnline": true,
+      "createAt": "23/08/10",
+      "deviceType": "Android",
+      "device": {
+        "modelName": "Zenfone 9",
+        "brandName": "Asus"
+      }
     },
     {
-        "policy": "Kiosko",
-        "isOnline": false,
-        "createAt": "22/04/22",
-        "deviceType": "Android",
-        "device": {
-            "modelName": "Mi 11",
-            "brandName": "Xiaomi"
-        }
+      "id": 15,
+      "policy": "Kiosko",
+      "isOnline": false,
+      "createAt": "22/04/22",
+      "deviceType": "Android",
+      "device": {
+        "modelName": "Mi 11",
+        "brandName": "Xiaomi"
+      }
     },
     {
-        "policy": "Work Win",
-        "isOnline": true,
-        "createAt": "23/01/08",
-        "deviceType": "Android",
-        "device": {
-            "modelName": "Edge 30",
-            "brandName": "Motorola"
-        }
+      "id": 16,
+      "policy": "Work Win",
+      "isOnline": true,
+      "createAt": "23/01/08",
+      "deviceType": "Android",
+      "device": {
+        "modelName": "Edge 30",
+        "brandName": "Motorola"
+      }
     },
     {
-        "policy": "Work Restaurant",
-        "isOnline": false,
-        "createAt": "23/03/03",
-        "deviceType": "Android",
-        "device": {
-            "modelName": "V23",
-            "brandName": "Vivo"
-        }
+      "id": 17,
+      "policy": "Work Restaurant",
+      "isOnline": false,
+      "createAt": "23/03/03",
+      "deviceType": "Android",
+      "device": {
+        "modelName": "V23",
+        "brandName": "Vivo"
+      }
     },
     {
-        "policy": "Work Win",
-        "isOnline": true,
-        "createAt": "21/09/01",
-        "deviceType": "Android",
-        "device": {
-            "modelName": "Galaxy Z Fold3",
-            "brandName": "Samsung"
-        }
+      "id": 18,
+      "policy": "Work Win",
+      "isOnline": true,
+      "createAt": "21/09/01",
+      "deviceType": "Android",
+      "device": {
+        "modelName": "Galaxy Z Fold3",
+        "brandName": "Samsung"
+      }
     },
     {
-        "policy": "Work Restaurant",
-        "isOnline": false,
-        "createAt": "22/12/17",
-        "deviceType": "Android",
-        "device": {
-            "modelName": "ROG Phone 5",
-            "brandName": "Asus"
-        }
+      "id": 19,
+      "policy": "Work Restaurant",
+      "isOnline": false,
+      "createAt": "22/12/17",
+      "deviceType": "Android",
+      "device": {
+        "modelName": "ROG Phone 5",
+        "brandName": "Asus"
+      }
     },
     {
-        "policy": "Kiosko",
-        "isOnline": true,
-        "createAt": "21/05/14",
-        "deviceType": "iOS",
-        "device": {
-            "modelName": "iPhone 12 Mini",
-            "brandName": "Apple"
-        }
+      "id": 20,
+      "policy": "Kiosko",
+      "isOnline": true,
+      "createAt": "21/05/14",
+      "deviceType": "iOS",
+      "device": {
+        "modelName": "iPhone 12 Mini",
+        "brandName": "Apple"
+      }
     }
-]
+  ]
+  

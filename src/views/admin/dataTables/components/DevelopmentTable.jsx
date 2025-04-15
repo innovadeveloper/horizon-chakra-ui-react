@@ -16,7 +16,17 @@ import {
   useColorModeValue,
   Button,
   Icon,
-  useColorMode
+  IconButton,
+  useColorMode,
+  Badge,
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
 } from '@chakra-ui/react';
 import {
   createColumnHelper,
@@ -31,6 +41,8 @@ import Card from '@components/card/Card';
 import Menu from '@components/menu/MainMenu';
 import { AndroidLogo, AppleLogo, WindowsLogo } from '@components/icons/Icons';
 import * as React from 'react';
+import { MdModeEditOutline } from "react-icons/md";
+import { LoremIpsum } from 'react-lorem-ipsum';
 
 // Assets
 
@@ -48,6 +60,8 @@ export default function ComplexTable(props) {
   const contentFontSize = { sm: '12px', lg: '14px' };
   const columnTitleColor = "white";
   const textColor = useColorModeValue('secondaryGray.900', 'white');
+  const modalBgColor = useColorModeValue('white', 'navy.700');
+  const barColor = useColorModeValue('black', 'navy.800');
   const iconColor = useColorModeValue('secondaryGray.500', 'white');
   const borderColor = useColorModeValue('gray.200', 'whiteAlpha.100');
   let defaultData = tableData;
@@ -125,13 +139,26 @@ export default function ComplexTable(props) {
           fontSize={{ sm: '10px', lg: '12px' }}
           color={columnTitleColor}
         >
-          ONLINE
+          ESTADO
         </Text>
       ),
       cell: (info) => (
-        <Text color={textColor} fontSize={contentFontSize}>
-          {info.getValue() ? "v" : "x"}
-        </Text>
+        <>
+          {info.getValue() ? <Box
+            w="12px"
+            h="12px"
+            bg="green.400"
+            borderRadius="full"
+            display="inline-block"
+          />
+            : <Box
+              w="12px"
+              h="12px"
+              bg="red.400"
+              borderRadius="full"
+              display="inline-block"
+            />}
+        </>
       ),
     }),
     columnHelper.accessor('createAt', {
@@ -151,17 +178,38 @@ export default function ComplexTable(props) {
           <Text me="10px" color={textColor} fontSize={contentFontSize}>
             {info.getValue()}
           </Text>
-          {/* <Progress
-            variant="table"
-            colorScheme="brandScheme"
-            h="8px"
-            w="63px"
-            value={info.getValue()}
-          /> */}
         </Flex>
       ),
     }),
+
+
+    columnHelper.accessor('id', {
+      id: 'id',
+      header: () => (
+        <Text
+          justifyContent="space-between"
+          align="center"
+          fontSize={{ sm: '10px', lg: '14px' }}
+          color={columnTitleColor}
+        >
+          EDITAR
+        </Text>
+      ),
+      cell: (info) => (
+
+        <IconButton
+          variant="solid"
+          onClick={onOpen}
+        >
+          <MdModeEditOutline />
+        </IconButton>
+      ),
+    }),
+
   ];
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   const [data, setData] = React.useState(() => [...defaultData]);
   const table = useReactTable({
     data,
@@ -178,126 +226,124 @@ export default function ComplexTable(props) {
     debugTable: true,
   });
   return (
-    <Card
-      flexDirection="column"
-      w="100%"
-      px="0px"
-      overflowX={{ sm: 'scroll', lg: 'hidden' }}
-    >
-      <Flex px="25px" mb="8px" justifyContent="space-between" align="center">
-        {/* <Text
-          color={textColor}
-          fontSize="22px"
-          fontWeight="700"
-          lineHeight="100%"
-        >
-          Development Table
-        </Text> */}
-        {/* <Menu /> */}
-      </Flex>
-      <Box>
-        {/* <Table variant="simple" color="gray.500" mb="24px" mt="12px">
-          <Thead>
-            <Tr bg="black">
-              <Th color="white" borderTopLeftRadius="md" borderBottomLeftRadius="md">Nombre</Th>
-              <Th color="white">Edad</Th>
-              <Th color="white">Email</Th>
-              <Th color="white" borderTopRightRadius="md" borderBottomRightRadius="md">País</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-          </Tbody>
-        </Table> */}
+    <>
+      <Card
+        flexDirection="column"
+        w="100%"
+        px="0px"
+        mt="0px"
+        overflowX={{ sm: 'scroll', lg: 'hidden' }}
+      >
+        {/* <Flex px="25px" mb="8px" justifyContent="space-between" align="center">
+        </Flex> */}
+        <Box>
+          <Table variant="simple" color="gray.500" mb="24px" mt="0px">
+            <Thead>
+              {table.getHeaderGroups().map((headerGroup) => (
+                <Tr key={headerGroup.id} bg={barColor}>
+                  {headerGroup.headers.map((header, index) => {
+                    const isFirst = index === 0;
+                    const isLast = index === headerGroup.headers.length - 1;
 
-        <Table variant="simple" color="gray.500" mb="24px" mt="12px">
-          <Thead>
-            {table.getHeaderGroups().map((headerGroup) => (
-              <Tr key={headerGroup.id} bg="black">
-                {headerGroup.headers.map((header, index) => {
-                  const isFirst = index === 0;
-                  const isLast = index === headerGroup.headers.length - 1;
+                    return (
+                      <Th
+                        key={header.id}
+                        colSpan={header.colSpan}
+                        pe="10px"
+                        borderColor={borderColor}
+                        cursor="pointer"
+                        borderTopLeftRadius={isFirst ? "md" : undefined}
+                        borderBottomLeftRadius={isFirst ? "md" : undefined}
 
-                  return (
-                    <Th
-                      key={header.id}
-                      colSpan={header.colSpan}
-                      pe="10px"
-                      borderColor={borderColor}
-                      cursor="pointer"
-                      borderTopLeftRadius={isFirst ? "md" : undefined}
-                      borderBottomLeftRadius={isFirst ? "md" : undefined}
-
-                      borderTopRightRadius={isLast ? "md" : undefined}
-                      borderBottomRightRadius={isLast ? "md" : undefined}
-                      onClick={header.column.getToggleSortingHandler()}
-                    >
-                      <Flex
-                        justifyContent="space-between"
-                        align="center"
-                        fontSize={{ sm: '10px', lg: '12px' }}
-                        color="gray.400"
+                        borderTopRightRadius={isLast ? "md" : undefined}
+                        borderBottomRightRadius={isLast ? "md" : undefined}
+                        onClick={header.column.getToggleSortingHandler()}
                       >
-                        {flexRender(
-                          header.column.columnDef.header,
-                          header.getContext(),
-                        )}
-                        {{
-                          asc: '',
-                          desc: '',
-                        }[header.column.getIsSorted()] ?? null}
-                      </Flex>
-                    </Th>
-                  );
-                })}
-              </Tr>
-            ))}
-          </Thead>
-          <Tbody>
-            {table
-              .getRowModel()
-              .rows.slice(0, 11)
-              .map((row) => {
-                return (
-                  <Tr key={row.id}>
-                    {row.getVisibleCells().map((cell) => {
-                      return (
-                        <Td
-                          key={cell.id}
-                          fontSize={{ sm: '14px' }}
-                          minW={{ sm: '150px', md: '200px', lg: 'auto' }}
-                          borderColor="transparent"
+                        <Flex
+                          justifyContent="space-between"
+                          align="center"
+                          fontSize={{ sm: '10px', lg: '12px' }}
+                          color="gray.400"
                         >
                           {flexRender(
-                            cell.column.columnDef.cell,
-                            cell.getContext(),
+                            header.column.columnDef.header,
+                            header.getContext(),
                           )}
-                        </Td>
-                      );
-                    })}
-                  </Tr>
-                );
-              })}
-          </Tbody>
-        </Table>
-      </Box>
-      <Flex mt="4" justify="space-between" align="center">
-        <Button
-          onClick={() => table.previousPage()}
-          isDisabled={!table.getCanPreviousPage()}
-        >
-          Anterior
-        </Button>
-        <Text>
-          Página {table.getState().pagination.pageIndex + 1} de{" "}
-          {table.getPageCount()}
-        </Text>
-        <Button
-          onClick={() => table.nextPage()}
-          isDisabled={!table.getCanNextPage()}
-        >
-          Siguiente
-        </Button>
-      </Flex>
-    </Card>
+                          {{
+                            asc: '',
+                            desc: '',
+                          }[header.column.getIsSorted()] ?? null}
+                        </Flex>
+                      </Th>
+                    );
+                  })}
+                </Tr>
+              ))}
+            </Thead>
+            <Tbody>
+              {table
+                .getRowModel()
+                .rows.slice(0, 11)
+                .map((row) => {
+                  return (
+                    <Tr key={row.id}>
+                      {row.getVisibleCells().map((cell) => {
+                        return (
+                          <Td
+                            key={cell.id}
+                            fontSize={{ sm: '14px' }}
+                            minW={{ sm: '150px', md: '200px', lg: 'auto' }}
+                            borderColor="transparent"
+                          >
+                            {flexRender(
+                              cell.column.columnDef.cell,
+                              cell.getContext(),
+                            )}
+                          </Td>
+                        );
+                      })}
+                    </Tr>
+                  );
+                })}
+            </Tbody>
+          </Table>
+        </Box>
+        <Flex mt="4" justify="space-between" align="center">
+          <Button
+            onClick={() => table.previousPage()}
+            isDisabled={!table.getCanPreviousPage()}
+          >
+            Anterior
+          </Button>
+          <Text>
+            Página {table.getState().pagination.pageIndex + 1} de{" "}
+            {table.getPageCount()}
+          </Text>
+          <Button
+            onClick={() => table.nextPage()}
+            isDisabled={!table.getCanNextPage()}
+          >
+            Siguiente
+          </Button>
+        </Flex>
+      </Card>
+
+      <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent bg={modalBgColor}>
+          <ModalHeader>Create your account</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody pb={6}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </ModalBody>
+          <ModalFooter>
+            <Button colorScheme="brand" mr={3}>
+              Save
+            </Button>
+            <Button onClick={onClose}>Cancel</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    </>
   );
 }
