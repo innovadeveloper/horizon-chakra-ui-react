@@ -27,7 +27,11 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
+  // Tabs
 } from '@chakra-ui/react';
+
+// import { Tabs } from "@chakra-ui/react"
+
 import {
   createColumnHelper,
   flexRender,
@@ -334,12 +338,31 @@ export default function ComplexTable(props) {
           <ModalHeader>Edición de Dispositivo</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+sssss
+            {/* INICIO */}
+            {/* <Tabs.Root defaultValue="members">
+               <Tabs.List>
+                <Tabs.Trigger value="members">
+                  <AndroidLogo />
+                  Members
+                </Tabs.Trigger>
+                <Tabs.Trigger value="projects">
+                  <AppleLogo />
+                  Projects
+                </Tabs.Trigger>
+                <Tabs.Trigger value="tasks">
+                  <WindowsLogo />
+                  Settings
+                </Tabs.Trigger>
+              </Tabs.List>
+              <Tabs.Content value="members">Manage your team members</Tabs.Content>
+              <Tabs.Content value="projects">Manage your projects</Tabs.Content>
+              <Tabs.Content value="tasks">
+                Manage your tasks for freelancers
+              </Tabs.Content> 
+            </Tabs.Root> */}
+            {/* FIN */}
+
           </ModalBody>
           <ModalFooter>
             <Button colorScheme="brand" mr={3}>
