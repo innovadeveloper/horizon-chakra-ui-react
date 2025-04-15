@@ -330,17 +330,22 @@ export default function ComplexTable(props) {
 
       <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent bg={modalBgColor}>
-          <ModalHeader>Create your account</ModalHeader>
+        <ModalContent bg={modalBgColor} maxWidth="100%" width="50%">
+          <ModalHeader>Edición de Dispositivo</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </ModalBody>
           <ModalFooter>
             <Button colorScheme="brand" mr={3}>
-              Save
+              Actualizar
             </Button>
-            <Button onClick={onClose}>Cancel</Button>
+            <Button onClick={onClose}>Cancelar</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
