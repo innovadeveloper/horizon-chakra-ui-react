@@ -27,7 +27,7 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  // Tabs
+  Tabs, TabList, TabPanels, Tab, TabPanel, TabIndicator
 } from '@chakra-ui/react';
 
 // import { Tabs } from "@chakra-ui/react"
@@ -65,7 +65,10 @@ export default function ComplexTable(props) {
   const columnTitleColor = "white";
   const textColor = useColorModeValue('secondaryGray.900', 'white');
   const modalBgColor = useColorModeValue('white', 'navy.700');
+  
   const barColor = useColorModeValue('black', 'navy.800');
+  const tabSelectedBackgroundColorMode = useColorModeValue('white.200', 'navy.800');
+  const tabSelectedColumnColor = {color : textTitleColor, bg : tabSelectedBackgroundColorMode, fontWeight: 'bold'}
   const iconColor = useColorModeValue('secondaryGray.500', 'white');
   const borderColor = useColorModeValue('gray.200', 'whiteAlpha.100');
   let defaultData = tableData;
@@ -338,30 +341,21 @@ export default function ComplexTable(props) {
           <ModalHeader>Edición de Dispositivo</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
-sssss
-            {/* INICIO */}
-            {/* <Tabs.Root defaultValue="members">
-               <Tabs.List>
-                <Tabs.Trigger value="members">
-                  <AndroidLogo />
-                  Members
-                </Tabs.Trigger>
-                <Tabs.Trigger value="projects">
-                  <AppleLogo />
-                  Projects
-                </Tabs.Trigger>
-                <Tabs.Trigger value="tasks">
-                  <WindowsLogo />
-                  Settings
-                </Tabs.Trigger>
-              </Tabs.List>
-              <Tabs.Content value="members">Manage your team members</Tabs.Content>
-              <Tabs.Content value="projects">Manage your projects</Tabs.Content>
-              <Tabs.Content value="tasks">
-                Manage your tasks for freelancers
-              </Tabs.Content> 
-            </Tabs.Root> */}
-            {/* FIN */}
+            <Tabs isFitted variant='enclosed'>
+              <TabList mb='1em'>
+                <Tab _selected={tabSelectedColumnColor} >One</Tab>
+                <Tab _selected={tabSelectedColumnColor}>Two</Tab>
+              </TabList>
+              <TabIndicator mt='-1.5px' height='2px' bg={tabSelectedBackgroundColorMode} borderRadius='1px' />
+              <TabPanels>
+                <TabPanel>
+                  <p>one!</p>
+                </TabPanel>
+                <TabPanel>
+                  <p>two!</p>
+                </TabPanel>
+              </TabPanels>
+            </Tabs>
 
           </ModalBody>
           <ModalFooter>
