@@ -6,8 +6,8 @@ import { useState } from 'react';
 const SimpleSliderField = ({ label, min = 20, max = 120, step = 5 }) => {
   const [sliderValue, setSliderValue] = useState(50);
   const labelColor = useColorModeValue('dark.primary.500', 'light.primary.500');
-  const secondaryBarColor = useColorModeValue('light.primary.900', 'dark.primary.100');
-  const primaryBarColor = useColorModeValue('dark.primary.900', 'dark.primary.400');
+  const secondaryBarColor = useColorModeValue('light.primary.900', 'light.primary.900');
+  const primaryBarColor = useColorModeValue('dark.primary.900', 'light.primary.50');
   const logoBarColor = useColorModeValue('dark.primary.900', 'dark.primary.900');
 
   return (

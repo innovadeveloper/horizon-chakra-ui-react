@@ -9,7 +9,7 @@ const SimpleNumberInputFieldComponent = ({ label, defaultValue = 15, min = 10, m
     <FormControl>
       <FormLabel color={inputTextColor}>{label}</FormLabel>
       <NumberInput defaultValue={defaultValue} min={min} max={max} focusBorderColor={inputFocusBorderColor}>
-        <NumberInputField />
+        <NumberInputField color={inputTextColor}/>
         <NumberInputStepper>
           <NumberIncrementStepper />
           <NumberDecrementStepper />

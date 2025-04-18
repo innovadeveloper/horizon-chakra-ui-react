@@ -35,6 +35,7 @@ import {
   HStack
 } from '@chakra-ui/react';
 import GenericForm from '@components/forms/GenericForm';
+import { SimpleModal } from '@components/modals/SimpleModal';
 
 // import { Tabs } from "@chakra-ui/react"
 
@@ -57,27 +58,6 @@ import { LoremIpsum } from 'react-lorem-ipsum';
 // Assets
 
 const columnHelper = createColumnHelper();
-
-const GenericFormComponent = () => {
-  const handleInputChange = (e) => {
-    console.log('Input value:', e.target.value);
-  };
-
-  const handleRadioChange = (value) => {
-    console.log('Selected framework:', value);
-  };
-
-  return (
-    <GenericForm
-      inputLabel="Your Email"
-      inputPlaceholder="Enter your email"
-      onInputChange={handleInputChange}
-      onRadioChange={handleRadioChange}
-      options={['Angular', 'React', 'Vue']}
-    />
-  );
-};
-
 
 // const columns = columnsDataCheck;
 export default function ComplexTable(props) {
@@ -363,7 +343,31 @@ export default function ComplexTable(props) {
         </Flex>
       </Card>
 
-      <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
+      <SimpleModal
+        isOpen={isOpen}
+        onClose={onClose}
+        onUpdate={() => { }}
+        tabLabels={['One', 'Two']}
+      >
+        <TabPanel>
+          <GenericForm
+            inputLabel="Your Email"
+            inputPlaceholder="Enter your email"
+            onInputChange={(e) => {
+              console.log('Input value:', e.target.value);
+            }}
+            onRadioChange={(value) => {
+              console.log('Selected framework:', value);
+            }}
+            options={['Angular', 'React', 'Vue']}
+          />
+        </TabPanel>
+        <TabPanel>
+          <p>Contenido del segundo tab</p>
+        </TabPanel>
+      </SimpleModal>
+
+      {/* <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent bg={modalBgColor} maxWidth="100%" width="50%">
           <ModalHeader>Edición de Dispositivo</ModalHeader>
@@ -377,9 +381,6 @@ export default function ComplexTable(props) {
               <TabIndicator mt='-1.5px' height='2px' bg={tabSelectedBackgroundColorMode} borderRadius='1px' />
               <TabPanels>
                 <TabPanel>
-                  {/* <p>one!</p> */}
-                  {/* <Input placeholder='Basic usage' focusBorderColor={barColor} /> */}
-
                   <GenericFormComponent/>
 
                 </TabPanel>
@@ -397,7 +398,8 @@ export default function ComplexTable(props) {
             <Button onClick={onClose}>Cancelar</Button>
           </ModalFooter>
         </ModalContent>
-      </Modal>
+      </Modal> */}
+
     </>
   );
 }

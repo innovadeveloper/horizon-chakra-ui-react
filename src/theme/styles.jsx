@@ -5,7 +5,9 @@ import "@fontsource/poppins/400.css"
 import "@fontsource/poppins/500.css"
 import "@fontsource/poppins/700.css"
 import "@fontsource/poppins/900.css"
+import { colors } from "./colors";
 
+// Object.assign(globalStyles, colors),  // colors
 
 export const globalStyles = {
   fonts: {
@@ -102,6 +104,7 @@ export const globalStyles = {
       100: "#ffffff",
       200: "#eaeaea",
     },
+    ...colors["colors"] // inyección de otros valores
   },
   styles: {
     global: (props) => ({
