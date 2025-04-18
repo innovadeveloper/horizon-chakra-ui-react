@@ -14,6 +14,8 @@ import {
   Thead,
   Tr,
   useColorModeValue,
+  useRadioGroup,
+  useRadio,
   Button,
   Icon,
   IconButton,
@@ -27,8 +29,12 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  Tabs, TabList, TabPanels, Tab, TabPanel, TabIndicator
+  Tabs, TabList, TabPanels, Tab, TabPanel, TabIndicator,
+  Input,
+  FormControl, FormLabel, FormHelperText,
+  HStack
 } from '@chakra-ui/react';
+import GenericForm from '@components/forms/GenericForm';
 
 // import { Tabs } from "@chakra-ui/react"
 
@@ -52,6 +58,27 @@ import { LoremIpsum } from 'react-lorem-ipsum';
 
 const columnHelper = createColumnHelper();
 
+const GenericFormComponent = () => {
+  const handleInputChange = (e) => {
+    console.log('Input value:', e.target.value);
+  };
+
+  const handleRadioChange = (value) => {
+    console.log('Selected framework:', value);
+  };
+
+  return (
+    <GenericForm
+      inputLabel="Your Email"
+      inputPlaceholder="Enter your email"
+      onInputChange={handleInputChange}
+      onRadioChange={handleRadioChange}
+      options={['Angular', 'React', 'Vue']}
+    />
+  );
+};
+
+
 // const columns = columnsDataCheck;
 export default function ComplexTable(props) {
   const { tableData } = props;
@@ -60,15 +87,16 @@ export default function ComplexTable(props) {
     pageIndex: 0,
     pageSize: 10,
   });
+
   const textTitleColor = useColorModeValue('gray.600', 'white');
   const contentFontSize = { sm: '12px', lg: '14px' };
   const columnTitleColor = "white";
   const textColor = useColorModeValue('secondaryGray.900', 'white');
   const modalBgColor = useColorModeValue('white', 'navy.700');
-  
+
   const barColor = useColorModeValue('black', 'navy.800');
   const tabSelectedBackgroundColorMode = useColorModeValue('white.200', 'navy.800');
-  const tabSelectedColumnColor = {color : textTitleColor, bg : tabSelectedBackgroundColorMode, fontWeight: 'bold'}
+  const tabSelectedColumnColor = { color: textTitleColor, bg: tabSelectedBackgroundColorMode, fontWeight: 'bold' }
   const iconColor = useColorModeValue('secondaryGray.500', 'white');
   const borderColor = useColorModeValue('gray.200', 'whiteAlpha.100');
   let defaultData = tableData;
@@ -349,7 +377,11 @@ export default function ComplexTable(props) {
               <TabIndicator mt='-1.5px' height='2px' bg={tabSelectedBackgroundColorMode} borderRadius='1px' />
               <TabPanels>
                 <TabPanel>
-                  <p>one!</p>
+                  {/* <p>one!</p> */}
+                  {/* <Input placeholder='Basic usage' focusBorderColor={barColor} /> */}
+
+                  <GenericFormComponent/>
+
                 </TabPanel>
                 <TabPanel>
                   <p>two!</p>
