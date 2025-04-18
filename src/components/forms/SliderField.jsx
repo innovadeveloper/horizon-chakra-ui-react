@@ -5,19 +5,20 @@ import { useState } from 'react';
 
 const SimpleSliderField = ({ label, min = 20, max = 120, step = 5 }) => {
   const [sliderValue, setSliderValue] = useState(50);
-  const barColor = useColorModeValue('secondaryGray.600', 'navy.800');
-  const sidebarColor = useColorModeValue('black', 'navy.800');
-  const formLabelColor = useColorModeValue('black', 'white');
+  const labelColor = useColorModeValue('dark.primary.500', 'light.primary.500');
+  const secondaryBarColor = useColorModeValue('light.primary.900', 'dark.primary.100');
+  const primaryBarColor = useColorModeValue('dark.primary.900', 'dark.primary.400');
+  const logoBarColor = useColorModeValue('dark.primary.900', 'dark.primary.900');
 
   return (
     <FormControl>
-      <FormLabel color={formLabelColor}>{label} : {sliderValue}</FormLabel>
+      <FormLabel color={labelColor}>{label} : {sliderValue}</FormLabel>
       <Slider min={min} max={max} step={step} value={sliderValue} onChange={setSliderValue}>
-        <SliderTrack bg={barColor}>
-          <SliderFilledTrack bg={sidebarColor} />
+        <SliderTrack bg={secondaryBarColor}>
+          <SliderFilledTrack bg={primaryBarColor} />
         </SliderTrack>
         <SliderThumb boxSize={6}>
-          <Box color={sidebarColor} as={MdGraphicEq} />
+          <Box color={logoBarColor} as={MdGraphicEq} />
         </SliderThumb>
       </Slider>
     </FormControl>

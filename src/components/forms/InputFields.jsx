@@ -2,18 +2,18 @@
 import { FormControl, FormLabel, FormHelperText, Input, useColorModeValue } from '@chakra-ui/react';
 
 const SimpleInputField = ({ label, helperText, placeholder, type = 'text', onChange }) => {
-  const barColor = useColorModeValue('secondaryGray.600', 'navy.800');
-  const textColor = useColorModeValue('black', 'white');
-  const formLabelColor = useColorModeValue('black', 'white');
+  const labelColor = useColorModeValue('dark.primary.500', 'light.primary.500');
+  const inputFocusBorderColor = useColorModeValue('light.secondary.50', 'dark.secondary.50');
+  const inputTextColor = useColorModeValue('dark.primary.500', 'light.primary.500');
 
   return (
     <FormControl>
-      <FormLabel color={formLabelColor}>{label}</FormLabel>
+      <FormLabel color={labelColor}>{label}</FormLabel>
       <Input
         type={type}
         placeholder={placeholder}
-        focusBorderColor={barColor}
-        textColor={textColor}
+        focusBorderColor={inputFocusBorderColor}
+        textColor={inputTextColor}
         onChange={onChange}
       />
       <FormHelperText>{helperText}</FormHelperText>
@@ -21,4 +21,4 @@ const SimpleInputField = ({ label, helperText, placeholder, type = 'text', onCha
   );
 };
 
-export {SimpleInputField};
+export { SimpleInputField };

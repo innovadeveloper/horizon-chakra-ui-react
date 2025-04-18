@@ -3,7 +3,7 @@ import { FormControl, FormLabel, HStack, useColorModeValue, useRadioGroup } from
 import {SimpleRadioCard} from '@components/forms/RadioCard';
 
 const SimpleRadioGroupField = ({ label, options = [], onChange }) => {
-  const formLabelColor = useColorModeValue('black', 'white');
+  const inputTextColor = useColorModeValue('light.secondary.500', 'dark.secondary.500');
 
   const { getRootProps, getRadioProps } = useRadioGroup({
     name: 'framework',
@@ -15,7 +15,7 @@ const SimpleRadioGroupField = ({ label, options = [], onChange }) => {
 
   return (
     <FormControl>
-      <FormLabel color={formLabelColor}>{label}</FormLabel>
+      <FormLabel color={inputTextColor}>{label}</FormLabel>
       <HStack {...group}>
         {options.map((value) => {
           const radio = getRadioProps({ value });

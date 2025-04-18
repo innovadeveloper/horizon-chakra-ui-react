@@ -5,6 +5,9 @@ const SimpleRadioCard = ({ children, ...props }) => {
   const { getInputProps, getRadioProps } = useRadio(props);
   const input = getInputProps();
   const checkbox = getRadioProps();
+  const radioBackgroundColor = useColorModeValue('light.secondary.500', 'dark.secondary.500');
+  const inputTextColor = useColorModeValue('dark.secondary.500', 'light.secondary.500');
+  // const inputFocusBorderColor = useColorModeValue('light.secondary.50', 'dark.secondary.50');
 
   return (
     <Box as="label">
@@ -16,9 +19,9 @@ const SimpleRadioCard = ({ children, ...props }) => {
         borderRadius="md"
         boxShadow="md"
         _checked={{
-          bg: useColorModeValue('black', 'navy.800'),
-          color: 'white',
-          borderColor: 'teal.600',
+          bg: radioBackgroundColor,
+          color: inputTextColor,
+          // borderColor: 'teal.600',
         }}
         _focus={{
           boxShadow: 'outline',

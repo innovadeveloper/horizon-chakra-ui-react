@@ -2,13 +2,13 @@
 import { FormControl, FormLabel, NumberInput, NumberInputField, NumberInputStepper, NumberIncrementStepper, NumberDecrementStepper, useColorModeValue } from '@chakra-ui/react';
 
 const SimpleNumberInputFieldComponent = ({ label, defaultValue = 15, min = 10, max = 20 }) => {
-  const barColor = useColorModeValue('secondaryGray.600', 'navy.800');
-  const formLabelColor = useColorModeValue('black', 'white');
+  const inputFocusBorderColor = useColorModeValue('light.secondary.50', 'dark.secondary.50');
+  const inputTextColor = useColorModeValue('dark.primary.500', 'light.primary.500');
 
   return (
     <FormControl>
-      <FormLabel color={formLabelColor}>{label}</FormLabel>
-      <NumberInput defaultValue={defaultValue} min={min} max={max} focusBorderColor={barColor}>
+      <FormLabel color={inputTextColor}>{label}</FormLabel>
+      <NumberInput defaultValue={defaultValue} min={min} max={max} focusBorderColor={inputFocusBorderColor}>
         <NumberInputField />
         <NumberInputStepper>
           <NumberIncrementStepper />
