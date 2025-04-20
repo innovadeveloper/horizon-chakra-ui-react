@@ -73,15 +73,10 @@ const useDeviceTableColumns = () => {
             <AndroidLogo color={iconColor} h="18px" w="16px" />
           </Flex>
           <Flex height="10" grow="1" ml="10px" direction="column">
-            <Text
-              fontFamily="poppins"
-              fontWeight="700"
-              fontSize={contentFontSize}
-              color={textTitleColor}
-            >
+            <Text variant={"listItemTitle"} >
               {info.getValue().modelName}
             </Text>
-            <Text fontSize={contentFontSize} color={textColor}>
+            <Text variant={"listItemCaption"}>
               {info.getValue().brandName}
             </Text>
           </Flex>
@@ -95,7 +90,7 @@ const useDeviceTableColumns = () => {
       headerText: 'POLITICA',
       renderCell: (info) => (
         <Flex align="center">
-          <Text fontSize={contentFontSize} color={textColor}>
+          <Text variant={"listItemCaption"}>
             {info.getValue()}
           </Text>
         </Flex>
@@ -123,7 +118,7 @@ const useDeviceTableColumns = () => {
       headerText: 'REGISTRO',
       renderCell: (info) => (
         <Flex align="center">
-          <Text me="10px" color={textColor} fontSize={contentFontSize}>
+          <Text variant={"listItemCaption"}>
             {info.getValue()}
           </Text>
         </Flex>
@@ -135,9 +130,9 @@ const useDeviceTableColumns = () => {
       id: 'id',
       headerText: 'EDITAR',
       renderCell: (info) => (
-        <IconButton variant="solid" 
-        // onClick={(e) => onEdit()}
-        onClick={() => onEdit(info)} // Aquí le pasas toda la fila
+        <IconButton variant="solid"
+          // onClick={(e) => onEdit()}
+          onClick={() => onEdit(info)} // Aquí le pasas toda la fila
         >
           <MdModeEditOutline />
         </IconButton>
@@ -146,96 +141,6 @@ const useDeviceTableColumns = () => {
   ];
 
   return { columns, selectedRow, setSelectedRow };
-}
-
-const columns = (onOpen) => {
-
-  const contentFontSize = { sm: '12px', lg: '14px' };
-  const columnTitleColor = "white";
-  const textColor = useColorModeValue('secondaryGray.900', 'white');
-  const modalBgColor = useColorModeValue('white', 'navy.700');
-  const iconColor = useColorModeValue('secondaryGray.500', 'white');
-  const textTitleColor = useColorModeValue('gray.600', 'white');
-
-  return [
-    createColumn({
-      accessor: 'device',
-      id: 'device',
-      headerText: 'DISPOSITIVO',
-      renderCell: (info) => (
-        <Flex>
-          <Flex height="10" w="30px" align="center" justify="center">
-            <AndroidLogo color={iconColor} h="18px" w="16px" />
-          </Flex>
-          <Flex height="10" grow="1" ml="10px" direction="column">
-            <Text
-              fontFamily="poppins"
-              fontWeight="700"
-              fontSize={contentFontSize}
-              color={textTitleColor}
-            >
-              {info.getValue().modelName}
-            </Text>
-            <Text fontSize={contentFontSize} color={textColor}>
-              {info.getValue().brandName}
-            </Text>
-          </Flex>
-        </Flex>
-      ),
-    }),
-
-    createColumn({
-      accessor: 'policy',
-      id: 'policy',
-      headerText: 'POLITICA',
-      renderCell: (info) => (
-        <Flex align="center">
-          <Text fontSize={contentFontSize} color={textColor}>
-            {info.getValue()}
-          </Text>
-        </Flex>
-      ),
-    }),
-
-    createColumn({
-      accessor: 'isOnline',
-      id: 'isOnline',
-      headerText: 'ESTADO',
-      renderCell: (info) => (
-        <>
-          {info.getValue() ? (
-            <Box w="12px" h="12px" bg="green.400" borderRadius="full" display="inline-block" />
-          ) : (
-            <Box w="12px" h="12px" bg="red.400" borderRadius="full" display="inline-block" />
-          )}
-        </>
-      ),
-    }),
-
-    createColumn({
-      accessor: 'createAt',
-      id: 'createAt',
-      headerText: 'REGISTRO',
-      renderCell: (info) => (
-        <Flex align="center">
-          <Text me="10px" color={textColor} fontSize={contentFontSize}>
-            {info.getValue()}
-          </Text>
-        </Flex>
-      ),
-    }),
-
-    createColumn({
-      accessor: 'id',
-      id: 'id',
-      headerText: 'EDITAR',
-      renderCell: (info) => (
-        <IconButton variant="solid" onClick={(e) => onOpen()}>
-          <MdModeEditOutline />
-        </IconButton>
-      ),
-    }),
-  ];
 }
 
 
@@ -248,19 +153,9 @@ export default function Settings() {
         columns={{ sm: 1, md: 1 }}
         spacing={{ base: "20px", xl: "20px" }}>
         <GeneralTable
-          // columnsData={columnsDataDevelopment}
           tableData={devicesTableDevelopment}
-          useDeviceTableColumns = {useDeviceTableColumns}
+          useDeviceTableColumns={useDeviceTableColumns}
         />
-        {/* <CheckTable columnsData={columnsDataCheck} tableData={tableDataCheck} />
-        <ColumnsTable
-          columnsData={columnsDataColumns}
-          tableData={tableDataColumns}
-        />
-        <ComplexTable
-          columnsData={columnsDataComplex}
-          tableData={tableDataComplex}
-        /> */}
       </SimpleGrid>
     </Box>
   );

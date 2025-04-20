@@ -251,86 +251,6 @@ const GeneralTable = ({ tableData, useDeviceTableColumns }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { columns, selectedRow, setSelectedRow } = useDeviceTableColumns();
 
-  // const columns = [
-  //   createColumn({
-  //     accessor: 'device',
-  //     id: 'device',
-  //     headerText: 'DISPOSITIVO',
-  //     renderCell: (info) => (
-  //       <Flex>
-  //         <Flex height="10" w="30px" align="center" justify="center">
-  //           <AndroidLogo color={iconColor} h="18px" w="16px" />
-  //         </Flex>
-  //         <Flex height="10" grow="1" ml="10px" direction="column">
-  //           <Text
-  //             fontFamily="poppins"
-  //             fontWeight="700"
-  //             fontSize={contentFontSize}
-  //             color={textTitleColor}
-  //           >
-  //             {info.getValue().modelName}
-  //           </Text>
-  //           <Text fontSize={contentFontSize} color={textColor}>
-  //             {info.getValue().brandName}
-  //           </Text>
-  //         </Flex>
-  //       </Flex>
-  //     ),
-  //   }),
-
-  //   createColumn({
-  //     accessor: 'policy',
-  //     id: 'policy',
-  //     headerText: 'POLITICA',
-  //     renderCell: (info) => (
-  //       <Flex align="center">
-  //         <Text fontSize={contentFontSize} color={textColor}>
-  //           {info.getValue()}
-  //         </Text>
-  //       </Flex>
-  //     ),
-  //   }),
-
-  //   createColumn({
-  //     accessor: 'isOnline',
-  //     id: 'isOnline',
-  //     headerText: 'ESTADO',
-  //     renderCell: (info) => (
-  //       <>
-  //         {info.getValue() ? (
-  //           <Box w="12px" h="12px" bg="green.400" borderRadius="full" display="inline-block" />
-  //         ) : (
-  //           <Box w="12px" h="12px" bg="red.400" borderRadius="full" display="inline-block" />
-  //         )}
-  //       </>
-  //     ),
-  //   }),
-
-  //   createColumn({
-  //     accessor: 'createAt',
-  //     id: 'createAt',
-  //     headerText: 'REGISTRO',
-  //     renderCell: (info) => (
-  //       <Flex align="center">
-  //         <Text me="10px" color={textColor} fontSize={contentFontSize}>
-  //           {info.getValue()}
-  //         </Text>
-  //       </Flex>
-  //     ),
-  //   }),
-
-  //   createColumn({
-  //     accessor: 'id',
-  //     id: 'id',
-  //     headerText: 'EDITAR',
-  //     renderCell: (info) => (
-  //       <IconButton variant="solid" onClick={onOpen}>
-  //         <MdModeEditOutline />
-  //       </IconButton>
-  //     ),
-  //   }),
-  // ];
-
   const table = useReactTable({
     data,
     columns,
@@ -357,12 +277,7 @@ const GeneralTable = ({ tableData, useDeviceTableColumns }) => {
       >
         <TableComponent table={table} />
       </Card>
-
-      {/* <ModalContentComponent isOpen={selectedRow} onClose={() => {
-        setSelectedRow(false)
-      }} /> */}
       <ModalContentComponent isOpen={selectedRow} onClose={() => setSelectedRow(null)} />
-      {/* <ModalContentComponent isOpen={isOpen} onClose={onClose} /> */}
     </>
   );
 };

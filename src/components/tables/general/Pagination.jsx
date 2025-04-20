@@ -9,7 +9,6 @@ const Pagination = ({ table }) => {
   return (
     <Flex mt="4" justify="space-between" align="center">
       <Button
-        variant={"classic"}
         // variant={"brand"}
         // textColor={labelColor}
         onClick={() => table.previousPage()}

@@ -5,15 +5,15 @@ import TableRow from './TableRow';
 import Pagination from './Pagination';
 
 const TableComponent = ({ table }) => {
+
   return (
     <>
-      <Table variant="simple" color="gray.500" mb="24px" mt="0px">
+      <Table mb="24px" mt="0px">
         <Thead>
           {table.getHeaderGroups().map((headerGroup) => (
             <TableHeader
               key={headerGroup.id}
               headerGroup={headerGroup}
-              barColor={useColorModeValue('black', 'navy.800')}
               borderColor={useColorModeValue('gray.200', 'whiteAlpha.100')}
             />
           ))}

@@ -1,6 +1,20 @@
 import { mode } from "@chakra-ui/theme-tools";
+import { color } from "framer-motion";
 export const inputStyles = {
   components: {
+    Text : {
+      baseStyle: (props) => ({
+        textColor : mode("dark.primary.500", "dark.secondary.500")(props),
+        fontSize : { sm: '12px', lg: '14px' },
+      }),
+      variants : {
+        listItemTitle : (props) => ({
+          fontWeight : "600",
+        }),
+        listItemCaption : (props) => ({
+        })
+      }
+    },
     Input: {
       baseStyle: {
         field: {

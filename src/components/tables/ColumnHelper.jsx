@@ -1,6 +1,6 @@
 // pages/ComplexTable.js
 
-import { Text } from '@chakra-ui/react';
+import { Text, useColorModeValue } from '@chakra-ui/react';
 
 import { MdModeEditOutline } from "react-icons/md";
 
@@ -9,7 +9,7 @@ import { createColumnHelper } from '@tanstack/react-table';
 const columnHelper = createColumnHelper();
 
 export const createColumn = ({ accessor, id, headerText, renderCell }) => {
-  const columnTitleColor = "white";
+  const labelColor = useColorModeValue('light.primary.500', 'dark.primary.500');
 
   return columnHelper.accessor(accessor, {
     id,
@@ -18,7 +18,7 @@ export const createColumn = ({ accessor, id, headerText, renderCell }) => {
         justifyContent="space-between"
         align="center"
         fontSize={{ sm: '10px', lg: '12px' }}
-        color={columnTitleColor}
+        color={labelColor}
       >
         {headerText}
       </Text>

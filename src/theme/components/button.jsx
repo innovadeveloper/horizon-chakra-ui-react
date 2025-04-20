@@ -1,22 +1,5 @@
 import { mode, transparentize } from '@chakra-ui/theme-tools';
 
-const bgDefault = (props) => {
-  return mode(
-    "black.100",
-    transparentize('navy.600', 0.5)(props.theme)   // 30% opacidad en dark
-  )(props)
-}
-
-const bgPressed = (props) => {
-  return mode(
-    "black.200",
-    transparentize('navy.500', 0.5)(props.theme)   // 30% opacidad en dark
-  )(props)
-}
-
-const colorDefault = (props) => mode("white", "white")(props)
-
-
 // COLORS FOR BUTTONS 
 
 const buttonBackgroundDefault = (props) => {
@@ -35,8 +18,6 @@ const buttonBackgroundPressed = (props) => {
 
 const buttonTextColor = (props) => mode("dark.secondary.500", "dark.primary.500")(props)
 
-
-
 export const buttonStyles = {
   components: {
     Button: {
@@ -51,20 +32,23 @@ export const buttonStyles = {
         _active: {
           boxShadow: "none",
         },
+        _disabled: {
+          pointerEvents: "none",  // 🔥 nuevo: evita interacciones accidentales
+        }
       },
       variants: {
         outline: () => ({
           borderRadius: "16px",
         }),
         brand: (props) => ({
-          bg: bgDefault(props),
-          color: colorDefault(props),
+          bg: buttonBackgroundDefault(props),
+          color: buttonTextColor(props),
           backdropFilter: 'blur(10px)', // 👈 efecto de blur en el fondo
           _focus: {
-            bg: bgDefault(props),
+            bg: buttonBackgroundDefault(props),
           },
           _active: {
-            bg: bgPressed(props)
+            bg: buttonBackgroundPressed(props)
           },
           _hover: {
             // bg: mode("brand.500", "brand.400")(props),
@@ -83,25 +67,6 @@ export const buttonStyles = {
           _hover: {
             // bg: buttonBackgroundPressed(props)
           },
-          _disabled: {
-            bg: 'gray.300',
-            color: 'gray.500',
-            cursor: 'not-allowed',
-            opacity: 1,
-            pointerEvents: "none",  // 🔥 nuevo: evita interacciones accidentales
-          }
-          // bg: mode("light.secondary.500", "light.primary.500")(props),
-          // color: mode("light.primary.500", "light.secondary.500")(props),
-          // _focus: {
-          //   bg: mode("light.secondary.500", "light.primary.500")(props),
-          // },
-          // _active: {
-          //   // bg: mode("light.secondary.100", transparentize('light.primary.100', 0.8)(props.theme))(props),
-          //   bg: mode("light.secondary.100", 'light.primary.100')(props),
-          // },
-          // _hover: {
-          //   // bg: mode("brand.800", "brand.400")(props),
-          // },
         }),
         lightBrand: (props) => ({
           bg: mode("#F2EFFF", "whiteAlpha.100")(props),
