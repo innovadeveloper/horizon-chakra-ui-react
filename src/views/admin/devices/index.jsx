@@ -21,7 +21,7 @@
 */
 
 // Chakra imports
-import { Box, SimpleGrid, Flex, useColorModeValue, Text, IconButton } from "@chakra-ui/react";
+import { Box, SimpleGrid, Flex, useColorModeValue, Text, IconButton, Input, FormLabel } from "@chakra-ui/react";
 import GeneralTable from "@/components/tables/general/GeneralTable";
 // import DevicesTable from "@views/admin/dataTables/components/DevicesTable";
 import CheckTable from "@views/admin/dataTables/components/CheckTable";
@@ -43,6 +43,7 @@ import { AndroidLogo } from '@components/icons/Icons';
 import { createColumn } from '@components/tables/ColumnHelper';
 import { MdModeEditOutline } from "react-icons/md";
 import { useState, useCallback } from 'react';
+import ModalContentComponent from "@/components/tables/general/ModalContentComponent";
 
 
 const useDeviceTableColumns = () => {
@@ -126,16 +127,20 @@ const useDeviceTableColumns = () => {
     }),
 
     createColumn({
-      accessor: 'id',
-      id: 'id',
+      accessor: 'device',
+      id: 'device2',
       headerText: 'EDITAR',
       renderCell: (info) => (
         <IconButton variant="solid"
           // onClick={(e) => onEdit()}
-          onClick={() => onEdit(info)} // Aquí le pasas toda la fila
+          onClick={() => onEdit(info.getValue())} // Aquí le pasas toda la fila
         >
           <MdModeEditOutline />
         </IconButton>
+        // <Input
+        //         variant={"classic"}
+        //       />
+        // <FormLabel>w222</FormLabel>
       ),
     }),
   ];
@@ -155,6 +160,7 @@ export default function Settings() {
         <GeneralTable
           tableData={devicesTableDevelopment}
           useDeviceTableColumns={useDeviceTableColumns}
+          ModalComponent={ModalContentComponent}
         />
       </SimpleGrid>
     </Box>

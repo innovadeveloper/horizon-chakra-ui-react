@@ -5,10 +5,10 @@ import TableRow from './TableRow';
 import Pagination from './Pagination';
 
 const TableComponent = ({ table }) => {
-
+  const backgroundColor = useColorModeValue('dark.secondary.500', 'dark.primary.500');
   return (
     <>
-      <Table mb="24px" mt="0px">
+      <Table mb="24px" mt="0px" bg={backgroundColor}>
         <Thead>
           {table.getHeaderGroups().map((headerGroup) => (
             <TableHeader

@@ -19,7 +19,7 @@ import { Box } from '@chakra-ui/react'; // Componentes de Chakra UI
 const MiFormulario = () => {
     return (
         <>
-            <MapComponent position={[-12.007172935393886, -77.06031303157475]}/>
+            {/* <MapComponent position={[-12.007172935393886, -77.06031303157475]}/> */}
             <Box height="10" />
             <SimpleInputField label="Correo" placeholder="Escribe tu correo xd" helperText="Nunca compartiremos tu correo" type="email" />
             <Box height="10" />

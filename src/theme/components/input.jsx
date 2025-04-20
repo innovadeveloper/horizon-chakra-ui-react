@@ -1,17 +1,18 @@
+import { border } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
 import { color } from "framer-motion";
 export const inputStyles = {
   components: {
-    Text : {
+    Text: {
       baseStyle: (props) => ({
-        textColor : mode("dark.primary.500", "dark.secondary.500")(props),
-        fontSize : { sm: '12px', lg: '14px' },
+        textColor: mode("dark.primary.500", "dark.secondary.500")(props),
+        fontSize: { sm: '12px', lg: '14px' },
       }),
-      variants : {
-        listItemTitle : (props) => ({
-          fontWeight : "600",
+      variants: {
+        listItemTitle: (props) => ({
+          fontWeight: "600",
         }),
-        listItemCaption : (props) => ({
+        listItemCaption: (props) => ({
         })
       }
     },
@@ -19,11 +20,24 @@ export const inputStyles = {
       baseStyle: {
         field: {
           fontWeight: 400,
-          borderRadius: "8px",
+          borderRadius: "5px",
         },
       },
-
       variants: {
+        classic: (props) => ({
+          field: {
+            textColor: mode('dark.primary.500', 'light.primary.500')(props),
+            border: "1px solid",
+            borderColor: mode('dark.primary.50', 'dark.secondary.200')(props),
+            outline: "none",
+            transition: "all 0.2s ease", // <<=== Ahora todo el cambio es fluido
+            _focus: {
+              border: "1px solid",
+              borderColor: mode('dark.primary.900', 'dark.secondary.200')(props),
+              boxShadow: "0 0 0 1px", // opcional, hace que se vea "glow"
+            },
+          },
+        }),
         main: (props) => ({
           field: {
             bg: mode("transparent", "navy.800")(props),
@@ -75,8 +89,21 @@ export const inputStyles = {
           fontWeight: 400,
         },
       },
-
       variants: {
+        classic: (props) => ({
+          field: {
+            textColor: mode('dark.primary.500', 'light.primary.500')(props),
+            border: "1px solid",
+            borderColor: mode('dark.primary.50', 'dark.secondary.200')(props),
+            outline: "none",
+            transition: "all 0.2s ease", // <<=== Ahora todo el cambio es fluido
+            _focus: {
+              border: "1px solid",
+              borderColor: mode('dark.primary.900', 'dark.secondary.200')(props),
+              boxShadow: "0 0 0 1px", // opcional, hace que se vea "glow"
+            },
+          },
+        }),
         main: (props) => ({
           field: {
             bg: "transparent",

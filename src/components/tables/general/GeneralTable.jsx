@@ -234,7 +234,7 @@ import {
 import { createColumn } from '@components/tables/ColumnHelper';
 
 
-const GeneralTable = ({ tableData, useDeviceTableColumns }) => {
+const GeneralTable = ({ tableData, useDeviceTableColumns, ModalComponent }) => {
   const [data, setData] = useState(() => [...tableData]);
   const [sorting, setSorting] = useState([]);
   const [pagination, setPagination] = useState({
@@ -277,7 +277,8 @@ const GeneralTable = ({ tableData, useDeviceTableColumns }) => {
       >
         <TableComponent table={table} />
       </Card>
-      <ModalContentComponent isOpen={selectedRow} onClose={() => setSelectedRow(null)} />
+      {/* <ModalContentComponent isOpen={selectedRow} onClose={() => setSelectedRow(null)} /> */}
+      <ModalComponent isOpen={selectedRow} onClose={() => setSelectedRow(null)} />
     </>
   );
 };
