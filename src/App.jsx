@@ -9,6 +9,7 @@ import {
 import initialTheme from './theme/theme'; // { themeGreen }
 import { useState } from 'react';
 import ProtectedRoute from "@/helpers/ProtectedRoute";
+import { LocalStorage, RoutePaths } from "@variables/constants"
 
 
 
@@ -37,7 +38,8 @@ export default function Main() {
               <RTLLayout theme={currentTheme} setTheme={setCurrentTheme} />
             }
           />
-          <Route path="/" element={<Navigate to="/admin" replace />} />
+          {/* <Route path="/" element={<Navigate to="/admin" replace />} /> */}
+          <Route path="/" element={<Navigate to="/auth/sign-in/default" replace />} />
         </Routes>
       </ChakraProvider>
     </Router>

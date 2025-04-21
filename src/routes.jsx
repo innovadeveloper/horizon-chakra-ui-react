@@ -23,6 +23,7 @@ import Devices from '@views/admin/devices';
 import RTL from '@views/admin/rtl';
 import Redirect from '@layouts/redirect/Redirect';
 import { RoutePaths } from "@variables/constants"
+import AuthLayout from '@layouts/auth';
 
 // Auth Imports
 import SignInCentered from '@views/auth/signIn';
@@ -65,7 +66,7 @@ const routes = [
     component: <Profile />,
   },
   {
-    name: 'Mensajería',
+    name: 'Auth',
     layout: RoutePaths.LOGIN.LAYOUT,
     path: RoutePaths.LOGIN.PATH,
     icon: <Icon as={MdSms} width="20px" height="20px" color="inherit" />,
