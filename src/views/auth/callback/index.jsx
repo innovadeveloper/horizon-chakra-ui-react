@@ -7,13 +7,17 @@ import { useNavigate } from "react-router-dom";
 import { LocalStorage, RoutePaths } from "@variables/constants"
 
 export default function CallbackPage() {
-  const { state } = useAuth();
+  const { state, getUser } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
     if (!state.isLoading && state.isAuthenticated) {
+      const fetchUser = async () => {
+        await getUser();
+      };
+      fetchUser();
       navigate(RoutePaths.DASHBOARD.URI);
-    }else if(!state.isLoading && !state.isAuthenticated)
+    } else if (!state.isLoading && !state.isAuthenticated)
       navigate(RoutePaths.LOGIN.URI);
   }, [state, navigate]);
 

@@ -19,7 +19,7 @@ import { ItemContent } from '@/components/menu/ItemContent';
 import { SearchBar } from '@/components/navbar/searchBar/SearchBar';
 import { SidebarResponsive } from '@/components/sidebar/Sidebar';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 // Assets
 import navImage from '@assets/img/layout/Navbar.png'; //  '@assets/img/layout/Navbar.png';
 import { MdNotificationsNone, MdInfoOutline } from 'react-icons/md';
@@ -29,7 +29,7 @@ import routes from '@/routes';
 import { useAuth } from "@helpers/hooks/useAuth"
 
 export default function HeaderLinks(props) {
-  const { state, logout } = useAuth();
+  const { state, logout, userInfo, getUser } = useAuth();
   const { secondary } = props;
   const { colorMode, toggleColorMode } = useColorMode();
   // Chakra Color Mode
@@ -46,6 +46,16 @@ export default function HeaderLinks(props) {
     '14px 17px 40px 4px rgba(112, 144, 176, 0.06)',
   );
   const borderButton = useColorModeValue('secondaryGray.500', 'whiteAlpha.200');
+
+  useEffect(() => {
+    if(userInfo == null){
+      getUser()
+    }
+  }, []);
+  { console.log("user info => " + JSON.stringify(userInfo)) }
+
+  
+
   return (
     // <></>
     <Flex
@@ -274,7 +284,7 @@ export default function HeaderLinks(props) {
               fontWeight="700"
               color={textColor}
             >
-              👋&nbsp; Hey, Adela
+              👋&nbsp; {`Hey ${ (userInfo != null) ? userInfo.username : '' }`}
             </Text>
           </Flex>
           <Flex flexDirection="column" p="10px">
@@ -301,7 +311,7 @@ export default function HeaderLinks(props) {
               borderRadius="8px"
               px="14px"
             >
-              <Text fontSize="sm" onClick={ () => logout()}>Log out</Text>
+              <Text fontSize="sm" onClick={() => logout()}>Log out</Text>
             </MenuItem>
           </Flex>
         </MenuList>

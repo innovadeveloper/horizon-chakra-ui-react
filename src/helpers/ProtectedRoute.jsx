@@ -13,9 +13,9 @@ import { useAuth } from "@helpers/hooks/useAuth"
  * @returns 
  */
 export default function ProtectedRoute({ children }) {
-    const { isAuthenticated } = useAuth();
-    const delay = 5000;
-    if (!isAuthenticated)
+    const { state } = useAuth();
+    const delay = 2000;
+    if (!state.isAuthenticated)
         return <Redirect message="No tienes una sesión activa" delay={delay} path={RoutePaths.LOGIN.URI} />;
     return children;
 }

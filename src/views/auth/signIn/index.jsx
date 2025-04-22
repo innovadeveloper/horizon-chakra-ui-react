@@ -50,7 +50,7 @@ import DefaultAuth from "@layouts/auth/Default";
 //  https://unsplash.com/es/s/fotos/smartphone-isometric-vector
 // import illustration from "@assets/img/auth/auth-bg.avif";
 import illustration from "@assets/img/auth/auth-bg2.avif";
-
+import { FaKey } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { RiEyeCloseLine } from "react-icons/ri";
@@ -125,9 +125,10 @@ function SignIn() {
             data-element='prueba'
             borderRadius='16px'
             fontWeight='500'
+            onClick={() => login()}
           >
-            <Icon as={FcGoogle} w='20px' h='20px' me='10px' />
-            Iniciar sesión con Google
+            <Icon as={FaKey} w='20px' h='20px' me='10px' />
+            Iniciar sesión con Abexa
           </Button>
           <Flex align='center' mb='25px'>
             <HSeparator />
@@ -213,7 +214,6 @@ function SignIn() {
               </NavLink>
             </Flex>
             <Button
-              onClick={() => login()}
               fontSize='sm'
               variant='brand'
               fontWeight='500'
