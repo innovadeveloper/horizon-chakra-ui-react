@@ -5,6 +5,11 @@ const RoutePaths = Object.freeze({
         PATH : "/sign-in",
         URI : "/auth/sign-in"
     },
+    AUTH_CALLBACK: {
+        LAYOUT : "/auth",
+        PATH : "/callback",
+        URI : "/auth/callback"
+    },
     // ADMIN
     DASHBOARD: {
         LAYOUT : "/admin",

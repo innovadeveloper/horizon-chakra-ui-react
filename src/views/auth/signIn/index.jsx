@@ -54,6 +54,7 @@ import illustration from "@assets/img/auth/auth-bg2.avif";
 import { FcGoogle } from "react-icons/fc";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { RiEyeCloseLine } from "react-icons/ri";
+import { useAuth } from "@helpers/hooks/useAuth"
 
 function SignIn() {
   // Chakra color mode
@@ -72,6 +73,9 @@ function SignIn() {
     { bg: "secondaryGray.300" },
     { bg: "whiteAlpha.200" }
   );
+  const { login, logout } = useAuth();
+
+
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
   return (
@@ -120,13 +124,8 @@ function SignIn() {
             variant='brand'
             data-element='prueba'
             borderRadius='16px'
-            // bg={googleBg}
-            // color={googleText}
             fontWeight='500'
-            // _hover={googleHover}
-            // _active={googleActive}
-            // _focus={googleActive}
-            >
+          >
             <Icon as={FcGoogle} w='20px' h='20px' me='10px' />
             Iniciar sesión con Google
           </Button>
@@ -214,6 +213,7 @@ function SignIn() {
               </NavLink>
             </Flex>
             <Button
+              onClick={() => login()}
               fontSize='sm'
               variant='brand'
               fontWeight='500'

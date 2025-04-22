@@ -24,6 +24,7 @@ import RTL from '@views/admin/rtl';
 import Redirect from '@layouts/redirect/Redirect';
 import { RoutePaths } from "@variables/constants"
 import AuthLayout from '@layouts/auth';
+import CallbackPage from '@views/auth/callback';
 
 // Auth Imports
 import SignInCentered from '@views/auth/signIn';
@@ -71,6 +72,13 @@ const routes = [
     path: RoutePaths.LOGIN.PATH,
     icon: <Icon as={MdSms} width="20px" height="20px" color="inherit" />,
     component: <SignInCentered />,
+  },
+  {
+    name: 'AuthCallback',
+    layout: RoutePaths.AUTH_CALLBACK.LAYOUT,
+    path: RoutePaths.AUTH_CALLBACK.PATH,
+    icon: <Icon as={MdSms} width="20px" height="20px" color="inherit" />,
+    component: <CallbackPage />,
   },
 ];
 
