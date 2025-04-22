@@ -1,9 +1,11 @@
 const RoutePaths = Object.freeze({
+    // AUTH
     LOGIN: {
         LAYOUT : "/auth",
         PATH : "/sign-in",
         URI : "/auth/sign-in"
     },
+    // ADMIN
     DASHBOARD: {
         LAYOUT : "/admin",
         PATH : "/default",

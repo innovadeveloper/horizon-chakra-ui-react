@@ -13,10 +13,7 @@ import { LocalStorage, RoutePaths } from "@variables/constants"
 export default function Auth() {
   // states and functions
   const [toggleSidebar, setToggleSidebar] = useState(false);
-  // functions for changing the states from components
-  const getRoute = () => {
-    return window.location.pathname !== '/auth/full-screen-maps';
-  };
+  // { console.log(`url ${window.location.pathname}`) }
 
   const getRoutes = (routesMap) => {
     return routesMap.map((route, key) => {
@@ -30,17 +27,6 @@ export default function Auth() {
       } else {
         return null;
       }
-
-      // if (route.layout === '/auth') {
-      //   return (
-      //     <Route path={`${route.path}`} element={route.component} key={key} />
-      //   );
-      // }
-      // if (route.collapse) {
-      //   return getRoutes(route.items);
-      // } else {
-      //   return null;
-      // }
     });
   };
 
@@ -67,18 +53,13 @@ export default function Auth() {
           transitionProperty="top, bottom, width"
           transitionTimingFunction="linear, linear, ease"
         >
-          {getRoute() ? (
-            <Box mx="auto" minH="100vh">
-              <Routes>
-                {getRoutes(routes)}
-                <Route
-                  path="/"
-                  // element={<Navigate to="/auth/sign-in/default" replace />}
-                  element={<Navigate to={RoutePaths.LOGIN.URI} replace />}
-                />
-              </Routes>
-            </Box>
-          ) : null}
+          <Routes>
+            {getRoutes(routes)}
+            <Route
+              path="/"
+              element={<Navigate to={RoutePaths.LOGIN.URI} replace />}
+            />
+          </Routes>
         </Box>
       </SidebarContext.Provider>
     </Box>
