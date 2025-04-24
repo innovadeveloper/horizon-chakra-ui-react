@@ -21,7 +21,7 @@
 */
 
 // Chakra imports
-import { Box, SimpleGrid, Flex, useColorModeValue, Text, IconButton, Input, FormLabel } from "@chakra-ui/react";
+import { Box, SimpleGrid, Flex, useColorModeValue, Text, IconButton, Input, FormLabel, Button } from "@chakra-ui/react";
 import GeneralTable from "@/components/tables/general/GeneralTable";
 // import DevicesTable from "@views/admin/dataTables/components/DevicesTable";
 import CheckTable from "@views/admin/dataTables/components/CheckTable";
@@ -34,21 +34,26 @@ import {
   columnsDataComplex,
 } from "@views/admin/dataTables/variables/columnsData";
 import tableDataDevelopment from "@views/admin/dataTables/variables/tableDataDevelopment.json";
-import devicesTableDevelopment from "@views/admin/dataTables/variables/devices-table-data.json";
-// import devicesTableDevelopment from "@views/admin/dataTables/variables/my-devices-data.json";
+// import devicesTableDevelopment from "@views/admin/dataTables/variables/devices-table-data.json";
+import devicesTableDevelopment from "@views/admin/dataTables/variables/my-devices-data.json";
 // import tableDataCheck from "@views/admin/dataTables/variables/tableDataCheck.json";
 // import tableDataColumns from "@views/admin/dataTables/variables/tableDataColumns.json";
 // import tableDataComplex from "@views/admin/dataTables/variables/tableDataComplex.json";
 import React from "react";
 import { AndroidLogo } from '@components/icons/Icons';
 import { createColumn } from '@components/tables/ColumnHelper';
-import { MdModeEditOutline } from "react-icons/md";
+import { MdModeEditOutline, MdDeleteForever } from "react-icons/md";
+
 import { useState, useCallback } from 'react';
 import ModalContentComponent from "@/components/tables/general/ModalContentComponent";
+import DeviceLocationModal from "@components/modals/DeviceLocationModal";
+import { FaMapMarkerAlt } from "react-icons/fa";
+// import { MdEdit } from "react-icons/md";
 
 
 const useDeviceTableColumns = () => {
   const [selectedRow, setSelectedRow] = useState(null); // Para saber qué fila se clickeó
+  const [selectedMap, setMapSelected] = useState(null);
 
   const contentFontSize = { sm: '12px', lg: '14px' };
   const columnTitleColor = "white";
@@ -63,19 +68,47 @@ const useDeviceTableColumns = () => {
     console.log('Editando fila:', rowData);
   }, []);
 
+  const onMap = useCallback((info) => {
+    setMapSelected(info);
+    console.log('Abriendo mapa:', info);
+  }, []);
+
+
+
   // Definir columnas
   const columns = [
     createColumn({
       accessor: row => ({
-        modelName: row.device.modelName,
-        brandName: row.device.brandName,
+        isOnline: row.isOnline,
+        modelName: row.modelName,
+        brandName: row.brandName,
       }),
       id: 'device',
       headerText: 'DISPOSITIVO',
       renderCell: (info) => (
         <Flex>
           <Flex height="10" w="30px" align="center" justify="center">
-            <AndroidLogo color={iconColor} h="18px" w="16px" />
+
+            <Flex direction={"row"} alignItems="center" position="relative">
+              <AndroidLogo color={iconColor} h="25px" w="22px" />
+              <Box
+                w="10px"
+                h="10px"
+                bg={info.getValue().isOnline ? "green.400" : "red.400" }
+                borderRadius="full"
+                position="absolute"
+                bottom={0}
+                right={-1}
+              />
+
+              {/* {info.getValue() ? (
+                <Box w="12px" h="12px" bg="green.400" borderRadius="full" justifyContent={"center"} />
+              ) : (
+                <Box w="12px" h="12px" bg="red.400" borderRadius="full" justifyContent={"center"} />
+              )} */}
+            </Flex>
+
+            {/* <AndroidLogo color={iconColor} h="18px" w="16px" /> */}
           </Flex>
           <Flex height="10" grow="1" ml="10px" direction="column">
             <Text variant={"listItemTitle"} >
@@ -90,9 +123,9 @@ const useDeviceTableColumns = () => {
     }),
 
     createColumn({
-      accessor: 'policy',
-      id: 'policy',
-      headerText: 'POLITICA',
+      accessor: 'androidVersion',
+      id: 'androidVersion',
+      headerText: 'VERSION',
       renderCell: (info) => (
         <Flex align="center">
           <Text variant={"listItemCaption"}>
@@ -102,20 +135,6 @@ const useDeviceTableColumns = () => {
       ),
     }),
 
-    createColumn({
-      accessor: 'isOnline',
-      id: 'isOnline',
-      headerText: 'ESTADO',
-      renderCell: (info) => (
-        <>
-          {info.getValue() ? (
-            <Box w="12px" h="12px" bg="green.400" borderRadius="full" display="inline-block" />
-          ) : (
-            <Box w="12px" h="12px" bg="red.400" borderRadius="full" display="inline-block" />
-          )}
-        </>
-      ),
-    }),
 
     createColumn({
       accessor: 'createAt',
@@ -130,26 +149,96 @@ const useDeviceTableColumns = () => {
       ),
     }),
 
+
     createColumn({
-      accessor: 'device',
-      id: 'device2',
-      headerText: 'EDITAR',
+      accessor: 'policyName',
+      id: 'policyName',
+      headerText: 'POLITICA',
       renderCell: (info) => (
-        <IconButton variant="solid"
-          // onClick={(e) => onEdit()}
-          onClick={() => onEdit(info.getValue())} // Aquí le pasas toda la fila
-        >
-          <MdModeEditOutline />
-        </IconButton>
-        // <Input
-        //         variant={"classic"}
-        //       />
-        // <FormLabel>w222</FormLabel>
+        <Flex align="center">
+          <Text variant={"listItemCaption"}>
+            {info.getValue()}
+          </Text>
+        </Flex>
       ),
     }),
+
+    // createColumn({
+    //   accessor: 'isOnline',
+    //   id: 'isOnline',
+    //   headerText: 'ESTADO',
+    //   renderCell: (info) => (
+    //     <>
+    //       {info.getValue() ? (
+    //         <Box w="12px" h="12px" bg="green.400" borderRadius="full" justifyContent={"center"} />
+    //       ) : (
+    //         <Box w="12px" h="12px" bg="red.400" borderRadius="full" justifyContent={"center"} />
+    //       )}
+    //     </>
+    //   ),
+    // }),
+
+    createColumn({
+      accessor: row => ({
+        id: row.id,
+        modelName: row.modelName,
+        brandName: row.brandName,
+      }),
+      id: 'viewInMap',
+      headerText: 'VER EN MAPA',
+      renderCell: (info) => (
+        <Flex justifyContent={"center"}>
+          <IconButton variant="solid" onClick={() => onMap(info.getValue())}>
+            <FaMapMarkerAlt />
+          </IconButton>
+        </Flex>
+      ),
+    }),
+
+
+    createColumn({
+      accessor: 'id',
+      id: 'actions',
+      headerText: 'ACCIONES',
+      renderCell: (info) => (
+        // <Flex align="center">
+        //   <Text variant={"listItemCaption"}>
+        //     {info.getValue()}
+        //   </Text>
+        // </Flex>
+
+        <Flex direction={"row"}>
+          <IconButton variant="solid" onClick={() => onMap(info.getValue())}>
+            <MdModeEditOutline />
+          </IconButton>
+          <IconButton variant="solid" onClick={() => onMap(info.getValue())}>
+            <MdDeleteForever />
+          </IconButton>
+        </Flex>
+      ),
+    }),
+
+
+    // createColumn({
+    //   accessor: 'device',
+    //   id: 'device2',
+    //   headerText: 'EDITAR',
+    //   renderCell: (info) => (
+    //     <IconButton variant="solid"
+    //       // onClick={(e) => onEdit()}
+    //       onClick={() => onEdit(info.getValue())} // Aquí le pasas toda la fila
+    //     >
+    //       <MdModeEditOutline />
+    //     </IconButton>
+    //     // <Input
+    //     //         variant={"classic"}
+    //     //       />
+    //     // <FormLabel>w222</FormLabel>
+    //   ),
+    // }),
   ];
 
-  return { columns, selectedRow, setSelectedRow };
+  return { columns, selectedRow, setSelectedRow, selectedMap, setMapSelected };
 }
 
 
@@ -165,6 +254,7 @@ export default function Settings() {
           tableData={devicesTableDevelopment}
           useDeviceTableColumns={useDeviceTableColumns}
           ModalComponent={ModalContentComponent}
+          DeviceLocationModal={DeviceLocationModal}
         />
       </SimpleGrid>
     </Box>

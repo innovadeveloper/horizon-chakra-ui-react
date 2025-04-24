@@ -26,10 +26,10 @@ export default function Main() {
           <Route
             path="admin/*"
             element={
-              <ProtectedRoute>
-                <AdminLayout theme={currentTheme} setTheme={setCurrentTheme} />
-              </ProtectedRoute>
-              // <AdminLayout theme={currentTheme} setTheme={setCurrentTheme} />
+              // <ProtectedRoute>
+              //   <AdminLayout theme={currentTheme} setTheme={setCurrentTheme} />
+              // </ProtectedRoute>
+              <AdminLayout theme={currentTheme} setTheme={setCurrentTheme} />
             }
           />
           <Route
