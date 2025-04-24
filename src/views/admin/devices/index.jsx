@@ -35,9 +35,10 @@ import {
 } from "@views/admin/dataTables/variables/columnsData";
 import tableDataDevelopment from "@views/admin/dataTables/variables/tableDataDevelopment.json";
 import devicesTableDevelopment from "@views/admin/dataTables/variables/devices-table-data.json";
-import tableDataCheck from "@views/admin/dataTables/variables/tableDataCheck.json";
-import tableDataColumns from "@views/admin/dataTables/variables/tableDataColumns.json";
-import tableDataComplex from "@views/admin/dataTables/variables/tableDataComplex.json";
+// import devicesTableDevelopment from "@views/admin/dataTables/variables/my-devices-data.json";
+// import tableDataCheck from "@views/admin/dataTables/variables/tableDataCheck.json";
+// import tableDataColumns from "@views/admin/dataTables/variables/tableDataColumns.json";
+// import tableDataComplex from "@views/admin/dataTables/variables/tableDataComplex.json";
 import React from "react";
 import { AndroidLogo } from '@components/icons/Icons';
 import { createColumn } from '@components/tables/ColumnHelper';
@@ -65,7 +66,10 @@ const useDeviceTableColumns = () => {
   // Definir columnas
   const columns = [
     createColumn({
-      accessor: 'device',
+      accessor: row => ({
+        modelName: row.device.modelName,
+        brandName: row.device.brandName,
+      }),
       id: 'device',
       headerText: 'DISPOSITIVO',
       renderCell: (info) => (

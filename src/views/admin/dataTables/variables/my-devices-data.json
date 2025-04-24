@@ -1,0 +1,802 @@
+[
+  {
+    "id": "94fd6147-f2f3-4721-84df-dc29c559d303",
+    "modelName": "Galaxy A10",
+    "androidVersion": 14,
+    "createAt": "03-07-2022 00:00:00",
+    "policyName": "Kiosko",
+    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+  },
+  {
+    "id": "61485a5b-a4a1-4ad8-950c-9bbb04b5b08e",
+    "modelName": "Galaxy M31",
+    "androidVersion": 14,
+    "createAt": "30-11-2023 00:00:00",
+    "policyName": "Restaurante",
+    "policyId": "48b11b5c-81d7-4f24-9e6e-f45e9988b7f1"
+  },
+  {
+    "id": "c1d46356-46bb-44ac-8f8f-620a1fe88b7b",
+    "modelName": "Galaxy M12",
+    "androidVersion": 11,
+    "createAt": "15-07-2020 00:00:00",
+    "policyName": "Transporte",
+    "policyId": "726f0c26-85d1-4a5a-bd1f-d985d9a92d14"
+  },
+  {
+    "id": "534446cb-d183-4cb5-bd0f-e4c80e194364",
+    "modelName": "Galaxy A20",
+    "androidVersion": 11,
+    "createAt": "27-12-2021 00:00:00",
+    "policyName": "Oficina",
+    "policyId": "87b67c39-83b7-4cde-bd16-939e3f51b86f"
+  },
+  {
+    "id": "32adcecf-a2be-4922-a51c-0499b0dabfc1",
+    "modelName": "Galaxy S21",
+    "androidVersion": 9,
+    "createAt": "28-03-2020 00:00:00",
+    "policyName": "Restaurante",
+    "policyId": "48b11b5c-81d7-4f24-9e6e-f45e9988b7f1"
+  },
+  {
+    "id": "7d6b321c-2a03-471a-a72c-2a55b66978c7",
+    "modelName": "Galaxy A10",
+    "androidVersion": 12,
+    "createAt": "28-01-2022 00:00:00",
+    "policyName": "Kiosko",
+    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+  },
+  {
+    "id": "c68c8cb2-2806-413a-8cd0-f07cd59d08e1",
+    "modelName": "Galaxy A70",
+    "androidVersion": 12,
+    "createAt": "24-06-2020 00:00:00",
+    "policyName": "Restaurante",
+    "policyId": "48b11b5c-81d7-4f24-9e6e-f45e9988b7f1"
+  },
+  {
+    "id": "0e1af5f0-770e-4887-887d-31c108402057",
+    "modelName": "Galaxy S22",
+    "androidVersion": 12,
+    "createAt": "05-01-2019 00:00:00",
+    "policyName": "Kiosko",
+    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+  },
+  {
+    "id": "90583ba7-826c-4e49-9522-970939987c62",
+    "modelName": "Galaxy A70",
+    "androidVersion": 11,
+    "createAt": "19-11-2023 00:00:00",
+    "policyName": "Restaurante",
+    "policyId": "48b11b5c-81d7-4f24-9e6e-f45e9988b7f1"
+  },
+  {
+    "id": "15a6d7aa-0137-4382-bff4-3958885723b5",
+    "modelName": "Galaxy S10",
+    "androidVersion": 14,
+    "createAt": "14-06-2020 00:00:00",
+    "policyName": "Kiosko",
+    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+  },
+  {
+    "id": "1b86c608-2215-43b9-aa7c-d9d3bec09bbb",
+    "modelName": "Galaxy Note 20",
+    "androidVersion": 9,
+    "createAt": "24-06-2024 00:00:00",
+    "policyName": "Almacén",
+    "policyId": "3bca0a6e-bf71-44aa-b07b-d4890a884e6d"
+  },
+  {
+    "id": "f2899faa-55d5-49db-87f3-1910d7a16f4c",
+    "modelName": "Galaxy A30",
+    "androidVersion": 9,
+    "createAt": "30-09-2023 00:00:00",
+    "policyName": "Kiosko",
+    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+  },
+  {
+    "id": "1c043e4f-34ad-4a68-a8a1-a1fd7f17b3e4",
+    "modelName": "Galaxy S22",
+    "androidVersion": 13,
+    "createAt": "03-07-2025 00:00:00",
+    "policyName": "Transporte",
+    "policyId": "726f0c26-85d1-4a5a-bd1f-d985d9a92d14"
+  },
+  {
+    "id": "c0f957dc-d4dc-4f81-8c18-fc25e8c6d38e",
+    "modelName": "Galaxy S22",
+    "androidVersion": 13,
+    "createAt": "17-05-2021 00:00:00",
+    "policyName": "Transporte",
+    "policyId": "726f0c26-85d1-4a5a-bd1f-d985d9a92d14"
+  },
+  {
+    "id": "f1a736d0-9d3b-47ae-a8a2-66b7cdce1fd8",
+    "modelName": "Galaxy S10",
+    "androidVersion": 12,
+    "createAt": "12-02-2020 00:00:00",
+    "policyName": "Almacén",
+    "policyId": "3bca0a6e-bf71-44aa-b07b-d4890a884e6d"
+  },
+  {
+    "id": "768ceaf3-cb6f-4405-b3db-fc172f5f79f8",
+    "modelName": "Galaxy A33",
+    "androidVersion": 14,
+    "createAt": "16-06-2019 00:00:00",
+    "policyName": "Restaurante",
+    "policyId": "48b11b5c-81d7-4f24-9e6e-f45e9988b7f1"
+  },
+  {
+    "id": "77b3ad91-4228-4b54-8fd5-8f419fb12e8f",
+    "modelName": "Galaxy A73",
+    "androidVersion": 12,
+    "createAt": "24-10-2021 00:00:00",
+    "policyName": "Almacén",
+    "policyId": "3bca0a6e-bf71-44aa-b07b-d4890a884e6d"
+  },
+  {
+    "id": "3b6be6f1-fa77-4881-a006-9505d25f3eee",
+    "modelName": "Galaxy A73",
+    "androidVersion": 10,
+    "createAt": "31-03-2024 00:00:00",
+    "policyName": "Kiosko",
+    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+  },
+  {
+    "id": "34ba9ea4-d233-49ff-a124-4fda178182bf",
+    "modelName": "Galaxy M31",
+    "androidVersion": 11,
+    "createAt": "28-08-2024 00:00:00",
+    "policyName": "Oficina",
+    "policyId": "87b67c39-83b7-4cde-bd16-939e3f51b86f"
+  },
+  {
+    "id": "34d31a53-6a38-44ca-b5e9-09df7f93b520",
+    "modelName": "Galaxy Note 10",
+    "androidVersion": 13,
+    "createAt": "19-05-2019 00:00:00",
+    "policyName": "Kiosko",
+    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+  },
+  {
+    "id": "d1e76d64-dab7-4d5a-8723-ed9925238401",
+    "modelName": "Galaxy A13",
+    "androidVersion": 11,
+    "createAt": "01-07-2023 00:00:00",
+    "policyName": "Kiosko",
+    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+  },
+  {
+    "id": "0a1f2cad-3161-429c-8bac-c9f857861b05",
+    "modelName": "Galaxy A13",
+    "androidVersion": 12,
+    "createAt": "19-07-2022 00:00:00",
+    "policyName": "Restaurante",
+    "policyId": "48b11b5c-81d7-4f24-9e6e-f45e9988b7f1"
+  },
+  {
+    "id": "542c709a-5fb1-47d0-9e9c-f3102b7b2ca3",
+    "modelName": "Galaxy A50",
+    "androidVersion": 12,
+    "createAt": "03-10-2019 00:00:00",
+    "policyName": "Oficina",
+    "policyId": "87b67c39-83b7-4cde-bd16-939e3f51b86f"
+  },
+  {
+    "id": "f87736ef-e2e5-431f-aca7-db85ff518f8c",
+    "modelName": "Galaxy A33",
+    "androidVersion": 13,
+    "createAt": "22-09-2018 00:00:00",
+    "policyName": "Kiosko",
+    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+  },
+  {
+    "id": "645066f7-1a26-42b3-91a2-c52f2ce81116",
+    "modelName": "Galaxy A70",
+    "androidVersion": 14,
+    "createAt": "05-01-2020 00:00:00",
+    "policyName": "Almacén",
+    "policyId": "3bca0a6e-bf71-44aa-b07b-d4890a884e6d"
+  },
+  {
+    "id": "520474fa-888a-44fd-8abe-0171aea02712",
+    "modelName": "Galaxy M12",
+    "androidVersion": 9,
+    "createAt": "12-01-2022 00:00:00",
+    "policyName": "Restaurante",
+    "policyId": "48b11b5c-81d7-4f24-9e6e-f45e9988b7f1"
+  },
+  {
+    "id": "55c14783-7d81-418d-9601-4fcc51d0d504",
+    "modelName": "Galaxy S22",
+    "androidVersion": 12,
+    "createAt": "21-02-2018 00:00:00",
+    "policyName": "Transporte",
+    "policyId": "726f0c26-85d1-4a5a-bd1f-d985d9a92d14"
+  },
+  {
+    "id": "ef54d1c0-c3d8-4a01-a9a4-c72ba91644d2",
+    "modelName": "Galaxy A23",
+    "androidVersion": 10,
+    "createAt": "20-12-2020 00:00:00",
+    "policyName": "Transporte",
+    "policyId": "726f0c26-85d1-4a5a-bd1f-d985d9a92d14"
+  },
+  {
+    "id": "16b7de9e-7fc9-46bf-a29e-88b94aec1572",
+    "modelName": "Galaxy A30",
+    "androidVersion": 9,
+    "createAt": "30-03-2024 00:00:00",
+    "policyName": "Oficina",
+    "policyId": "87b67c39-83b7-4cde-bd16-939e3f51b86f"
+  },
+  {
+    "id": "01a83555-ebc7-4334-b9fb-3d248c10a08d",
+    "modelName": "Galaxy S21",
+    "androidVersion": 9,
+    "createAt": "12-06-2020 00:00:00",
+    "policyName": "Kiosko",
+    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+  },
+  {
+    "id": "417d3bdf-8027-4272-84d4-eeb02878961d",
+    "modelName": "Galaxy A53",
+    "androidVersion": 11,
+    "createAt": "04-08-2020 00:00:00",
+    "policyName": "Restaurante",
+    "policyId": "48b11b5c-81d7-4f24-9e6e-f45e9988b7f1"
+  },
+  {
+    "id": "73f8bf3a-5de2-4225-9352-4fc6ef06633a",
+    "modelName": "Galaxy S21",
+    "androidVersion": 10,
+    "createAt": "07-04-2023 00:00:00",
+    "policyName": "Transporte",
+    "policyId": "726f0c26-85d1-4a5a-bd1f-d985d9a92d14"
+  },
+  {
+    "id": "bcdcac25-fbdb-4446-a23d-f3784a397c53",
+    "modelName": "Galaxy A13",
+    "androidVersion": 12,
+    "createAt": "08-12-2019 00:00:00",
+    "policyName": "Kiosko",
+    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+  },
+  {
+    "id": "7f99f748-7c2c-4a01-a994-9498cd458402",
+    "modelName": "Galaxy A10",
+    "androidVersion": 14,
+    "createAt": "22-09-2019 00:00:00",
+    "policyName": "Almacén",
+    "policyId": "3bca0a6e-bf71-44aa-b07b-d4890a884e6d"
+  },
+  {
+    "id": "d19c6862-e4d8-4eea-b7ba-ef52ea189c10",
+    "modelName": "Galaxy Note 10",
+    "androidVersion": 12,
+    "createAt": "24-06-2024 00:00:00",
+    "policyName": "Oficina",
+    "policyId": "87b67c39-83b7-4cde-bd16-939e3f51b86f"
+  },
+  {
+    "id": "c8d98c3a-4b69-4aab-ba42-dfa985574f8a",
+    "modelName": "Galaxy Note 10",
+    "androidVersion": 9,
+    "createAt": "07-02-2023 00:00:00",
+    "policyName": "Almacén",
+    "policyId": "3bca0a6e-bf71-44aa-b07b-d4890a884e6d"
+  },
+  {
+    "id": "2b29a90c-6c5e-40aa-b4f7-120704b7a25e",
+    "modelName": "Galaxy A13",
+    "androidVersion": 11,
+    "createAt": "07-01-2025 00:00:00",
+    "policyName": "Almacén",
+    "policyId": "3bca0a6e-bf71-44aa-b07b-d4890a884e6d"
+  },
+  {
+    "id": "7e6bcdc6-a8f4-48ff-92d4-2f2ec1614f69",
+    "modelName": "Galaxy S10",
+    "androidVersion": 13,
+    "createAt": "18-04-2018 00:00:00",
+    "policyName": "Restaurante",
+    "policyId": "48b11b5c-81d7-4f24-9e6e-f45e9988b7f1"
+  },
+  {
+    "id": "325c2a16-be7c-40fd-ae19-9291b54c8c68",
+    "modelName": "Galaxy S20",
+    "androidVersion": 12,
+    "createAt": "30-12-2022 00:00:00",
+    "policyName": "Kiosko",
+    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+  },
+  {
+    "id": "e9ccec20-d197-460f-b6a0-dcb9c1fb330d",
+    "modelName": "Galaxy A50",
+    "androidVersion": 9,
+    "createAt": "21-12-2025 00:00:00",
+    "policyName": "Kiosko",
+    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+  },
+  {
+    "id": "87ac0203-d661-475c-bb6c-2d1d831e0d4a",
+    "modelName": "Galaxy A53",
+    "androidVersion": 14,
+    "createAt": "13-07-2024 00:00:00",
+    "policyName": "Restaurante",
+    "policyId": "48b11b5c-81d7-4f24-9e6e-f45e9988b7f1"
+  },
+  {
+    "id": "4f6abb70-d71a-4062-b14e-87c475b741d3",
+    "modelName": "Galaxy Note 20",
+    "androidVersion": 11,
+    "createAt": "27-01-2023 00:00:00",
+    "policyName": "Transporte",
+    "policyId": "726f0c26-85d1-4a5a-bd1f-d985d9a92d14"
+  },
+  {
+    "id": "436b86f1-3f79-4718-a3e4-321b28d024d9",
+    "modelName": "Galaxy A33",
+    "androidVersion": 11,
+    "createAt": "04-12-2022 00:00:00",
+    "policyName": "Almacén",
+    "policyId": "3bca0a6e-bf71-44aa-b07b-d4890a884e6d"
+  },
+  {
+    "id": "385518fa-a05b-46f2-8ae1-e51f3b153b25",
+    "modelName": "Galaxy A23",
+    "androidVersion": 13,
+    "createAt": "19-02-2022 00:00:00",
+    "policyName": "Transporte",
+    "policyId": "726f0c26-85d1-4a5a-bd1f-d985d9a92d14"
+  },
+  {
+    "id": "82e43e3b-ea67-4c9a-b49d-e1c3312d1426",
+    "modelName": "Galaxy A20",
+    "androidVersion": 14,
+    "createAt": "13-12-2025 00:00:00",
+    "policyName": "Oficina",
+    "policyId": "87b67c39-83b7-4cde-bd16-939e3f51b86f"
+  },
+  {
+    "id": "8810035c-ac7c-4604-b436-8f8cde769c3c",
+    "modelName": "Galaxy A23",
+    "androidVersion": 12,
+    "createAt": "26-07-2025 00:00:00",
+    "policyName": "Oficina",
+    "policyId": "87b67c39-83b7-4cde-bd16-939e3f51b86f"
+  },
+  {
+    "id": "272a1699-3168-4394-beda-d6a2ca8cba94",
+    "modelName": "Galaxy A50",
+    "androidVersion": 10,
+    "createAt": "24-12-2021 00:00:00",
+    "policyName": "Almacén",
+    "policyId": "3bca0a6e-bf71-44aa-b07b-d4890a884e6d"
+  },
+  {
+    "id": "d2995b3f-fb1f-43a3-a4e6-77507f736d9a",
+    "modelName": "Galaxy A13",
+    "androidVersion": 10,
+    "createAt": "07-02-2021 00:00:00",
+    "policyName": "Kiosko",
+    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+  },
+  {
+    "id": "aa7aecc1-7741-4b1a-b406-d54f844d9ad1",
+    "modelName": "Galaxy S10",
+    "androidVersion": 14,
+    "createAt": "16-11-2020 00:00:00",
+    "policyName": "Transporte",
+    "policyId": "726f0c26-85d1-4a5a-bd1f-d985d9a92d14"
+  },
+  {
+    "id": "524a05f4-d249-4c96-bdc5-c723c6c24621",
+    "modelName": "Galaxy A33",
+    "androidVersion": 12,
+    "createAt": "18-11-2019 00:00:00",
+    "policyName": "Restaurante",
+    "policyId": "48b11b5c-81d7-4f24-9e6e-f45e9988b7f1"
+  },
+  {
+    "id": "c2bc8d62-0c66-45d0-9def-c8611377d3d6",
+    "modelName": "Galaxy A20",
+    "androidVersion": 12,
+    "createAt": "20-09-2021 00:00:00",
+    "policyName": "Restaurante",
+    "policyId": "48b11b5c-81d7-4f24-9e6e-f45e9988b7f1"
+  },
+  {
+    "id": "1dafcbfa-97c5-4987-9da9-e265bd6bfd19",
+    "modelName": "Galaxy A73",
+    "androidVersion": 14,
+    "createAt": "18-04-2024 00:00:00",
+    "policyName": "Kiosko",
+    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+  },
+  {
+    "id": "a8177e0b-b2cf-4983-bcad-172464015871",
+    "modelName": "Galaxy A23",
+    "androidVersion": 14,
+    "createAt": "15-06-2020 00:00:00",
+    "policyName": "Restaurante",
+    "policyId": "48b11b5c-81d7-4f24-9e6e-f45e9988b7f1"
+  },
+  {
+    "id": "a2709c33-73ba-4593-9fa1-991535e6303b",
+    "modelName": "Galaxy S22",
+    "androidVersion": 11,
+    "createAt": "20-02-2018 00:00:00",
+    "policyName": "Almacén",
+    "policyId": "3bca0a6e-bf71-44aa-b07b-d4890a884e6d"
+  },
+  {
+    "id": "cf9ca1ae-76e3-4040-8139-612d9c1fe139",
+    "modelName": "Galaxy S22",
+    "androidVersion": 9,
+    "createAt": "04-02-2022 00:00:00",
+    "policyName": "Transporte",
+    "policyId": "726f0c26-85d1-4a5a-bd1f-d985d9a92d14"
+  },
+  {
+    "id": "1aa96fbe-1354-4782-8601-89cc06624d9b",
+    "modelName": "Galaxy S22",
+    "androidVersion": 12,
+    "createAt": "26-05-2021 00:00:00",
+    "policyName": "Kiosko",
+    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+  },
+  {
+    "id": "7832e732-df95-4747-a1b9-3ff023cb17d8",
+    "modelName": "Galaxy A10",
+    "androidVersion": 10,
+    "createAt": "18-04-2018 00:00:00",
+    "policyName": "Oficina",
+    "policyId": "87b67c39-83b7-4cde-bd16-939e3f51b86f"
+  },
+  {
+    "id": "3c4d3f7a-6253-494b-a59c-802e28c4e915",
+    "modelName": "Galaxy A53",
+    "androidVersion": 10,
+    "createAt": "30-01-2021 00:00:00",
+    "policyName": "Transporte",
+    "policyId": "726f0c26-85d1-4a5a-bd1f-d985d9a92d14"
+  },
+  {
+    "id": "ac5fc9da-18ca-4df1-8e91-001ef0288f61",
+    "modelName": "Galaxy A70",
+    "androidVersion": 11,
+    "createAt": "04-01-2023 00:00:00",
+    "policyName": "Transporte",
+    "policyId": "726f0c26-85d1-4a5a-bd1f-d985d9a92d14"
+  },
+  {
+    "id": "7f4267fd-bfd1-4fda-987a-a61e68f2f23f",
+    "modelName": "Galaxy A13",
+    "androidVersion": 10,
+    "createAt": "13-04-2021 00:00:00",
+    "policyName": "Transporte",
+    "policyId": "726f0c26-85d1-4a5a-bd1f-d985d9a92d14"
+  },
+  {
+    "id": "5c2fc7f2-2984-4ad8-9cf5-6cb7ca974e07",
+    "modelName": "Galaxy S20",
+    "androidVersion": 9,
+    "createAt": "21-11-2019 00:00:00",
+    "policyName": "Almacén",
+    "policyId": "3bca0a6e-bf71-44aa-b07b-d4890a884e6d"
+  },
+  {
+    "id": "ab67f86c-82a8-4892-a8a4-bd63db4ad551",
+    "modelName": "Galaxy S10",
+    "androidVersion": 12,
+    "createAt": "04-02-2021 00:00:00",
+    "policyName": "Oficina",
+    "policyId": "87b67c39-83b7-4cde-bd16-939e3f51b86f"
+  },
+  {
+    "id": "ee7327f2-d715-4dc2-a800-b4a7d2b08a79",
+    "modelName": "Galaxy A30",
+    "androidVersion": 11,
+    "createAt": "28-10-2020 00:00:00",
+    "policyName": "Almacén",
+    "policyId": "3bca0a6e-bf71-44aa-b07b-d4890a884e6d"
+  },
+  {
+    "id": "bc34a663-c688-474e-9047-07b9b20bf0f2",
+    "modelName": "Galaxy S10",
+    "androidVersion": 9,
+    "createAt": "23-08-2024 00:00:00",
+    "policyName": "Oficina",
+    "policyId": "87b67c39-83b7-4cde-bd16-939e3f51b86f"
+  },
+  {
+    "id": "af8894d5-6815-48c9-b4b1-91520f5d3ca5",
+    "modelName": "Galaxy S22",
+    "androidVersion": 11,
+    "createAt": "24-05-2025 00:00:00",
+    "policyName": "Almacén",
+    "policyId": "3bca0a6e-bf71-44aa-b07b-d4890a884e6d"
+  },
+  {
+    "id": "31d8fce9-1ca0-4d86-b612-9880cb7fd80b",
+    "modelName": "Galaxy A73",
+    "androidVersion": 12,
+    "createAt": "18-01-2019 00:00:00",
+    "policyName": "Restaurante",
+    "policyId": "48b11b5c-81d7-4f24-9e6e-f45e9988b7f1"
+  },
+  {
+    "id": "79d88939-dd6d-4f76-b2ec-cc9a41c9613c",
+    "modelName": "Galaxy A20",
+    "androidVersion": 11,
+    "createAt": "12-04-2023 00:00:00",
+    "policyName": "Oficina",
+    "policyId": "87b67c39-83b7-4cde-bd16-939e3f51b86f"
+  },
+  {
+    "id": "4bcae12d-e82f-47f6-be52-1e7dd5d55f7c",
+    "modelName": "Galaxy S10",
+    "androidVersion": 11,
+    "createAt": "10-10-2025 00:00:00",
+    "policyName": "Kiosko",
+    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+  },
+  {
+    "id": "35fda084-2c54-4f7b-af0b-a4ad82f28f51",
+    "modelName": "Galaxy Note 20",
+    "androidVersion": 10,
+    "createAt": "26-02-2023 00:00:00",
+    "policyName": "Kiosko",
+    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+  },
+  {
+    "id": "cce4c775-a845-4bd8-81f9-347b29620eaf",
+    "modelName": "Galaxy A50",
+    "androidVersion": 13,
+    "createAt": "08-07-2024 00:00:00",
+    "policyName": "Kiosko",
+    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+  },
+  {
+    "id": "180179c8-080b-4670-b4f9-35d29dea1035",
+    "modelName": "Galaxy M31",
+    "androidVersion": 12,
+    "createAt": "24-11-2023 00:00:00",
+    "policyName": "Kiosko",
+    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+  },
+  {
+    "id": "e02190c7-f449-4e1f-8484-48583b6a4d94",
+    "modelName": "Galaxy S10",
+    "androidVersion": 11,
+    "createAt": "02-02-2024 00:00:00",
+    "policyName": "Transporte",
+    "policyId": "726f0c26-85d1-4a5a-bd1f-d985d9a92d14"
+  },
+  {
+    "id": "296f15b6-43cd-44a5-8076-9c8e6fe1aee0",
+    "modelName": "Galaxy Note 10",
+    "androidVersion": 13,
+    "createAt": "14-08-2020 00:00:00",
+    "policyName": "Kiosko",
+    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+  },
+  {
+    "id": "5ffbd7c2-3f5b-4654-8eba-8f4f0ee57405",
+    "modelName": "Galaxy A70",
+    "androidVersion": 9,
+    "createAt": "09-07-2025 00:00:00",
+    "policyName": "Restaurante",
+    "policyId": "48b11b5c-81d7-4f24-9e6e-f45e9988b7f1"
+  },
+  {
+    "id": "c6b655d5-2470-444f-a66a-64634ee56f5b",
+    "modelName": "Galaxy A50",
+    "androidVersion": 14,
+    "createAt": "03-12-2022 00:00:00",
+    "policyName": "Restaurante",
+    "policyId": "48b11b5c-81d7-4f24-9e6e-f45e9988b7f1"
+  },
+  {
+    "id": "6dbc8dcc-ae73-4214-b597-f45edc4a46d5",
+    "modelName": "Galaxy M31",
+    "androidVersion": 13,
+    "createAt": "27-02-2025 00:00:00",
+    "policyName": "Oficina",
+    "policyId": "87b67c39-83b7-4cde-bd16-939e3f51b86f"
+  },
+  {
+    "id": "fa0e3707-1179-4ee4-8bee-a1cb2e7025dd",
+    "modelName": "Galaxy M12",
+    "androidVersion": 11,
+    "createAt": "11-08-2021 00:00:00",
+    "policyName": "Kiosko",
+    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+  },
+  {
+    "id": "b67274c8-1f18-4a67-b8e3-b360a5202434",
+    "modelName": "Galaxy S22",
+    "androidVersion": 9,
+    "createAt": "29-03-2022 00:00:00",
+    "policyName": "Almacén",
+    "policyId": "3bca0a6e-bf71-44aa-b07b-d4890a884e6d"
+  },
+  {
+    "id": "c1a73129-505e-40f2-9ebc-15f5d7de7fdb",
+    "modelName": "Galaxy M12",
+    "androidVersion": 14,
+    "createAt": "04-09-2023 00:00:00",
+    "policyName": "Kiosko",
+    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+  },
+  {
+    "id": "5fbb94e3-122a-4f8a-b50f-55018181b72a",
+    "modelName": "Galaxy S20",
+    "androidVersion": 14,
+    "createAt": "19-01-2025 00:00:00",
+    "policyName": "Transporte",
+    "policyId": "726f0c26-85d1-4a5a-bd1f-d985d9a92d14"
+  },
+  {
+    "id": "6b7a03b5-3370-46f7-bf95-7070461c1040",
+    "modelName": "Galaxy Note 10",
+    "androidVersion": 10,
+    "createAt": "30-04-2020 00:00:00",
+    "policyName": "Almacén",
+    "policyId": "3bca0a6e-bf71-44aa-b07b-d4890a884e6d"
+  },
+  {
+    "id": "b4bce03b-c9c0-41e1-9b91-0f5068ad8135",
+    "modelName": "Galaxy A30",
+    "androidVersion": 14,
+    "createAt": "27-01-2020 00:00:00",
+    "policyName": "Restaurante",
+    "policyId": "48b11b5c-81d7-4f24-9e6e-f45e9988b7f1"
+  },
+  {
+    "id": "7594fc89-983e-4f14-b456-2f8a52202573",
+    "modelName": "Galaxy Note 20",
+    "androidVersion": 13,
+    "createAt": "20-09-2020 00:00:00",
+    "policyName": "Transporte",
+    "policyId": "726f0c26-85d1-4a5a-bd1f-d985d9a92d14"
+  },
+  {
+    "id": "aca2c208-fc3c-417c-b256-c447e6f178d3",
+    "modelName": "Galaxy A70",
+    "androidVersion": 14,
+    "createAt": "30-05-2024 00:00:00",
+    "policyName": "Oficina",
+    "policyId": "87b67c39-83b7-4cde-bd16-939e3f51b86f"
+  },
+  {
+    "id": "fc06ee0b-a855-4d1b-be01-f8d7ae0dfe63",
+    "modelName": "Galaxy S22",
+    "androidVersion": 13,
+    "createAt": "29-03-2022 00:00:00",
+    "policyName": "Kiosko",
+    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+  },
+  {
+    "id": "1c83bc27-1fcc-452d-9a61-51174fca28ce",
+    "modelName": "Galaxy A53",
+    "androidVersion": 13,
+    "createAt": "08-03-2020 00:00:00",
+    "policyName": "Restaurante",
+    "policyId": "48b11b5c-81d7-4f24-9e6e-f45e9988b7f1"
+  },
+  {
+    "id": "44076c50-827a-4e53-a015-da51d5d5e305",
+    "modelName": "Galaxy M12",
+    "androidVersion": 12,
+    "createAt": "13-11-2025 00:00:00",
+    "policyName": "Kiosko",
+    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+  },
+  {
+    "id": "78081390-d89e-48ef-8108-d098e8630b33",
+    "modelName": "Galaxy S20",
+    "androidVersion": 14,
+    "createAt": "30-09-2024 00:00:00",
+    "policyName": "Restaurante",
+    "policyId": "48b11b5c-81d7-4f24-9e6e-f45e9988b7f1"
+  },
+  {
+    "id": "112046f3-5715-4c9a-83f8-e48026931e86",
+    "modelName": "Galaxy S22",
+    "androidVersion": 9,
+    "createAt": "05-06-2018 00:00:00",
+    "policyName": "Restaurante",
+    "policyId": "48b11b5c-81d7-4f24-9e6e-f45e9988b7f1"
+  },
+  {
+    "id": "bcfaab7e-56cf-46a3-a7ff-effab87b0f23",
+    "modelName": "Galaxy A33",
+    "androidVersion": 13,
+    "createAt": "09-04-2019 00:00:00",
+    "policyName": "Kiosko",
+    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+  },
+  {
+    "id": "b8c31ed5-3c13-4b2c-94e4-12594915d6b0",
+    "modelName": "Galaxy A20",
+    "androidVersion": 9,
+    "createAt": "12-11-2025 00:00:00",
+    "policyName": "Restaurante",
+    "policyId": "48b11b5c-81d7-4f24-9e6e-f45e9988b7f1"
+  },
+  {
+    "id": "10053540-1a17-475f-ab3b-085c834c3343",
+    "modelName": "Galaxy Note 10",
+    "androidVersion": 14,
+    "createAt": "25-08-2022 00:00:00",
+    "policyName": "Almacén",
+    "policyId": "3bca0a6e-bf71-44aa-b07b-d4890a884e6d"
+  },
+  {
+    "id": "2702cb69-3cf2-49f7-a6bc-be16cec438a9",
+    "modelName": "Galaxy S20",
+    "androidVersion": 9,
+    "createAt": "31-08-2024 00:00:00",
+    "policyName": "Transporte",
+    "policyId": "726f0c26-85d1-4a5a-bd1f-d985d9a92d14"
+  },
+  {
+    "id": "3f13af09-28f4-458a-ae47-06c992e82679",
+    "modelName": "Galaxy A33",
+    "androidVersion": 14,
+    "createAt": "25-04-2022 00:00:00",
+    "policyName": "Oficina",
+    "policyId": "87b67c39-83b7-4cde-bd16-939e3f51b86f"
+  },
+  {
+    "id": "52a47ccf-4efd-4a84-b44f-5527d4f2dda6",
+    "modelName": "Galaxy A50",
+    "androidVersion": 12,
+    "createAt": "09-10-2018 00:00:00",
+    "policyName": "Almacén",
+    "policyId": "3bca0a6e-bf71-44aa-b07b-d4890a884e6d"
+  },
+  {
+    "id": "781db3d9-bfc7-42eb-aeb6-f256b81ebc5c",
+    "modelName": "Galaxy Note 10",
+    "androidVersion": 9,
+    "createAt": "29-06-2021 00:00:00",
+    "policyName": "Restaurante",
+    "policyId": "48b11b5c-81d7-4f24-9e6e-f45e9988b7f1"
+  },
+  {
+    "id": "2bef51fb-e4fa-49bb-bc94-08fe01a77f64",
+    "modelName": "Galaxy A53",
+    "androidVersion": 12,
+    "createAt": "08-02-2025 00:00:00",
+    "policyName": "Oficina",
+    "policyId": "87b67c39-83b7-4cde-bd16-939e3f51b86f"
+  },
+  {
+    "id": "47c583ba-7c22-4f40-9a0b-545891622f5c",
+    "modelName": "Galaxy A13",
+    "androidVersion": 14,
+    "createAt": "22-03-2020 00:00:00",
+    "policyName": "Almacén",
+    "policyId": "3bca0a6e-bf71-44aa-b07b-d4890a884e6d"
+  },
+  {
+    "id": "65becaaa-55c4-43af-9713-2b08e89bcac5",
+    "modelName": "Galaxy M12",
+    "androidVersion": 9,
+    "createAt": "20-06-2022 00:00:00",
+    "policyName": "Almacén",
+    "policyId": "3bca0a6e-bf71-44aa-b07b-d4890a884e6d"
+  },
+  {
+    "id": "82e22b09-8664-4368-971f-531b7e4bbe00",
+    "modelName": "Galaxy Note 20",
+    "androidVersion": 14,
+    "createAt": "07-03-2020 00:00:00",
+    "policyName": "Restaurante",
+    "policyId": "48b11b5c-81d7-4f24-9e6e-f45e9988b7f1"
+  }
+]
