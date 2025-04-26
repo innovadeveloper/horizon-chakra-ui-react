@@ -1,7 +1,7 @@
 // components/ModalContentComponent.js
 import { SimpleModal } from '@components/modals/SimpleModal';
 import GenericForm from '@components/forms/GenericForm';
-import { Menu, MenuButton, MenuList, MenuItem, MenuDivider, Text, Button, Flex, Box } from '@chakra-ui/react';
+import { Menu, MenuButton, MenuList, MenuItem, MenuDivider, Text, Button, Flex, Box, useDisclosure } from '@chakra-ui/react';
 import { IoIosAddCircle } from "react-icons/io";
 import { SimpleMenu } from '@components/forms';
 import { useState, useEffect } from "react";

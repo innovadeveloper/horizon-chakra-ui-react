@@ -234,7 +234,8 @@ import {
 import { createColumn } from '@components/tables/ColumnHelper';
 
 
-const GeneralTable = ({ tableData, useDeviceTableColumns, ModalComponent, DeviceLocationModal }) => {
+// const GeneralTable = ({ tableData, useDeviceTableColumns, ModalComponent, DeviceLocationModal }) => {
+const GeneralTable = ({ tableData, columns, children }) => {
   const [data, setData] = useState(() => [...tableData]);
   const [sorting, setSorting] = useState([]);
   const [pagination, setPagination] = useState({
@@ -249,7 +250,7 @@ const GeneralTable = ({ tableData, useDeviceTableColumns, ModalComponent, Device
   const textTitleColor = useColorModeValue('gray.600', 'white');
 
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { columns, selectedRow, setSelectedRow, selectedMap, setMapSelected } = useDeviceTableColumns();
+  // const { columns, selectedRow, setSelectedRow, selectedMap, setMapSelected } = useDeviceTableColumns();
 
   const table = useReactTable({
     data,
@@ -278,8 +279,9 @@ const GeneralTable = ({ tableData, useDeviceTableColumns, ModalComponent, Device
         <TableComponent table={table} />
       </Card>
       {/* <ModalContentComponent isOpen={selectedRow} onClose={() => setSelectedRow(null)} /> */}
-      <ModalComponent isOpen={selectedRow} onClose={() => setSelectedRow(null)} />
-      <DeviceLocationModal  setCloseModal={setMapSelected} isOpen={selectedMap} onClose={() => setMapSelected(null)} />
+      {/* <ModalComponent isOpen={selectedRow} onClose={() => setSelectedRow(null)} /> */}
+      {/* <DeviceLocationModal  setCloseModal={setMapSelected} isOpen={selectedMap} onClose={() => setMapSelected(null)} /> */}
+      {children} {/* Aquí renderizas lo que te manden */}
     </>
   );
 };

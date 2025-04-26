@@ -21,7 +21,7 @@
 */
 
 // Chakra imports
-import { Box, SimpleGrid, Flex, useColorModeValue, Text, IconButton, Input, FormLabel, Button } from "@chakra-ui/react";
+import { useDisclosure, Box, SimpleGrid, Flex, useColorModeValue, Text, IconButton, Input, FormLabel, Button } from "@chakra-ui/react";
 import GeneralTable from "@/components/tables/general/GeneralTable";
 // import DevicesTable from "@views/admin/dataTables/components/DevicesTable";
 import CheckTable from "@views/admin/dataTables/components/CheckTable";
@@ -101,12 +101,6 @@ const useDeviceTableColumns = () => {
                 bottom={0}
                 right={-1}
               />
-
-              {/* {info.getValue() ? (
-                <Box w="12px" h="12px" bg="green.400" borderRadius="full" justifyContent={"center"} />
-              ) : (
-                <Box w="12px" h="12px" bg="red.400" borderRadius="full" justifyContent={"center"} />
-              )} */}
             </Flex>
 
             {/* <AndroidLogo color={iconColor} h="18px" w="16px" /> */}
@@ -167,21 +161,6 @@ const useDeviceTableColumns = () => {
       ),
     }),
 
-    // createColumn({
-    //   accessor: 'isOnline',
-    //   id: 'isOnline',
-    //   headerText: 'ESTADO',
-    //   renderCell: (info) => (
-    //     <>
-    //       {info.getValue() ? (
-    //         <Box w="12px" h="12px" bg="green.400" borderRadius="full" justifyContent={"center"} />
-    //       ) : (
-    //         <Box w="12px" h="12px" bg="red.400" borderRadius="full" justifyContent={"center"} />
-    //       )}
-    //     </>
-    //   ),
-    // }),
-
     createColumn({
       accessor: row => ({
         id: row.id,
@@ -205,17 +184,12 @@ const useDeviceTableColumns = () => {
       id: 'actions',
       headerText: 'ACCIONES',
       renderCell: (info) => (
-        // <Flex align="center">
-        //   <Text variant={"listItemCaption"}>
-        //     {info.getValue()}
-        //   </Text>
-        // </Flex>
 
         <Flex direction={"row"}>
           <IconButton variant="solid" onClick={() => onMap(info.getValue())}>
             <FaInfoCircle />
           </IconButton>
-          <IconButton variant="solid" onClick={() => onMap(info.getValue())}>
+          <IconButton variant="solid" onClick={() => onEdit(info.getValue())}>
             <MdModeEditOutline />
           </IconButton>
           <IconButton variant="solid" onClick={() => onMap(info.getValue())}>
@@ -250,6 +224,9 @@ const useDeviceTableColumns = () => {
 
 
 export default function Settings() {
+  const { columns, selectedRow, setSelectedRow, selectedMap, setMapSelected } = useDeviceTableColumns();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   // Chakra Color Mode
   return (
     <Box pt={{ base: "130px", md: "80px", xl: "80px" }}>
@@ -257,12 +234,10 @@ export default function Settings() {
         mb='20px'
         columns={{ sm: 1, md: 1 }}
         spacing={{ base: "20px", xl: "20px" }}>
-        <GeneralTable
-          tableData={devicesTableDevelopment}
-          useDeviceTableColumns={useDeviceTableColumns}
-          ModalComponent={ModalContentComponent}
-          DeviceLocationModal={PolicyEditionModal}
-        />
+        <GeneralTable tableData={devicesTableDevelopment} columns={columns}>
+          <ModalContentComponent isOpen={selectedRow} onClose={() => setSelectedRow(null)} />
+          <PolicyEditionModal setCloseModal={setMapSelected} isOpen={selectedMap} onClose={() => setMapSelected(null)} />
+        </GeneralTable>
       </SimpleGrid>
     </Box>
   );

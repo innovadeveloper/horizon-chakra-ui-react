@@ -1,11 +1,11 @@
 // components/ModalContentComponent.js
-import { SimpleModal } from '@components/modals/SimpleModal';
+import { SimpleTabModal } from '@components/modals/SimpleTabModal';
 import GenericForm from '@components/forms/GenericForm';
 import { TabPanel, Text } from '@chakra-ui/react';
 
 const ModalContentComponent = ({ isOpen, onClose }) => {
   return (
-    <SimpleModal
+    <SimpleTabModal
       isOpen={isOpen}
       onClose={onClose}
       onUpdate={() => { }}
@@ -33,7 +33,7 @@ const ModalContentComponent = ({ isOpen, onClose }) => {
       <TabPanel>
         <p>Contenido del segundo tab</p>
       </TabPanel>
-    </SimpleModal>
+    </SimpleTabModal>
   );
 };
 

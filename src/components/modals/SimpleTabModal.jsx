@@ -6,7 +6,7 @@ import {
     Button, useColorModeValue
 } from '@chakra-ui/react';
 
-const SimpleModal = ({
+const SimpleTabModal = ({
     isOpen,
     onClose,
     onUpdate,
@@ -50,4 +50,4 @@ const SimpleModal = ({
     );
 };
 
-export { SimpleModal };
+export { SimpleTabModal };
