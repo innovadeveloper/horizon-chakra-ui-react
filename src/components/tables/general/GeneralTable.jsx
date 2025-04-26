@@ -279,7 +279,7 @@ const GeneralTable = ({ tableData, useDeviceTableColumns, ModalComponent, Device
       </Card>
       {/* <ModalContentComponent isOpen={selectedRow} onClose={() => setSelectedRow(null)} /> */}
       <ModalComponent isOpen={selectedRow} onClose={() => setSelectedRow(null)} />
-      <DeviceLocationModal isOpen={selectedMap} onClose={() => setMapSelected(null)} />
+      <DeviceLocationModal  setCloseModal={setMapSelected} isOpen={selectedMap} onClose={() => setMapSelected(null)} />
     </>
   );
 };

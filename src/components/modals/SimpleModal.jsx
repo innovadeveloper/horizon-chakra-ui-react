@@ -12,6 +12,9 @@ const SimpleModal = ({
     onUpdate,
     // tabLabels = [],
     children,
+    modalTitle,
+    confirmTextButton,
+    cancelTextButton
 }) => {
     const labelColor = useColorModeValue('dark.secondary.500', 'light.secondary.500');
     const modalBgColor = useColorModeValue('light.primary.500', 'dark.primary.900');
@@ -22,16 +25,16 @@ const SimpleModal = ({
         <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
             <ModalOverlay />
             <ModalContent bg={modalBgColor} maxWidth="100%" width="50%">
-                <ModalHeader>Edición de Dispositivo</ModalHeader>
+                <ModalHeader>{modalTitle}</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody pb={6}>
                     {children}
                 </ModalBody>
                 <ModalFooter>
-                    <Button colorScheme="brand" mr={3}>
-                        Actualizar
+                    <Button colorScheme="brand" mr={3} onClick={onUpdate}>
+                        {confirmTextButton}
                     </Button>
-                    <Button onClick={onClose}>Cancelar</Button>
+                    <Button onClick={onClose}>{cancelTextButton}</Button>
                 </ModalFooter>
             </ModalContent>
         </Modal>

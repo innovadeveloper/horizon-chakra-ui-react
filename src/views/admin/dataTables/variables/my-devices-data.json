@@ -1,1002 +1,1000 @@
-[
-  {
-    "id": "11fa37af-16d1-41e9-970a-9652775d1ca1",
-    "modelName": "Galaxy S21",
-    "androidVersion": 12,
-    "createAt": "23-04-2018 00:00:00",
-    "policyName": "Kiosko",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
-  },
-  {
-    "id": "9c564e9f-45f7-469b-b512-9ab1d697cc3f",
-    "modelName": "Galaxy A52",
-    "androidVersion": 11,
-    "createAt": "15-11-2018 00:00:00",
-    "policyName": "Restaurante",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
-  },
-  {
-    "id": "a564b71f-e0bb-42b0-a4f9-5017a7d1493f",
-    "modelName": "Galaxy M32",
-    "androidVersion": 10,
-    "createAt": "03-07-2018 00:00:00",
-    "policyName": "Oficina",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
-  },
-  {
-    "id": "37ed2f13-e6c7-4064-a1f2-b9b6b7e028a4",
-    "modelName": "Galaxy Note 20",
-    "androidVersion": 12,
-    "createAt": "19-02-2018 00:00:00",
-    "policyName": "Casa",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
-  },
-  {
-    "id": "d8352720-4023-4ccf-a8bb-9bfcf4380e85",
-    "modelName": "Galaxy J7",
-    "androidVersion": 8,
-    "createAt": "25-06-2018 00:00:00",
-    "policyName": "Comercio",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
-  },
-  {
-    "id": "c3565db0-28fe-432e-9de6-2a7a7553467d",
-    "modelName": "Galaxy Z Flip",
-    "androidVersion": 10,
-    "createAt": "04-09-2018 00:00:00",
-    "policyName": "Kiosko",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
-  },
-  {
-    "id": "e0b96ba3-8e5f-4fcb-bf1a-88c8c7b76f5a",
-    "modelName": "Galaxy Z Fold",
-    "androidVersion": 12,
-    "createAt": "17-08-2018 00:00:00",
-    "policyName": "Restaurante",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
-  },
-  {
-    "id": "6873d0c9-b431-4237-a66e-0e4d3de529c2",
-    "modelName": "Galaxy A72",
-    "androidVersion": 11,
-    "createAt": "12-04-2018 00:00:00",
-    "policyName": "Oficina",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
-  },
-  {
-    "id": "1b08de2b-3fa7-47b5-bf32-f6bb759bbd3b",
-    "modelName": "Galaxy S20",
-    "androidVersion": 10,
-    "createAt": "28-01-2018 00:00:00",
-    "policyName": "Casa",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
-  },
-  {
-    "id": "9a56be88-7cfb-42b5-b12f-6cc9ac09d7c5",
-    "modelName": "Galaxy A32",
-    "androidVersion": 9,
-    "createAt": "14-05-2018 00:00:00",
-    "policyName": "Comercio",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
-  },
-  {
-    "id": "9c564e9f-45f7-469b-b512-9ab1d697cc3f",
-    "modelName": "Galaxy A52",
-    "androidVersion": 11,
-    "createAt": "15-11-2018 00:00:00",
-    "policyName": "Restaurante",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
-  },
-  {
-    "id": "a564b71f-e0bb-42b0-a4f9-5017a7d1493f",
-    "modelName": "Galaxy M32",
-    "androidVersion": 10,
-    "createAt": "03-07-2018 00:00:00",
-    "policyName": "Oficina",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
-  },
-  {
-    "id": "37ed2f13-e6c7-4064-a1f2-b9b6b7e028a4",
-    "modelName": "Galaxy Note 20",
-    "androidVersion": 12,
-    "createAt": "19-02-2018 00:00:00",
-    "policyName": "Casa",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
-  },
-  {
-    "id": "d8352720-4023-4ccf-a8bb-9bfcf4380e85",
-    "modelName": "Galaxy J7",
-    "androidVersion": 8,
-    "createAt": "25-06-2018 00:00:00",
-    "policyName": "Comercio",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
-  },
-  {
-    "id": "c3565db0-28fe-432e-9de6-2a7a7553467d",
-    "modelName": "Galaxy Z Flip",
-    "androidVersion": 10,
-    "createAt": "04-09-2018 00:00:00",
-    "policyName": "Kiosko",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
-  },
-  {
-    "id": "e0b96ba3-8e5f-4fcb-bf1a-88c8c7b76f5a",
-    "modelName": "Galaxy Z Fold",
-    "androidVersion": 12,
-    "createAt": "17-08-2018 00:00:00",
-    "policyName": "Restaurante",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
-  },
-  {
-    "id": "6873d0c9-b431-4237-a66e-0e4d3de529c2",
-    "modelName": "Galaxy A72",
-    "androidVersion": 11,
-    "createAt": "12-04-2018 00:00:00",
-    "policyName": "Oficina",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
-  },
-  {
-    "id": "1b08de2b-3fa7-47b5-bf32-f6bb759bbd3b",
-    "modelName": "Galaxy S20",
-    "androidVersion": 10,
-    "createAt": "28-01-2018 00:00:00",
-    "policyName": "Casa",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
-  },
-  {
-    "id": "9a56be88-7cfb-42b5-b12f-6cc9ac09d7c5",
-    "modelName": "Galaxy A32",
-    "androidVersion": 9,
-    "createAt": "14-05-2018 00:00:00",
-    "policyName": "Comercio",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
-  },
-  {
-    "id": "9c564e9f-45f7-469b-b512-9ab1d697cc3f",
-    "modelName": "Galaxy A52",
-    "androidVersion": 11,
-    "createAt": "15-11-2018 00:00:00",
-    "policyName": "Restaurante",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
-  },
-  {
-    "id": "a564b71f-e0bb-42b0-a4f9-5017a7d1493f",
-    "modelName": "Galaxy M32",
-    "androidVersion": 10,
-    "createAt": "03-07-2018 00:00:00",
-    "policyName": "Oficina",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
-  },
-  {
-    "id": "37ed2f13-e6c7-4064-a1f2-b9b6b7e028a4",
-    "modelName": "Galaxy Note 20",
-    "androidVersion": 12,
-    "createAt": "19-02-2018 00:00:00",
-    "policyName": "Casa",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
-  },
-  {
-    "id": "d8352720-4023-4ccf-a8bb-9bfcf4380e85",
-    "modelName": "Galaxy J7",
-    "androidVersion": 8,
-    "createAt": "25-06-2018 00:00:00",
-    "policyName": "Comercio",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
-  },
-  {
-    "id": "c3565db0-28fe-432e-9de6-2a7a7553467d",
-    "modelName": "Galaxy Z Flip",
-    "androidVersion": 10,
-    "createAt": "04-09-2018 00:00:00",
-    "policyName": "Kiosko",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
-  },
-  {
-    "id": "e0b96ba3-8e5f-4fcb-bf1a-88c8c7b76f5a",
-    "modelName": "Galaxy Z Fold",
-    "androidVersion": 12,
-    "createAt": "17-08-2018 00:00:00",
-    "policyName": "Restaurante",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
-  },
-  {
-    "id": "6873d0c9-b431-4237-a66e-0e4d3de529c2",
-    "modelName": "Galaxy A72",
-    "androidVersion": 11,
-    "createAt": "12-04-2018 00:00:00",
-    "policyName": "Oficina",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
-  },
-  {
-    "id": "1b08de2b-3fa7-47b5-bf32-f6bb759bbd3b",
-    "modelName": "Galaxy S20",
-    "androidVersion": 10,
-    "createAt": "28-01-2018 00:00:00",
-    "policyName": "Casa",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
-  },
-  {
-    "id": "9a56be88-7cfb-42b5-b12f-6cc9ac09d7c5",
-    "modelName": "Galaxy A32",
-    "androidVersion": 9,
-    "createAt": "14-05-2018 00:00:00",
-    "policyName": "Comercio",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
-  },
-  {
-    "id": "9c564e9f-45f7-469b-b512-9ab1d697cc3f",
-    "modelName": "Galaxy A52",
-    "androidVersion": 11,
-    "createAt": "15-11-2018 00:00:00",
-    "policyName": "Restaurante",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
-  },
-  {
-    "id": "a564b71f-e0bb-42b0-a4f9-5017a7d1493f",
-    "modelName": "Galaxy M32",
-    "androidVersion": 10,
-    "createAt": "03-07-2018 00:00:00",
-    "policyName": "Oficina",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
-  },
-  {
-    "id": "37ed2f13-e6c7-4064-a1f2-b9b6b7e028a4",
-    "modelName": "Galaxy Note 20",
-    "androidVersion": 12,
-    "createAt": "19-02-2018 00:00:00",
-    "policyName": "Casa",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
-  },
-  {
-    "id": "d8352720-4023-4ccf-a8bb-9bfcf4380e85",
-    "modelName": "Galaxy J7",
-    "androidVersion": 8,
-    "createAt": "25-06-2018 00:00:00",
-    "policyName": "Comercio",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
-  },
-  {
-    "id": "c3565db0-28fe-432e-9de6-2a7a7553467d",
-    "modelName": "Galaxy Z Flip",
-    "androidVersion": 10,
-    "createAt": "04-09-2018 00:00:00",
-    "policyName": "Kiosko",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
-  },
-  {
-    "id": "e0b96ba3-8e5f-4fcb-bf1a-88c8c7b76f5a",
-    "modelName": "Galaxy Z Fold",
-    "androidVersion": 12,
-    "createAt": "17-08-2018 00:00:00",
-    "policyName": "Restaurante",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
-  },
-  {
-    "id": "6873d0c9-b431-4237-a66e-0e4d3de529c2",
-    "modelName": "Galaxy A72",
-    "androidVersion": 11,
-    "createAt": "12-04-2018 00:00:00",
-    "policyName": "Oficina",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
-  },
-  {
-    "id": "1b08de2b-3fa7-47b5-bf32-f6bb759bbd3b",
-    "modelName": "Galaxy S20",
-    "androidVersion": 10,
-    "createAt": "28-01-2018 00:00:00",
-    "policyName": "Casa",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
-  },
-  {
-    "id": "9a56be88-7cfb-42b5-b12f-6cc9ac09d7c5",
-    "modelName": "Galaxy A32",
-    "androidVersion": 9,
-    "createAt": "14-05-2018 00:00:00",
-    "policyName": "Comercio",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
-  },
-  {
-    "id": "9c564e9f-45f7-469b-b512-9ab1d697cc3f",
-    "modelName": "Galaxy A52",
-    "androidVersion": 11,
-    "createAt": "15-11-2018 00:00:00",
-    "policyName": "Restaurante",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
-  },
-  {
-    "id": "a564b71f-e0bb-42b0-a4f9-5017a7d1493f",
-    "modelName": "Galaxy M32",
-    "androidVersion": 10,
-    "createAt": "03-07-2018 00:00:00",
-    "policyName": "Oficina",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
-  },
-  {
-    "id": "37ed2f13-e6c7-4064-a1f2-b9b6b7e028a4",
-    "modelName": "Galaxy Note 20",
-    "androidVersion": 12,
-    "createAt": "19-02-2018 00:00:00",
-    "policyName": "Casa",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
-  },
-  {
-    "id": "d8352720-4023-4ccf-a8bb-9bfcf4380e85",
-    "modelName": "Galaxy J7",
-    "androidVersion": 8,
-    "createAt": "25-06-2018 00:00:00",
-    "policyName": "Comercio",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
-  },
-  {
-    "id": "c3565db0-28fe-432e-9de6-2a7a7553467d",
-    "modelName": "Galaxy Z Flip",
-    "androidVersion": 10,
-    "createAt": "04-09-2018 00:00:00",
-    "policyName": "Kiosko",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
-  },
-  {
-    "id": "e0b96ba3-8e5f-4fcb-bf1a-88c8c7b76f5a",
-    "modelName": "Galaxy Z Fold",
-    "androidVersion": 12,
-    "createAt": "17-08-2018 00:00:00",
-    "policyName": "Restaurante",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
-  },
-  {
-    "id": "6873d0c9-b431-4237-a66e-0e4d3de529c2",
-    "modelName": "Galaxy A72",
-    "androidVersion": 11,
-    "createAt": "12-04-2018 00:00:00",
-    "policyName": "Oficina",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
-  },
-  {
-    "id": "1b08de2b-3fa7-47b5-bf32-f6bb759bbd3b",
-    "modelName": "Galaxy S20",
-    "androidVersion": 10,
-    "createAt": "28-01-2018 00:00:00",
-    "policyName": "Casa",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
-  },
-  {
-    "id": "9a56be88-7cfb-42b5-b12f-6cc9ac09d7c5",
-    "modelName": "Galaxy A32",
-    "androidVersion": 9,
-    "createAt": "14-05-2018 00:00:00",
-    "policyName": "Comercio",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
-  },
-  {
-    "id": "9c564e9f-45f7-469b-b512-9ab1d697cc3f",
-    "modelName": "Galaxy A52",
-    "androidVersion": 11,
-    "createAt": "15-11-2018 00:00:00",
-    "policyName": "Restaurante",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
-  },
-  {
-    "id": "a564b71f-e0bb-42b0-a4f9-5017a7d1493f",
-    "modelName": "Galaxy M32",
-    "androidVersion": 10,
-    "createAt": "03-07-2018 00:00:00",
-    "policyName": "Oficina",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
-  },
-  {
-    "id": "37ed2f13-e6c7-4064-a1f2-b9b6b7e028a4",
-    "modelName": "Galaxy Note 20",
-    "androidVersion": 12,
-    "createAt": "19-02-2018 00:00:00",
-    "policyName": "Casa",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
-  },
-  {
-    "id": "d8352720-4023-4ccf-a8bb-9bfcf4380e85",
-    "modelName": "Galaxy J7",
-    "androidVersion": 8,
-    "createAt": "25-06-2018 00:00:00",
-    "policyName": "Comercio",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
-  },
-  {
-    "id": "c3565db0-28fe-432e-9de6-2a7a7553467d",
-    "modelName": "Galaxy Z Flip",
-    "androidVersion": 10,
-    "createAt": "04-09-2018 00:00:00",
-    "policyName": "Kiosko",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
-  },
-  {
-    "id": "e0b96ba3-8e5f-4fcb-bf1a-88c8c7b76f5a",
-    "modelName": "Galaxy Z Fold",
-    "androidVersion": 12,
-    "createAt": "17-08-2018 00:00:00",
-    "policyName": "Restaurante",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
-  },
-  {
-    "id": "6873d0c9-b431-4237-a66e-0e4d3de529c2",
-    "modelName": "Galaxy A72",
-    "androidVersion": 11,
-    "createAt": "12-04-2018 00:00:00",
-    "policyName": "Oficina",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
-  },
-  {
-    "id": "1b08de2b-3fa7-47b5-bf32-f6bb759bbd3b",
-    "modelName": "Galaxy S20",
-    "androidVersion": 10,
-    "createAt": "28-01-2018 00:00:00",
-    "policyName": "Casa",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
-  },
-  {
-    "id": "9a56be88-7cfb-42b5-b12f-6cc9ac09d7c5",
-    "modelName": "Galaxy A32",
-    "androidVersion": 9,
-    "createAt": "14-05-2018 00:00:00",
-    "policyName": "Comercio",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
-  },
-  {
-    "id": "9c564e9f-45f7-469b-b512-9ab1d697cc3f",
-    "modelName": "Galaxy A52",
-    "androidVersion": 11,
-    "createAt": "15-11-2018 00:00:00",
-    "policyName": "Restaurante",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
-  },
-  {
-    "id": "a564b71f-e0bb-42b0-a4f9-5017a7d1493f",
-    "modelName": "Galaxy M32",
-    "androidVersion": 10,
-    "createAt": "03-07-2018 00:00:00",
-    "policyName": "Oficina",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
-  },
-  {
-    "id": "37ed2f13-e6c7-4064-a1f2-b9b6b7e028a4",
-    "modelName": "Galaxy Note 20",
-    "androidVersion": 12,
-    "createAt": "19-02-2018 00:00:00",
-    "policyName": "Casa",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
-  },
-  {
-    "id": "d8352720-4023-4ccf-a8bb-9bfcf4380e85",
-    "modelName": "Galaxy J7",
-    "androidVersion": 8,
-    "createAt": "25-06-2018 00:00:00",
-    "policyName": "Comercio",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
-  },
-  {
-    "id": "c3565db0-28fe-432e-9de6-2a7a7553467d",
-    "modelName": "Galaxy Z Flip",
-    "androidVersion": 10,
-    "createAt": "04-09-2018 00:00:00",
-    "policyName": "Kiosko",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
-  },
-  {
-    "id": "e0b96ba3-8e5f-4fcb-bf1a-88c8c7b76f5a",
-    "modelName": "Galaxy Z Fold",
-    "androidVersion": 12,
-    "createAt": "17-08-2018 00:00:00",
-    "policyName": "Restaurante",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
-  },
-  {
-    "id": "6873d0c9-b431-4237-a66e-0e4d3de529c2",
-    "modelName": "Galaxy A72",
-    "androidVersion": 11,
-    "createAt": "12-04-2018 00:00:00",
-    "policyName": "Oficina",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
-  },
-  {
-    "id": "1b08de2b-3fa7-47b5-bf32-f6bb759bbd3b",
-    "modelName": "Galaxy S20",
-    "androidVersion": 10,
-    "createAt": "28-01-2018 00:00:00",
-    "policyName": "Casa",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
-  },
-  {
-    "id": "9a56be88-7cfb-42b5-b12f-6cc9ac09d7c5",
-    "modelName": "Galaxy A32",
-    "androidVersion": 9,
-    "createAt": "14-05-2018 00:00:00",
-    "policyName": "Comercio",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
-  },
-  {
-    "id": "9c564e9f-45f7-469b-b512-9ab1d697cc3f",
-    "modelName": "Galaxy A52",
-    "androidVersion": 11,
-    "createAt": "15-11-2018 00:00:00",
-    "policyName": "Restaurante",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
-  },
-  {
-    "id": "a564b71f-e0bb-42b0-a4f9-5017a7d1493f",
-    "modelName": "Galaxy M32",
-    "androidVersion": 10,
-    "createAt": "03-07-2018 00:00:00",
-    "policyName": "Oficina",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
-  },
-  {
-    "id": "37ed2f13-e6c7-4064-a1f2-b9b6b7e028a4",
-    "modelName": "Galaxy Note 20",
-    "androidVersion": 12,
-    "createAt": "19-02-2018 00:00:00",
-    "policyName": "Casa",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
-  },
-  {
-    "id": "d8352720-4023-4ccf-a8bb-9bfcf4380e85",
-    "modelName": "Galaxy J7",
-    "androidVersion": 8,
-    "createAt": "25-06-2018 00:00:00",
-    "policyName": "Comercio",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
-  },
-  {
-    "id": "c3565db0-28fe-432e-9de6-2a7a7553467d",
-    "modelName": "Galaxy Z Flip",
-    "androidVersion": 10,
-    "createAt": "04-09-2018 00:00:00",
-    "policyName": "Kiosko",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
-  },
-  {
-    "id": "e0b96ba3-8e5f-4fcb-bf1a-88c8c7b76f5a",
-    "modelName": "Galaxy Z Fold",
-    "androidVersion": 12,
-    "createAt": "17-08-2018 00:00:00",
-    "policyName": "Restaurante",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
-  },
-  {
-    "id": "6873d0c9-b431-4237-a66e-0e4d3de529c2",
-    "modelName": "Galaxy A72",
-    "androidVersion": 11,
-    "createAt": "12-04-2018 00:00:00",
-    "policyName": "Oficina",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
-  },
-  {
-    "id": "1b08de2b-3fa7-47b5-bf32-f6bb759bbd3b",
-    "modelName": "Galaxy S20",
-    "androidVersion": 10,
-    "createAt": "28-01-2018 00:00:00",
-    "policyName": "Casa",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
-  },
-  {
-    "id": "9a56be88-7cfb-42b5-b12f-6cc9ac09d7c5",
-    "modelName": "Galaxy A32",
-    "androidVersion": 9,
-    "createAt": "14-05-2018 00:00:00",
-    "policyName": "Comercio",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
-  },
-  {
-    "id": "9c564e9f-45f7-469b-b512-9ab1d697cc3f",
-    "modelName": "Galaxy A52",
-    "androidVersion": 11,
-    "createAt": "15-11-2018 00:00:00",
-    "policyName": "Restaurante",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
-  },
-  {
-    "id": "a564b71f-e0bb-42b0-a4f9-5017a7d1493f",
-    "modelName": "Galaxy M32",
-    "androidVersion": 10,
-    "createAt": "03-07-2018 00:00:00",
-    "policyName": "Oficina",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
-  },
-  {
-    "id": "37ed2f13-e6c7-4064-a1f2-b9b6b7e028a4",
-    "modelName": "Galaxy Note 20",
-    "androidVersion": 12,
-    "createAt": "19-02-2018 00:00:00",
-    "policyName": "Casa",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
-  },
-  {
-    "id": "d8352720-4023-4ccf-a8bb-9bfcf4380e85",
-    "modelName": "Galaxy J7",
-    "androidVersion": 8,
-    "createAt": "25-06-2018 00:00:00",
-    "policyName": "Comercio",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
-  },
-  {
-    "id": "c3565db0-28fe-432e-9de6-2a7a7553467d",
-    "modelName": "Galaxy Z Flip",
-    "androidVersion": 10,
-    "createAt": "04-09-2018 00:00:00",
-    "policyName": "Kiosko",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
-  },
-  {
-    "id": "e0b96ba3-8e5f-4fcb-bf1a-88c8c7b76f5a",
-    "modelName": "Galaxy Z Fold",
-    "androidVersion": 12,
-    "createAt": "17-08-2018 00:00:00",
-    "policyName": "Restaurante",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
-  },
-  {
-    "id": "6873d0c9-b431-4237-a66e-0e4d3de529c2",
-    "modelName": "Galaxy A72",
-    "androidVersion": 11,
-    "createAt": "12-04-2018 00:00:00",
-    "policyName": "Oficina",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
-  },
-  {
-    "id": "1b08de2b-3fa7-47b5-bf32-f6bb759bbd3b",
-    "modelName": "Galaxy S20",
-    "androidVersion": 10,
-    "createAt": "28-01-2018 00:00:00",
-    "policyName": "Casa",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
-  },
-  {
-    "id": "9a56be88-7cfb-42b5-b12f-6cc9ac09d7c5",
-    "modelName": "Galaxy A32",
-    "androidVersion": 9,
-    "createAt": "14-05-2018 00:00:00",
-    "policyName": "Comercio",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
-  },
-  {
-    "id": "9c564e9f-45f7-469b-b512-9ab1d697cc3f",
-    "modelName": "Galaxy A52",
-    "androidVersion": 11,
-    "createAt": "15-11-2018 00:00:00",
-    "policyName": "Restaurante",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
-  },
-  {
-    "id": "a564b71f-e0bb-42b0-a4f9-5017a7d1493f",
-    "modelName": "Galaxy M32",
-    "androidVersion": 10,
-    "createAt": "03-07-2018 00:00:00",
-    "policyName": "Oficina",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
-  },
-  {
-    "id": "37ed2f13-e6c7-4064-a1f2-b9b6b7e028a4",
-    "modelName": "Galaxy Note 20",
-    "androidVersion": 12,
-    "createAt": "19-02-2018 00:00:00",
-    "policyName": "Casa",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
-  },
-  {
-    "id": "d8352720-4023-4ccf-a8bb-9bfcf4380e85",
-    "modelName": "Galaxy J7",
-    "androidVersion": 8,
-    "createAt": "25-06-2018 00:00:00",
-    "policyName": "Comercio",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
-  },
-  {
-    "id": "c3565db0-28fe-432e-9de6-2a7a7553467d",
-    "modelName": "Galaxy Z Flip",
-    "androidVersion": 10,
-    "createAt": "04-09-2018 00:00:00",
-    "policyName": "Kiosko",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
-  },
-  {
-    "id": "e0b96ba3-8e5f-4fcb-bf1a-88c8c7b76f5a",
-    "modelName": "Galaxy Z Fold",
-    "androidVersion": 12,
-    "createAt": "17-08-2018 00:00:00",
-    "policyName": "Restaurante",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
-  },
-  {
-    "id": "6873d0c9-b431-4237-a66e-0e4d3de529c2",
-    "modelName": "Galaxy A72",
-    "androidVersion": 11,
-    "createAt": "12-04-2018 00:00:00",
-    "policyName": "Oficina",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
-  },
-  {
-    "id": "1b08de2b-3fa7-47b5-bf32-f6bb759bbd3b",
-    "modelName": "Galaxy S20",
-    "androidVersion": 10,
-    "createAt": "28-01-2018 00:00:00",
-    "policyName": "Casa",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
-  },
-  {
-    "id": "9a56be88-7cfb-42b5-b12f-6cc9ac09d7c5",
-    "modelName": "Galaxy A32",
-    "androidVersion": 9,
-    "createAt": "14-05-2018 00:00:00",
-    "policyName": "Comercio",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
-  },
-  {
-    "id": "9c564e9f-45f7-469b-b512-9ab1d697cc3f",
-    "modelName": "Galaxy A52",
-    "androidVersion": 11,
-    "createAt": "15-11-2018 00:00:00",
-    "policyName": "Restaurante",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
-  },
-  {
-    "id": "a564b71f-e0bb-42b0-a4f9-5017a7d1493f",
-    "modelName": "Galaxy M32",
-    "androidVersion": 10,
-    "createAt": "03-07-2018 00:00:00",
-    "policyName": "Oficina",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
-  },
-  {
-    "id": "37ed2f13-e6c7-4064-a1f2-b9b6b7e028a4",
-    "modelName": "Galaxy Note 20",
-    "androidVersion": 12,
-    "createAt": "19-02-2018 00:00:00",
-    "policyName": "Casa",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
-  },
-  {
-    "id": "d8352720-4023-4ccf-a8bb-9bfcf4380e85",
-    "modelName": "Galaxy J7",
-    "androidVersion": 8,
-    "createAt": "25-06-2018 00:00:00",
-    "policyName": "Comercio",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
-  },
-  {
-    "id": "c3565db0-28fe-432e-9de6-2a7a7553467d",
-    "modelName": "Galaxy Z Flip",
-    "androidVersion": 10,
-    "createAt": "04-09-2018 00:00:00",
-    "policyName": "Kiosko",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
-  },
-  {
-    "id": "e0b96ba3-8e5f-4fcb-bf1a-88c8c7b76f5a",
-    "modelName": "Galaxy Z Fold",
-    "androidVersion": 12,
-    "createAt": "17-08-2018 00:00:00",
-    "policyName": "Restaurante",
-    "brandName": "Samsung",
-    "isOnline": false,
-    "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
-  },
-  {
-    "id": "6873d0c9-b431-4237-a66e-0e4d3de529c2",
-    "modelName": "Galaxy A72",
-    "androidVersion": 11,
-    "createAt": "12-04-2018 00:00:00",
-    "policyName": "Oficina",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
-  },
-  {
-    "id": "1b08de2b-3fa7-47b5-bf32-f6bb759bbd3b",
-    "modelName": "Galaxy S20",
-    "androidVersion": 10,
-    "createAt": "28-01-2018 00:00:00",
-    "policyName": "Casa",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
-  },
-  {
-    "id": "9a56be88-7cfb-42b5-b12f-6cc9ac09d7c5",
-    "modelName": "Galaxy A32",
-    "androidVersion": 9,
-    "createAt": "14-05-2018 00:00:00",
-    "policyName": "Comercio",
-    "brandName": "Samsung",
-    "isOnline": true,
-    "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
-  }
+[{
+        "id": "11fa37af-16d1-41e9-970a-9652775d1ca1",
+        "modelName": "Galaxy S21",
+        "androidVersion": 12,
+        "createAt": "23-04-2018 00:00:00",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+    },
+    {
+        "id": "9c564e9f-45f7-469b-b512-9ab1d697cc3f",
+        "modelName": "Galaxy A52",
+        "androidVersion": 11,
+        "createAt": "15-11-2018 00:00:00",
+        "policyName": "Restaurante",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
+    },
+    {
+        "id": "a564b71f-e0bb-42b0-a4f9-5017a7d1493f",
+        "modelName": "Galaxy M32",
+        "androidVersion": 10,
+        "createAt": "03-07-2018 00:00:00",
+        "policyName": "Oficina",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
+    },
+    {
+        "id": "37ed2f13-e6c7-4064-a1f2-b9b6b7e028a4",
+        "modelName": "Galaxy Note 20",
+        "androidVersion": 12,
+        "createAt": "19-02-2018 00:00:00",
+        "policyName": "Casa",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
+    },
+    {
+        "id": "d8352720-4023-4ccf-a8bb-9bfcf4380e85",
+        "modelName": "Galaxy J7",
+        "androidVersion": 8,
+        "createAt": "25-06-2018 00:00:00",
+        "policyName": "Comercio",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
+    },
+    {
+        "id": "c3565db0-28fe-432e-9de6-2a7a7553467d",
+        "modelName": "Galaxy Z Flip",
+        "androidVersion": 10,
+        "createAt": "04-09-2018 00:00:00",
+        "policyName": "Kiosko",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+    },
+    {
+        "id": "e0b96ba3-8e5f-4fcb-bf1a-88c8c7b76f5a",
+        "modelName": "Galaxy Z Fold",
+        "androidVersion": 12,
+        "createAt": "17-08-2018 00:00:00",
+        "policyName": "Restaurante",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
+    },
+    {
+        "id": "6873d0c9-b431-4237-a66e-0e4d3de529c2",
+        "modelName": "Galaxy A72",
+        "androidVersion": 11,
+        "createAt": "12-04-2018 00:00:00",
+        "policyName": "Oficina",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
+    },
+    {
+        "id": "1b08de2b-3fa7-47b5-bf32-f6bb759bbd3b",
+        "modelName": "Galaxy S20",
+        "androidVersion": 10,
+        "createAt": "28-01-2018 00:00:00",
+        "policyName": "Casa",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
+    },
+    {
+        "id": "9a56be88-7cfb-42b5-b12f-6cc9ac09d7c5",
+        "modelName": "Galaxy A32",
+        "androidVersion": 9,
+        "createAt": "14-05-2018 00:00:00",
+        "policyName": "Comercio",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
+    },
+    {
+        "id": "9c564e9f-45f7-469b-b512-9ab1d697cc3f",
+        "modelName": "Galaxy A52",
+        "androidVersion": 11,
+        "createAt": "15-11-2018 00:00:00",
+        "policyName": "Restaurante",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
+    },
+    {
+        "id": "a564b71f-e0bb-42b0-a4f9-5017a7d1493f",
+        "modelName": "Galaxy M32",
+        "androidVersion": 10,
+        "createAt": "03-07-2018 00:00:00",
+        "policyName": "Oficina",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
+    },
+    {
+        "id": "37ed2f13-e6c7-4064-a1f2-b9b6b7e028a4",
+        "modelName": "Galaxy Note 20",
+        "androidVersion": 12,
+        "createAt": "19-02-2018 00:00:00",
+        "policyName": "Casa",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
+    },
+    {
+        "id": "d8352720-4023-4ccf-a8bb-9bfcf4380e85",
+        "modelName": "Galaxy J7",
+        "androidVersion": 8,
+        "createAt": "25-06-2018 00:00:00",
+        "policyName": "Comercio",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
+    },
+    {
+        "id": "c3565db0-28fe-432e-9de6-2a7a7553467d",
+        "modelName": "Galaxy Z Flip",
+        "androidVersion": 10,
+        "createAt": "04-09-2018 00:00:00",
+        "policyName": "Kiosko",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+    },
+    {
+        "id": "e0b96ba3-8e5f-4fcb-bf1a-88c8c7b76f5a",
+        "modelName": "Galaxy Z Fold",
+        "androidVersion": 12,
+        "createAt": "17-08-2018 00:00:00",
+        "policyName": "Restaurante",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
+    },
+    {
+        "id": "6873d0c9-b431-4237-a66e-0e4d3de529c2",
+        "modelName": "Galaxy A72",
+        "androidVersion": 11,
+        "createAt": "12-04-2018 00:00:00",
+        "policyName": "Oficina",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
+    },
+    {
+        "id": "1b08de2b-3fa7-47b5-bf32-f6bb759bbd3b",
+        "modelName": "Galaxy S20",
+        "androidVersion": 10,
+        "createAt": "28-01-2018 00:00:00",
+        "policyName": "Casa",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
+    },
+    {
+        "id": "9a56be88-7cfb-42b5-b12f-6cc9ac09d7c5",
+        "modelName": "Galaxy A32",
+        "androidVersion": 9,
+        "createAt": "14-05-2018 00:00:00",
+        "policyName": "Comercio",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
+    },
+    {
+        "id": "9c564e9f-45f7-469b-b512-9ab1d697cc3f",
+        "modelName": "Galaxy A52",
+        "androidVersion": 11,
+        "createAt": "15-11-2018 00:00:00",
+        "policyName": "Restaurante",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
+    },
+    {
+        "id": "a564b71f-e0bb-42b0-a4f9-5017a7d1493f",
+        "modelName": "Galaxy M32",
+        "androidVersion": 10,
+        "createAt": "03-07-2018 00:00:00",
+        "policyName": "Oficina",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
+    },
+    {
+        "id": "37ed2f13-e6c7-4064-a1f2-b9b6b7e028a4",
+        "modelName": "Galaxy Note 20",
+        "androidVersion": 12,
+        "createAt": "19-02-2018 00:00:00",
+        "policyName": "Casa",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
+    },
+    {
+        "id": "d8352720-4023-4ccf-a8bb-9bfcf4380e85",
+        "modelName": "Galaxy J7",
+        "androidVersion": 8,
+        "createAt": "25-06-2018 00:00:00",
+        "policyName": "Comercio",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
+    },
+    {
+        "id": "c3565db0-28fe-432e-9de6-2a7a7553467d",
+        "modelName": "Galaxy Z Flip",
+        "androidVersion": 10,
+        "createAt": "04-09-2018 00:00:00",
+        "policyName": "Kiosko",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+    },
+    {
+        "id": "e0b96ba3-8e5f-4fcb-bf1a-88c8c7b76f5a",
+        "modelName": "Galaxy Z Fold",
+        "androidVersion": 12,
+        "createAt": "17-08-2018 00:00:00",
+        "policyName": "Restaurante",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
+    },
+    {
+        "id": "6873d0c9-b431-4237-a66e-0e4d3de529c2",
+        "modelName": "Galaxy A72",
+        "androidVersion": 11,
+        "createAt": "12-04-2018 00:00:00",
+        "policyName": "Oficina",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
+    },
+    {
+        "id": "1b08de2b-3fa7-47b5-bf32-f6bb759bbd3b",
+        "modelName": "Galaxy S20",
+        "androidVersion": 10,
+        "createAt": "28-01-2018 00:00:00",
+        "policyName": "Casa",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
+    },
+    {
+        "id": "9a56be88-7cfb-42b5-b12f-6cc9ac09d7c5",
+        "modelName": "Galaxy A32",
+        "androidVersion": 9,
+        "createAt": "14-05-2018 00:00:00",
+        "policyName": "Comercio",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
+    },
+    {
+        "id": "9c564e9f-45f7-469b-b512-9ab1d697cc3f",
+        "modelName": "Galaxy A52",
+        "androidVersion": 11,
+        "createAt": "15-11-2018 00:00:00",
+        "policyName": "Restaurante",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
+    },
+    {
+        "id": "a564b71f-e0bb-42b0-a4f9-5017a7d1493f",
+        "modelName": "Galaxy M32",
+        "androidVersion": 10,
+        "createAt": "03-07-2018 00:00:00",
+        "policyName": "Oficina",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
+    },
+    {
+        "id": "37ed2f13-e6c7-4064-a1f2-b9b6b7e028a4",
+        "modelName": "Galaxy Note 20",
+        "androidVersion": 12,
+        "createAt": "19-02-2018 00:00:00",
+        "policyName": "Casa",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
+    },
+    {
+        "id": "d8352720-4023-4ccf-a8bb-9bfcf4380e85",
+        "modelName": "Galaxy J7",
+        "androidVersion": 8,
+        "createAt": "25-06-2018 00:00:00",
+        "policyName": "Comercio",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
+    },
+    {
+        "id": "c3565db0-28fe-432e-9de6-2a7a7553467d",
+        "modelName": "Galaxy Z Flip",
+        "androidVersion": 10,
+        "createAt": "04-09-2018 00:00:00",
+        "policyName": "Kiosko",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+    },
+    {
+        "id": "e0b96ba3-8e5f-4fcb-bf1a-88c8c7b76f5a",
+        "modelName": "Galaxy Z Fold",
+        "androidVersion": 12,
+        "createAt": "17-08-2018 00:00:00",
+        "policyName": "Restaurante",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
+    },
+    {
+        "id": "6873d0c9-b431-4237-a66e-0e4d3de529c2",
+        "modelName": "Galaxy A72",
+        "androidVersion": 11,
+        "createAt": "12-04-2018 00:00:00",
+        "policyName": "Oficina",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
+    },
+    {
+        "id": "1b08de2b-3fa7-47b5-bf32-f6bb759bbd3b",
+        "modelName": "Galaxy S20",
+        "androidVersion": 10,
+        "createAt": "28-01-2018 00:00:00",
+        "policyName": "Casa",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
+    },
+    {
+        "id": "9a56be88-7cfb-42b5-b12f-6cc9ac09d7c5",
+        "modelName": "Galaxy A32",
+        "androidVersion": 9,
+        "createAt": "14-05-2018 00:00:00",
+        "policyName": "Comercio",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
+    },
+    {
+        "id": "9c564e9f-45f7-469b-b512-9ab1d697cc3f",
+        "modelName": "Galaxy A52",
+        "androidVersion": 11,
+        "createAt": "15-11-2018 00:00:00",
+        "policyName": "Restaurante",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
+    },
+    {
+        "id": "a564b71f-e0bb-42b0-a4f9-5017a7d1493f",
+        "modelName": "Galaxy M32",
+        "androidVersion": 10,
+        "createAt": "03-07-2018 00:00:00",
+        "policyName": "Oficina",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
+    },
+    {
+        "id": "37ed2f13-e6c7-4064-a1f2-b9b6b7e028a4",
+        "modelName": "Galaxy Note 20",
+        "androidVersion": 12,
+        "createAt": "19-02-2018 00:00:00",
+        "policyName": "Casa",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
+    },
+    {
+        "id": "d8352720-4023-4ccf-a8bb-9bfcf4380e85",
+        "modelName": "Galaxy J7",
+        "androidVersion": 8,
+        "createAt": "25-06-2018 00:00:00",
+        "policyName": "Comercio",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
+    },
+    {
+        "id": "c3565db0-28fe-432e-9de6-2a7a7553467d",
+        "modelName": "Galaxy Z Flip",
+        "androidVersion": 10,
+        "createAt": "04-09-2018 00:00:00",
+        "policyName": "Kiosko",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+    },
+    {
+        "id": "e0b96ba3-8e5f-4fcb-bf1a-88c8c7b76f5a",
+        "modelName": "Galaxy Z Fold",
+        "androidVersion": 12,
+        "createAt": "17-08-2018 00:00:00",
+        "policyName": "Restaurante",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
+    },
+    {
+        "id": "6873d0c9-b431-4237-a66e-0e4d3de529c2",
+        "modelName": "Galaxy A72",
+        "androidVersion": 11,
+        "createAt": "12-04-2018 00:00:00",
+        "policyName": "Oficina",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
+    },
+    {
+        "id": "1b08de2b-3fa7-47b5-bf32-f6bb759bbd3b",
+        "modelName": "Galaxy S20",
+        "androidVersion": 10,
+        "createAt": "28-01-2018 00:00:00",
+        "policyName": "Casa",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
+    },
+    {
+        "id": "9a56be88-7cfb-42b5-b12f-6cc9ac09d7c5",
+        "modelName": "Galaxy A32",
+        "androidVersion": 9,
+        "createAt": "14-05-2018 00:00:00",
+        "policyName": "Comercio",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
+    },
+    {
+        "id": "9c564e9f-45f7-469b-b512-9ab1d697cc3f",
+        "modelName": "Galaxy A52",
+        "androidVersion": 11,
+        "createAt": "15-11-2018 00:00:00",
+        "policyName": "Restaurante",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
+    },
+    {
+        "id": "a564b71f-e0bb-42b0-a4f9-5017a7d1493f",
+        "modelName": "Galaxy M32",
+        "androidVersion": 10,
+        "createAt": "03-07-2018 00:00:00",
+        "policyName": "Oficina",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
+    },
+    {
+        "id": "37ed2f13-e6c7-4064-a1f2-b9b6b7e028a4",
+        "modelName": "Galaxy Note 20",
+        "androidVersion": 12,
+        "createAt": "19-02-2018 00:00:00",
+        "policyName": "Casa",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
+    },
+    {
+        "id": "d8352720-4023-4ccf-a8bb-9bfcf4380e85",
+        "modelName": "Galaxy J7",
+        "androidVersion": 8,
+        "createAt": "25-06-2018 00:00:00",
+        "policyName": "Comercio",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
+    },
+    {
+        "id": "c3565db0-28fe-432e-9de6-2a7a7553467d",
+        "modelName": "Galaxy Z Flip",
+        "androidVersion": 10,
+        "createAt": "04-09-2018 00:00:00",
+        "policyName": "Kiosko",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+    },
+    {
+        "id": "e0b96ba3-8e5f-4fcb-bf1a-88c8c7b76f5a",
+        "modelName": "Galaxy Z Fold",
+        "androidVersion": 12,
+        "createAt": "17-08-2018 00:00:00",
+        "policyName": "Restaurante",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
+    },
+    {
+        "id": "6873d0c9-b431-4237-a66e-0e4d3de529c2",
+        "modelName": "Galaxy A72",
+        "androidVersion": 11,
+        "createAt": "12-04-2018 00:00:00",
+        "policyName": "Oficina",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
+    },
+    {
+        "id": "1b08de2b-3fa7-47b5-bf32-f6bb759bbd3b",
+        "modelName": "Galaxy S20",
+        "androidVersion": 10,
+        "createAt": "28-01-2018 00:00:00",
+        "policyName": "Casa",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
+    },
+    {
+        "id": "9a56be88-7cfb-42b5-b12f-6cc9ac09d7c5",
+        "modelName": "Galaxy A32",
+        "androidVersion": 9,
+        "createAt": "14-05-2018 00:00:00",
+        "policyName": "Comercio",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
+    },
+    {
+        "id": "9c564e9f-45f7-469b-b512-9ab1d697cc3f",
+        "modelName": "Galaxy A52",
+        "androidVersion": 11,
+        "createAt": "15-11-2018 00:00:00",
+        "policyName": "Restaurante",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
+    },
+    {
+        "id": "a564b71f-e0bb-42b0-a4f9-5017a7d1493f",
+        "modelName": "Galaxy M32",
+        "androidVersion": 10,
+        "createAt": "03-07-2018 00:00:00",
+        "policyName": "Oficina",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
+    },
+    {
+        "id": "37ed2f13-e6c7-4064-a1f2-b9b6b7e028a4",
+        "modelName": "Galaxy Note 20",
+        "androidVersion": 12,
+        "createAt": "19-02-2018 00:00:00",
+        "policyName": "Casa",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
+    },
+    {
+        "id": "d8352720-4023-4ccf-a8bb-9bfcf4380e85",
+        "modelName": "Galaxy J7",
+        "androidVersion": 8,
+        "createAt": "25-06-2018 00:00:00",
+        "policyName": "Comercio",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
+    },
+    {
+        "id": "c3565db0-28fe-432e-9de6-2a7a7553467d",
+        "modelName": "Galaxy Z Flip",
+        "androidVersion": 10,
+        "createAt": "04-09-2018 00:00:00",
+        "policyName": "Kiosko",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+    },
+    {
+        "id": "e0b96ba3-8e5f-4fcb-bf1a-88c8c7b76f5a",
+        "modelName": "Galaxy Z Fold",
+        "androidVersion": 12,
+        "createAt": "17-08-2018 00:00:00",
+        "policyName": "Restaurante",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
+    },
+    {
+        "id": "6873d0c9-b431-4237-a66e-0e4d3de529c2",
+        "modelName": "Galaxy A72",
+        "androidVersion": 11,
+        "createAt": "12-04-2018 00:00:00",
+        "policyName": "Oficina",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
+    },
+    {
+        "id": "1b08de2b-3fa7-47b5-bf32-f6bb759bbd3b",
+        "modelName": "Galaxy S20",
+        "androidVersion": 10,
+        "createAt": "28-01-2018 00:00:00",
+        "policyName": "Casa",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
+    },
+    {
+        "id": "9a56be88-7cfb-42b5-b12f-6cc9ac09d7c5",
+        "modelName": "Galaxy A32",
+        "androidVersion": 9,
+        "createAt": "14-05-2018 00:00:00",
+        "policyName": "Comercio",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
+    },
+    {
+        "id": "9c564e9f-45f7-469b-b512-9ab1d697cc3f",
+        "modelName": "Galaxy A52",
+        "androidVersion": 11,
+        "createAt": "15-11-2018 00:00:00",
+        "policyName": "Restaurante",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
+    },
+    {
+        "id": "a564b71f-e0bb-42b0-a4f9-5017a7d1493f",
+        "modelName": "Galaxy M32",
+        "androidVersion": 10,
+        "createAt": "03-07-2018 00:00:00",
+        "policyName": "Oficina",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
+    },
+    {
+        "id": "37ed2f13-e6c7-4064-a1f2-b9b6b7e028a4",
+        "modelName": "Galaxy Note 20",
+        "androidVersion": 12,
+        "createAt": "19-02-2018 00:00:00",
+        "policyName": "Casa",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
+    },
+    {
+        "id": "d8352720-4023-4ccf-a8bb-9bfcf4380e85",
+        "modelName": "Galaxy J7",
+        "androidVersion": 8,
+        "createAt": "25-06-2018 00:00:00",
+        "policyName": "Comercio",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
+    },
+    {
+        "id": "c3565db0-28fe-432e-9de6-2a7a7553467d",
+        "modelName": "Galaxy Z Flip",
+        "androidVersion": 10,
+        "createAt": "04-09-2018 00:00:00",
+        "policyName": "Kiosko",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+    },
+    {
+        "id": "e0b96ba3-8e5f-4fcb-bf1a-88c8c7b76f5a",
+        "modelName": "Galaxy Z Fold",
+        "androidVersion": 12,
+        "createAt": "17-08-2018 00:00:00",
+        "policyName": "Restaurante",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
+    },
+    {
+        "id": "6873d0c9-b431-4237-a66e-0e4d3de529c2",
+        "modelName": "Galaxy A72",
+        "androidVersion": 11,
+        "createAt": "12-04-2018 00:00:00",
+        "policyName": "Oficina",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
+    },
+    {
+        "id": "1b08de2b-3fa7-47b5-bf32-f6bb759bbd3b",
+        "modelName": "Galaxy S20",
+        "androidVersion": 10,
+        "createAt": "28-01-2018 00:00:00",
+        "policyName": "Casa",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
+    },
+    {
+        "id": "9a56be88-7cfb-42b5-b12f-6cc9ac09d7c5",
+        "modelName": "Galaxy A32",
+        "androidVersion": 9,
+        "createAt": "14-05-2018 00:00:00",
+        "policyName": "Comercio",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
+    },
+    {
+        "id": "9c564e9f-45f7-469b-b512-9ab1d697cc3f",
+        "modelName": "Galaxy A52",
+        "androidVersion": 11,
+        "createAt": "15-11-2018 00:00:00",
+        "policyName": "Restaurante",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
+    },
+    {
+        "id": "a564b71f-e0bb-42b0-a4f9-5017a7d1493f",
+        "modelName": "Galaxy M32",
+        "androidVersion": 10,
+        "createAt": "03-07-2018 00:00:00",
+        "policyName": "Oficina",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
+    },
+    {
+        "id": "37ed2f13-e6c7-4064-a1f2-b9b6b7e028a4",
+        "modelName": "Galaxy Note 20",
+        "androidVersion": 12,
+        "createAt": "19-02-2018 00:00:00",
+        "policyName": "Casa",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
+    },
+    {
+        "id": "d8352720-4023-4ccf-a8bb-9bfcf4380e85",
+        "modelName": "Galaxy J7",
+        "androidVersion": 8,
+        "createAt": "25-06-2018 00:00:00",
+        "policyName": "Comercio",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
+    },
+    {
+        "id": "c3565db0-28fe-432e-9de6-2a7a7553467d",
+        "modelName": "Galaxy Z Flip",
+        "androidVersion": 10,
+        "createAt": "04-09-2018 00:00:00",
+        "policyName": "Kiosko",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+    },
+    {
+        "id": "e0b96ba3-8e5f-4fcb-bf1a-88c8c7b76f5a",
+        "modelName": "Galaxy Z Fold",
+        "androidVersion": 12,
+        "createAt": "17-08-2018 00:00:00",
+        "policyName": "Restaurante",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
+    },
+    {
+        "id": "6873d0c9-b431-4237-a66e-0e4d3de529c2",
+        "modelName": "Galaxy A72",
+        "androidVersion": 11,
+        "createAt": "12-04-2018 00:00:00",
+        "policyName": "Oficina",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
+    },
+    {
+        "id": "1b08de2b-3fa7-47b5-bf32-f6bb759bbd3b",
+        "modelName": "Galaxy S20",
+        "androidVersion": 10,
+        "createAt": "28-01-2018 00:00:00",
+        "policyName": "Casa",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
+    },
+    {
+        "id": "9a56be88-7cfb-42b5-b12f-6cc9ac09d7c5",
+        "modelName": "Galaxy A32",
+        "androidVersion": 9,
+        "createAt": "14-05-2018 00:00:00",
+        "policyName": "Comercio",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
+    },
+    {
+        "id": "9c564e9f-45f7-469b-b512-9ab1d697cc3f",
+        "modelName": "Galaxy A52",
+        "androidVersion": 11,
+        "createAt": "15-11-2018 00:00:00",
+        "policyName": "Restaurante",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
+    },
+    {
+        "id": "a564b71f-e0bb-42b0-a4f9-5017a7d1493f",
+        "modelName": "Galaxy M32",
+        "androidVersion": 10,
+        "createAt": "03-07-2018 00:00:00",
+        "policyName": "Oficina",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
+    },
+    {
+        "id": "37ed2f13-e6c7-4064-a1f2-b9b6b7e028a4",
+        "modelName": "Galaxy Note 20",
+        "androidVersion": 12,
+        "createAt": "19-02-2018 00:00:00",
+        "policyName": "Casa",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
+    },
+    {
+        "id": "d8352720-4023-4ccf-a8bb-9bfcf4380e85",
+        "modelName": "Galaxy J7",
+        "androidVersion": 8,
+        "createAt": "25-06-2018 00:00:00",
+        "policyName": "Comercio",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
+    },
+    {
+        "id": "c3565db0-28fe-432e-9de6-2a7a7553467d",
+        "modelName": "Galaxy Z Flip",
+        "androidVersion": 10,
+        "createAt": "04-09-2018 00:00:00",
+        "policyName": "Kiosko",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+    },
+    {
+        "id": "e0b96ba3-8e5f-4fcb-bf1a-88c8c7b76f5a",
+        "modelName": "Galaxy Z Fold",
+        "androidVersion": 12,
+        "createAt": "17-08-2018 00:00:00",
+        "policyName": "Restaurante",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
+    },
+    {
+        "id": "6873d0c9-b431-4237-a66e-0e4d3de529c2",
+        "modelName": "Galaxy A72",
+        "androidVersion": 11,
+        "createAt": "12-04-2018 00:00:00",
+        "policyName": "Oficina",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
+    },
+    {
+        "id": "1b08de2b-3fa7-47b5-bf32-f6bb759bbd3b",
+        "modelName": "Galaxy S20",
+        "androidVersion": 10,
+        "createAt": "28-01-2018 00:00:00",
+        "policyName": "Casa",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
+    },
+    {
+        "id": "9a56be88-7cfb-42b5-b12f-6cc9ac09d7c5",
+        "modelName": "Galaxy A32",
+        "androidVersion": 9,
+        "createAt": "14-05-2018 00:00:00",
+        "policyName": "Comercio",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
+    },
+    {
+        "id": "9c564e9f-45f7-469b-b512-9ab1d697cc3f",
+        "modelName": "Galaxy A52",
+        "androidVersion": 11,
+        "createAt": "15-11-2018 00:00:00",
+        "policyName": "Restaurante",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
+    },
+    {
+        "id": "a564b71f-e0bb-42b0-a4f9-5017a7d1493f",
+        "modelName": "Galaxy M32",
+        "androidVersion": 10,
+        "createAt": "03-07-2018 00:00:00",
+        "policyName": "Oficina",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
+    },
+    {
+        "id": "37ed2f13-e6c7-4064-a1f2-b9b6b7e028a4",
+        "modelName": "Galaxy Note 20",
+        "androidVersion": 12,
+        "createAt": "19-02-2018 00:00:00",
+        "policyName": "Casa",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
+    },
+    {
+        "id": "d8352720-4023-4ccf-a8bb-9bfcf4380e85",
+        "modelName": "Galaxy J7",
+        "androidVersion": 8,
+        "createAt": "25-06-2018 00:00:00",
+        "policyName": "Comercio",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
+    },
+    {
+        "id": "c3565db0-28fe-432e-9de6-2a7a7553467d",
+        "modelName": "Galaxy Z Flip",
+        "androidVersion": 10,
+        "createAt": "04-09-2018 00:00:00",
+        "policyName": "Kiosko",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+    },
+    {
+        "id": "e0b96ba3-8e5f-4fcb-bf1a-88c8c7b76f5a",
+        "modelName": "Galaxy Z Fold",
+        "androidVersion": 12,
+        "createAt": "17-08-2018 00:00:00",
+        "policyName": "Restaurante",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "1b89b6f4-0a56-4fdb-a9da-5924c74bdb6a"
+    },
+    {
+        "id": "6873d0c9-b431-4237-a66e-0e4d3de529c2",
+        "modelName": "Galaxy A72",
+        "androidVersion": 11,
+        "createAt": "12-04-2018 00:00:00",
+        "policyName": "Oficina",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "a8c8d56e-3b7c-4d68-92b0-5ed788d059c8"
+    },
+    {
+        "id": "1b08de2b-3fa7-47b5-bf32-f6bb759bbd3b",
+        "modelName": "Galaxy S20",
+        "androidVersion": 10,
+        "createAt": "28-01-2018 00:00:00",
+        "policyName": "Casa",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "d72c44d1-6b75-4ecf-a00c-8f5a301b278b"
+    },
+    {
+        "id": "9a56be88-7cfb-42b5-b12f-6cc9ac09d7c5",
+        "modelName": "Galaxy A32",
+        "androidVersion": 9,
+        "createAt": "14-05-2018 00:00:00",
+        "policyName": "Comercio",
+        "brandName": "Samsung",
+        "isOnline": true,
+        "policyId": "91a870bb-77b9-462d-8504-20e22c5d014d"
+    }
 ]

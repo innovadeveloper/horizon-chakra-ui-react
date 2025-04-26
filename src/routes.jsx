@@ -20,6 +20,7 @@ import NFTMarketplace from '@views/admin/marketplace';
 import Profile from '@views/admin/profile';
 import DataTables from '@views/admin/dataTables';
 import Devices from '@views/admin/devices';
+import Policies from '@views/admin/policies';
 import RTL from '@views/admin/rtl';
 import Redirect from '@layouts/redirect/Redirect';
 import { RoutePaths } from "@variables/constants"
@@ -55,17 +56,17 @@ const routes = [
   {
     name: 'Mis Políticas',
     icon: <Icon as={MdLocalPolice} width="20px" height="20px" color="inherit" />,
-    layout: RoutePaths.DATA_TABLES.LAYOUT,
-    path: RoutePaths.DATA_TABLES.PATH,
-    component: <Devices />,
+    layout: RoutePaths.MY_POLICIES.LAYOUT,
+    path: RoutePaths.MY_POLICIES.PATH,
+    component: <Policies />,
   },
-  {
-    name: 'Perfiles de usuario',
-    layout: RoutePaths.PROFILE.LAYOUT,
-    path: RoutePaths.PROFILE.PATH,
-    icon: <Icon as={FaUsersCog} width="20px" height="20px" color="inherit" />,
-    component: <Profile />,
-  },
+  // {
+  //   name: 'Perfiles de usuario',
+  //   layout: RoutePaths.PROFILE.LAYOUT,
+  //   path: RoutePaths.PROFILE.PATH,
+  //   icon: <Icon as={FaUsersCog} width="20px" height="20px" color="inherit" />,
+  //   component: <Profile />,
+  // },
   {
     name: 'Auth',
     layout: RoutePaths.LOGIN.LAYOUT,

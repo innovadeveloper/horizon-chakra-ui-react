@@ -36,6 +36,11 @@ const RoutePaths = Object.freeze({
         PATH : "/my-devices",
         URI : "/admin/my-devices"
     },
+    MY_POLICIES: {
+        LAYOUT : "/admin",
+        PATH : "/my-policies",
+        URI : "/admin/my-policies"
+    },
 });
 
 const LocalStorage = Object.freeze({

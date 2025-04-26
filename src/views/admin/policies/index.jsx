@@ -35,7 +35,8 @@ import {
 } from "@views/admin/dataTables/variables/columnsData";
 import tableDataDevelopment from "@views/admin/dataTables/variables/tableDataDevelopment.json";
 // import devicesTableDevelopment from "@views/admin/dataTables/variables/devices-table-data.json";
-import devicesTableDevelopment from "@views/admin/dataTables/variables/my-devices-data.json";
+// import devicesTableDevelopment from "@views/admin/dataTables/variables/my-devices-data.json";
+import policiesTableDevelopment from "@views/admin/dataTables/variables/my-policies-data.json";
 // import tableDataCheck from "@views/admin/dataTables/variables/tableDataCheck.json";
 // import tableDataColumns from "@views/admin/dataTables/variables/tableDataColumns.json";
 // import tableDataComplex from "@views/admin/dataTables/variables/tableDataComplex.json";
@@ -47,9 +48,7 @@ import { MdModeEditOutline, MdDeleteForever } from "react-icons/md";
 import { useState, useCallback } from 'react';
 import ModalContentComponent from "@/components/tables/general/ModalContentComponent";
 import DeviceLocationModal from "@components/modals/DeviceLocationModal";
-import PolicyEditionModal from "@components/modals/PolicyEditionModal";
 import { FaMapMarkerAlt, FaInfoCircle } from "react-icons/fa";
-import { IoIosAddCircle } from "react-icons/io";
 
 
 const useDeviceTableColumns = () => {
@@ -74,59 +73,12 @@ const useDeviceTableColumns = () => {
     console.log('Abriendo mapa:', info);
   }, []);
 
-
-
   // Definir columnas
   const columns = [
     createColumn({
-      accessor: row => ({
-        isOnline: row.isOnline,
-        modelName: row.modelName,
-        brandName: row.brandName,
-      }),
-      id: 'device',
-      headerText: 'DISPOSITIVO',
-      renderCell: (info) => (
-        <Flex>
-          <Flex height="10" w="30px" align="center" justify="center">
-
-            <Flex direction={"row"} alignItems="center" position="relative">
-              <AndroidLogo color={iconColor} h="25px" w="22px" />
-              <Box
-                w="10px"
-                h="10px"
-                bg={info.getValue().isOnline ? "green.400" : "red.400"}
-                borderRadius="full"
-                position="absolute"
-                bottom={0}
-                right={-1}
-              />
-
-              {/* {info.getValue() ? (
-                <Box w="12px" h="12px" bg="green.400" borderRadius="full" justifyContent={"center"} />
-              ) : (
-                <Box w="12px" h="12px" bg="red.400" borderRadius="full" justifyContent={"center"} />
-              )} */}
-            </Flex>
-
-            {/* <AndroidLogo color={iconColor} h="18px" w="16px" /> */}
-          </Flex>
-          <Flex height="10" grow="1" ml="10px" direction="column">
-            <Text variant={"listItemTitle"} >
-              {info.getValue().modelName}
-            </Text>
-            <Text variant={"listItemCaption"}>
-              {info.getValue().brandName}
-            </Text>
-          </Flex>
-        </Flex>
-      ),
-    }),
-
-    createColumn({
-      accessor: 'androidVersion',
-      id: 'androidVersion',
-      headerText: 'VERSION',
+      accessor: 'policyName',
+      id: 'policyName',
+      headerText: 'NOMBRE',
       renderCell: (info) => (
         <Flex align="center">
           <Text variant={"listItemCaption"}>
@@ -135,8 +87,6 @@ const useDeviceTableColumns = () => {
         </Flex>
       ),
     }),
-
-
     createColumn({
       accessor: 'createAt',
       id: 'createAt',
@@ -149,72 +99,25 @@ const useDeviceTableColumns = () => {
         </Flex>
       ),
     }),
-
-
     createColumn({
-      accessor: 'policyName',
-      id: 'policyName',
-      headerText: 'POLITICA',
+      accessor: 'quantity',
+      id: 'quantity',
+      headerText: 'CANTIDAD',
       renderCell: (info) => (
-        <Flex align="center" alignItems={"center"}>
-          {info.getValue() ? (<Text variant={"listItemCaption"}>
+        <Flex align="center">
+          <Text variant={"listItemCaption"}>
             {info.getValue()}
-          </Text>) : (<IconButton variant="solid" onClick={() => onMap("empty")}>
-            <IoIosAddCircle />
-          </IconButton>)}
-
+          </Text>
         </Flex>
       ),
     }),
-
-    // createColumn({
-    //   accessor: 'isOnline',
-    //   id: 'isOnline',
-    //   headerText: 'ESTADO',
-    //   renderCell: (info) => (
-    //     <>
-    //       {info.getValue() ? (
-    //         <Box w="12px" h="12px" bg="green.400" borderRadius="full" justifyContent={"center"} />
-    //       ) : (
-    //         <Box w="12px" h="12px" bg="red.400" borderRadius="full" justifyContent={"center"} />
-    //       )}
-    //     </>
-    //   ),
-    // }),
-
-    createColumn({
-      accessor: row => ({
-        id: row.id,
-        modelName: row.modelName,
-        brandName: row.brandName,
-      }),
-      id: 'viewInMap',
-      headerText: 'VER EN MAPA',
-      renderCell: (info) => (
-        <Flex justifyContent={"center"}>
-          <IconButton variant="solid" onClick={() => onMap(info.getValue())}>
-            <FaMapMarkerAlt />
-          </IconButton>
-        </Flex>
-      ),
-    }),
-
 
     createColumn({
       accessor: 'id',
       id: 'actions',
       headerText: 'ACCIONES',
       renderCell: (info) => (
-        // <Flex align="center">
-        //   <Text variant={"listItemCaption"}>
-        //     {info.getValue()}
-        //   </Text>
-        // </Flex>
-
         <Flex direction={"row"}>
-          <IconButton variant="solid" onClick={() => onMap(info.getValue())}>
-            <FaInfoCircle />
-          </IconButton>
           <IconButton variant="solid" onClick={() => onMap(info.getValue())}>
             <MdModeEditOutline />
           </IconButton>
@@ -224,25 +127,6 @@ const useDeviceTableColumns = () => {
         </Flex>
       ),
     }),
-
-
-    // createColumn({
-    //   accessor: 'device',
-    //   id: 'device2',
-    //   headerText: 'EDITAR',
-    //   renderCell: (info) => (
-    //     <IconButton variant="solid"
-    //       // onClick={(e) => onEdit()}
-    //       onClick={() => onEdit(info.getValue())} // Aquí le pasas toda la fila
-    //     >
-    //       <MdModeEditOutline />
-    //     </IconButton>
-    //     // <Input
-    //     //         variant={"classic"}
-    //     //       />
-    //     // <FormLabel>w222</FormLabel>
-    //   ),
-    // }),
   ];
 
   return { columns, selectedRow, setSelectedRow, selectedMap, setMapSelected };
@@ -258,10 +142,10 @@ export default function Settings() {
         columns={{ sm: 1, md: 1 }}
         spacing={{ base: "20px", xl: "20px" }}>
         <GeneralTable
-          tableData={devicesTableDevelopment}
+          tableData={policiesTableDevelopment}
           useDeviceTableColumns={useDeviceTableColumns}
           ModalComponent={ModalContentComponent}
-          DeviceLocationModal={PolicyEditionModal}
+          DeviceLocationModal={DeviceLocationModal}
         />
       </SimpleGrid>
     </Box>
