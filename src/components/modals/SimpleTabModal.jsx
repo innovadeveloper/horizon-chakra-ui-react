@@ -10,7 +10,7 @@ const SimpleModal = ({
     isOpen,
     onClose,
     onUpdate,
-    // tabLabels = [],
+    tabLabels = [],
     children,
 }) => {
     const labelColor = useColorModeValue('dark.secondary.500', 'light.secondary.500');
@@ -25,7 +25,19 @@ const SimpleModal = ({
                 <ModalHeader>Edición de Dispositivo</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody pb={6}>
-                    {children}
+                    <Tabs isFitted variant="enclosed">
+                        <TabList mb="1em">
+                            {tabLabels.map((label, index) => (
+                                <Tab key={index} _selected={tabSelectedProperties}>
+                                    {label}
+                                </Tab>
+                            ))}
+                        </TabList>
+                        <TabIndicator mt="-1.5px" height="2px" bg={tabIndicatorColor} borderRadius="1px" />
+                        <TabPanels>
+                            {children}
+                        </TabPanels>
+                    </Tabs>
                 </ModalBody>
                 <ModalFooter>
                     <Button colorScheme="brand" mr={3}>

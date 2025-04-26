@@ -47,8 +47,7 @@ import { MdModeEditOutline, MdDeleteForever } from "react-icons/md";
 import { useState, useCallback } from 'react';
 import ModalContentComponent from "@/components/tables/general/ModalContentComponent";
 import DeviceLocationModal from "@components/modals/DeviceLocationModal";
-import { FaMapMarkerAlt } from "react-icons/fa";
-// import { MdEdit } from "react-icons/md";
+import { FaMapMarkerAlt, FaInfoCircle } from "react-icons/fa";
 
 
 const useDeviceTableColumns = () => {
@@ -94,7 +93,7 @@ const useDeviceTableColumns = () => {
               <Box
                 w="10px"
                 h="10px"
-                bg={info.getValue().isOnline ? "green.400" : "red.400" }
+                bg={info.getValue().isOnline ? "green.400" : "red.400"}
                 borderRadius="full"
                 position="absolute"
                 bottom={0}
@@ -208,6 +207,9 @@ const useDeviceTableColumns = () => {
         // </Flex>
 
         <Flex direction={"row"}>
+          <IconButton variant="solid" onClick={() => onMap(info.getValue())}>
+            <FaInfoCircle />
+          </IconButton>
           <IconButton variant="solid" onClick={() => onMap(info.getValue())}>
             <MdModeEditOutline />
           </IconButton>

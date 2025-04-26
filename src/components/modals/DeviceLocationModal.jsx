@@ -11,28 +11,27 @@ const ModalContentComponent = ({ isOpen, onClose }) => {
       onUpdate={() => { }}
       tabLabels={['One', 'Two']}
     >
-      <TabPanel>
-        <>
-
-          <Text fontSize="sm" color="gray.500" mb={4}>
-            {JSON.stringify(isOpen)}
-          </Text>
-          <GenericForm
-            inputLabel="Your Email"
-            inputPlaceholder="Enter your email"
-            onInputChange={(e) => {
-              console.log('Input value:', e.target.value);
-            }}
-            onRadioChange={(value) => {
-              console.log('Selected framework:', value);
-            }}
-            options={['Angular', 'React', 'Vue']}
-          />
-        </>
+      <>
+        <Text fontSize="sm" color="gray.500" mb={4}>
+          {JSON.stringify(isOpen)}
+        </Text>
+        <GenericForm
+          inputLabel="Your Email"
+          inputPlaceholder="Enter your email"
+          onInputChange={(e) => {
+            console.log('Input value:', e.target.value);
+          }}
+          onRadioChange={(value) => {
+            console.log('Selected framework:', value);
+          }}
+          options={['Angular', 'React', 'Vue']}
+        />
+      </>
+      {/* <TabPanel>
       </TabPanel>
       <TabPanel>
         <p>Contenido del segundo tab</p>
-      </TabPanel>
+      </TabPanel> */}
     </SimpleModal>
   );
 };

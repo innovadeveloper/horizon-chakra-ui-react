@@ -21,7 +21,7 @@ const MiFormulario = () => {
         <>
             <MapComponent position={[-12.007172935393886, -77.06031303157475]}/>
             <Box height="10" />
-            <SimpleInputField label="Correo" placeholder="Escribe tu correo xd" helperText="Nunca compartiremos tu correo" type="email" />
+            {/* <SimpleInputField label="Correo" placeholder="Escribe tu correo xd" helperText="Nunca compartiremos tu correo" type="email" />
             <Box height="10" />
             <SimpleRadioGroupField label="Framework favorito" options={['React', 'Vue', 'Svelte']} onChange={(val) => console.log(val)} />
             <Box height="10" />
@@ -29,7 +29,7 @@ const MiFormulario = () => {
             <Box height="10" />
             <SimpleSliderField label="Nivel de experiencia" />
             <Box height="10" />
-            <SimpleTextareaField label="Comentarios" />
+            <SimpleTextareaField label="Comentarios" /> */}
         </>
     );
 };
