@@ -38,7 +38,7 @@ const ModalContentComponent = ({ setCloseModal, isOpen, onClose, currentPolicy }
       isOpen={isOpen}
       onUpdate={onUpdate}
       onClose={onClose}
-      modalTitle={"Edición Política 2"}
+      modalTitle={"Edición Política"}
       confirmTextButton={"Guardar"}
       cancelTextButton={"Cancelar"}
     >

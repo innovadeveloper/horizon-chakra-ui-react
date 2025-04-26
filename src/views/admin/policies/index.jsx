@@ -46,14 +46,15 @@ import { createColumn } from '@components/tables/ColumnHelper';
 import { MdModeEditOutline, MdDeleteForever } from "react-icons/md";
 
 import { useState, useCallback } from 'react';
-import ModalContentComponent from "@/components/tables/general/ModalContentComponent";
-import DeviceLocationModal from "@components/modals/DeviceLocationModal";
 import { FaMapMarkerAlt, FaInfoCircle } from "react-icons/fa";
 
+import PolicyEditionModal from "@/components/modals/PolicyEditionModal";
+import DeviceDeleteModal from "@components/modals/DeviceDeleteModal";
 
 const useDeviceTableColumns = () => {
-  const [selectedRow, setSelectedRow] = useState(null); // Para saber qué fila se clickeó
-  const [selectedMap, setMapSelected] = useState(null);
+  // hooks 
+  const [selectedEdit, setSelectEdit] = useState(null);
+  const [selectedDelete, setSelectDelete] = useState(null);
 
   const contentFontSize = { sm: '12px', lg: '14px' };
   const columnTitleColor = "white";
@@ -64,13 +65,13 @@ const useDeviceTableColumns = () => {
 
   // Este será tu "closure" para editar
   const onEdit = useCallback((rowData) => {
-    setSelectedRow(rowData); // Guardas los datos que quieras
+    setSelectEdit(rowData); // Guardas los datos que quieras
     console.log('Editando fila:', rowData);
   }, []);
 
-  const onMap = useCallback((info) => {
-    setMapSelected(info);
-    console.log('Abriendo mapa:', info);
+  const onDelete = useCallback((info) => {
+    setSelectDelete(info);
+    console.log('Delete :', info);
   }, []);
 
   // Definir columnas
@@ -118,10 +119,10 @@ const useDeviceTableColumns = () => {
       headerText: 'ACCIONES',
       renderCell: (info) => (
         <Flex direction={"row"}>
-          <IconButton variant="solid" onClick={() => onMap(info.getValue())}>
+          <IconButton variant="solid" onClick={() => onEdit(info.getValue())}>
             <MdModeEditOutline />
           </IconButton>
-          <IconButton variant="solid" onClick={() => onMap(info.getValue())}>
+          <IconButton variant="solid" onClick={() => onDelete(info.getValue())}>
             <MdDeleteForever />
           </IconButton>
         </Flex>
@@ -129,11 +130,16 @@ const useDeviceTableColumns = () => {
     }),
   ];
 
-  return { columns, selectedRow, setSelectedRow, selectedMap, setMapSelected };
+  return {
+    columns, selected: { selectedEdit, selectedDelete }, setSelect: { setSelectEdit, setSelectDelete}
+  };
 }
 
 
 export default function Settings() {
+
+  const { columns, selected, setSelect } = useDeviceTableColumns();
+
   // Chakra Color Mode
   return (
     <Box pt={{ base: "130px", md: "80px", xl: "80px" }}>
@@ -141,12 +147,17 @@ export default function Settings() {
         mb='20px'
         columns={{ sm: 1, md: 1 }}
         spacing={{ base: "20px", xl: "20px" }}>
-        <GeneralTable
+        {/* <GeneralTable
           tableData={policiesTableDevelopment}
           useDeviceTableColumns={useDeviceTableColumns}
           ModalComponent={ModalContentComponent}
           DeviceLocationModal={DeviceLocationModal}
-        />
+        /> */}
+
+        <GeneralTable tableData={policiesTableDevelopment} columns={columns}>
+          <PolicyEditionModal currentPolicy={selected.selectedEdit} setCloseModal={setSelect.setSelectEdit} isOpen={selected.selectedEdit} onClose={() => setSelect.setSelectEdit(null)} />
+          <DeviceDeleteModal currentDevice={selected.selectedDelete} setCloseModal={setSelect.setSelectDelete} isOpen={selected.selectedDelete} onClose={() => setSelect.setSelectDelete(null)} />
+        </GeneralTable>
       </SimpleGrid>
     </Box>
   );

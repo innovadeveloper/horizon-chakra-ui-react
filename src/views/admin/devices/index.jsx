@@ -47,7 +47,7 @@ import { MdModeEditOutline, MdDeleteForever } from "react-icons/md";
 import { useState, useCallback } from 'react';
 import ModalContentComponent from "@/components/tables/general/ModalContentComponent";
 import DeviceLocationModal from "@components/modals/DeviceLocationModal";
-import PolicyEditionModal from "@components/modals/PolicyEditionModal";
+import DevicePolicyEditionModal from "@/components/modals/DevicePolicyEditionModal";
 import DeviceDeleteModal from "@components/modals/DeviceDeleteModal";
 import { FaMapMarkerAlt, FaInfoCircle } from "react-icons/fa";
 import { IoIosAddCircle } from "react-icons/io";
@@ -240,18 +240,12 @@ export default function Settings() {
         columns={{ sm: 1, md: 1 }}
         spacing={{ base: "20px", xl: "20px" }}>
         <GeneralTable tableData={devicesTableDevelopment} columns={columns}>
-
-          {/* const ModalContentComponent = ({ setCloseModal, isOpen, onClose, currentPolicy }) => {
- */}
-          {/*           {/* <MapComponent position={[-12.007172935393886, -77.06031303157475]} /> */}
-          {/* <PolicyEditionModal currentPolicy={{key : selectePolicyId, policyName : selectePolicyName}} setCloseModal={setSelect.setSelectPolicy} isOpen={selected.selectedPolicy} onClose={() => setSelect.setSelectPolicy(null)} /> */}
-          <PolicyEditionModal currentPolicy={selected.selectedPolicy} setCloseModal={setSelect.setSelectPolicy} isOpen={selected.selectedPolicy} onClose={() => setSelect.setSelectPolicy(null)} />
+          <DevicePolicyEditionModal currentPolicy={selected.selectedPolicy} setCloseModal={setSelect.setSelectPolicy} isOpen={selected.selectedPolicy} onClose={() => setSelect.setSelectPolicy(null)} />
           <DeviceLocationModal setCloseModal={setSelect.setSelectMap}
             location={{ latitude: -12.007172935393886, longitude: -77.06031303157475 }}
             device={selected.selectedMap || {}}
             isOpen={selected.selectedMap} onClose={() => setSelect.setSelectMap(null)} />
           <DeviceDeleteModal currentDevice={selected.selectedDelete} setCloseModal={setSelect.setSelectDelete} isOpen={selected.selectedDelete} onClose={() => setSelect.setSelectDelete(null)} />
-          {/* <ModalContentComponent isOpen={selected.selectedInfo} onClose={() => setSelect.setSelectInfo(null)} /> */}
         </GeneralTable>
       </SimpleGrid>
     </Box>
