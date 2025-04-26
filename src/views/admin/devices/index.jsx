@@ -53,8 +53,18 @@ import { IoIosAddCircle } from "react-icons/io";
 
 
 const useDeviceTableColumns = () => {
-  const [selectedRow, setSelectedRow] = useState(null); // Para saber qué fila se clickeó
-  const [selectedMap, setMapSelected] = useState(null);
+  // hooks 
+  const [selectedPolicy, setSelectPolicy] = useState(null);
+  const [selectedMap, setSelectMap] = useState(null);
+  const [selectedInfo, setSelectInfo] = useState(null);
+  const [selectedEdit, setSelectEdit] = useState(null);
+  const [selectedDelete, setSelectDelete] = useState(null);
+
+
+
+  // const [selectedRow, setSelectedRow] = useState(null); // Para saber qué fila se clickeó
+
+  // const [selectedMap, setMapSelected] = useState(null);
 
   const contentFontSize = { sm: '12px', lg: '14px' };
   const columnTitleColor = "white";
@@ -146,14 +156,17 @@ const useDeviceTableColumns = () => {
 
 
     createColumn({
-      accessor: 'policyName',
+      accessor: row => ({
+        id: row.id,
+        policyName: row.policyName,
+      }),
       id: 'policyName',
       headerText: 'POLITICA',
       renderCell: (info) => (
         <Flex align="center" alignItems={"center"}>
-          {info.getValue() ? (<Text variant={"listItemCaption"}>
-            {info.getValue()}
-          </Text>) : (<IconButton variant="solid" onClick={() => onMap("empty")}>
+          {info.getValue().policyName ? (<Text variant={"listItemCaption"}>
+            {info.getValue().policyName}
+          </Text>) : (<IconButton variant="solid" onClick={() => setSelectPolicy(info.getValue())}>
             <IoIosAddCircle />
           </IconButton>)}
 
@@ -171,7 +184,7 @@ const useDeviceTableColumns = () => {
       headerText: 'VER EN MAPA',
       renderCell: (info) => (
         <Flex justifyContent={"center"}>
-          <IconButton variant="solid" onClick={() => onMap(info.getValue())}>
+          <IconButton variant="solid" onClick={() => setSelectMap(info.getValue())}>
             <FaMapMarkerAlt />
           </IconButton>
         </Flex>
@@ -180,51 +193,41 @@ const useDeviceTableColumns = () => {
 
 
     createColumn({
-      accessor: 'id',
+      accessor: row => ({
+        id: row.id,
+        modelName: row.modelName,
+        brandName: row.brandName,
+      }),
       id: 'actions',
       headerText: 'ACCIONES',
       renderCell: (info) => (
 
         <Flex direction={"row"}>
-          <IconButton variant="solid" onClick={() => onMap(info.getValue())}>
+          <IconButton variant="solid" onClick={() => setSelectInfo(info.getValue())}>
             <FaInfoCircle />
           </IconButton>
-          <IconButton variant="solid" onClick={() => onEdit(info.getValue())}>
+          <IconButton variant="solid" onClick={() => setSelectEdit(info.getValue())}>
             <MdModeEditOutline />
           </IconButton>
-          <IconButton variant="solid" onClick={() => onMap(info.getValue())}>
+          <IconButton variant="solid" onClick={() => setSelectDelete(info.getValue())}>
             <MdDeleteForever />
           </IconButton>
         </Flex>
       ),
     }),
 
-
-    // createColumn({
-    //   accessor: 'device',
-    //   id: 'device2',
-    //   headerText: 'EDITAR',
-    //   renderCell: (info) => (
-    //     <IconButton variant="solid"
-    //       // onClick={(e) => onEdit()}
-    //       onClick={() => onEdit(info.getValue())} // Aquí le pasas toda la fila
-    //     >
-    //       <MdModeEditOutline />
-    //     </IconButton>
-    //     // <Input
-    //     //         variant={"classic"}
-    //     //       />
-    //     // <FormLabel>w222</FormLabel>
-    //   ),
-    // }),
   ];
 
-  return { columns, selectedRow, setSelectedRow, selectedMap, setMapSelected };
+  return {
+    columns, selected: { selectedPolicy, selectedMap, selectedInfo, selectedEdit, selectedDelete }, setSelect: {
+      setSelectPolicy, setSelectMap, setSelectInfo, setSelectEdit, setSelectDelete
+    }
+  };
 }
 
 
 export default function Settings() {
-  const { columns, selectedRow, setSelectedRow, selectedMap, setMapSelected } = useDeviceTableColumns();
+  const { columns, selected, setSelect } = useDeviceTableColumns();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   // Chakra Color Mode
@@ -235,8 +238,10 @@ export default function Settings() {
         columns={{ sm: 1, md: 1 }}
         spacing={{ base: "20px", xl: "20px" }}>
         <GeneralTable tableData={devicesTableDevelopment} columns={columns}>
-          <ModalContentComponent isOpen={selectedRow} onClose={() => setSelectedRow(null)} />
-          <PolicyEditionModal setCloseModal={setMapSelected} isOpen={selectedMap} onClose={() => setMapSelected(null)} />
+          <PolicyEditionModal setCloseModal={setSelect.setSelectPolicy} isOpen={selected.selectedPolicy} onClose={() => setSelect.setSelectPolicy(null)} />
+          <DeviceLocationModal setCloseModal={setSelect.setSelectMap} device={selected.selectedMap || {}} isOpen={selected.selectedMap} onClose={() => setSelect.setSelectMap(null)} />
+
+          {/* <ModalContentComponent isOpen={selected.selectedInfo} onClose={() => setSelect.setSelectInfo(null)} /> */}
         </GeneralTable>
       </SimpleGrid>
     </Box>

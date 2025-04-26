@@ -3,7 +3,8 @@ import {
     Modal, ModalOverlay, ModalContent, ModalHeader,
     ModalCloseButton, ModalBody, ModalFooter,
     Tabs, TabList, Tab, TabIndicator, TabPanels, TabPanel,
-    Button, useColorModeValue
+    Button, useColorModeValue,
+    Box
 } from '@chakra-ui/react';
 
 const SimpleModal = ({
@@ -31,10 +32,14 @@ const SimpleModal = ({
                     {children}
                 </ModalBody>
                 <ModalFooter>
-                    <Button colorScheme="brand" mr={3} onClick={onUpdate}>
+                    { (confirmTextButton != null && confirmTextButton != undefined) ? <Button colorScheme="brand" mr={3} onClick={onUpdate}>
                         {confirmTextButton}
-                    </Button>
-                    <Button onClick={onClose}>{cancelTextButton}</Button>
+                    </Button> : <Box/>}
+                    { (cancelTextButton != null && cancelTextButton != undefined) ? <Button colorScheme="brand" mr={3} onClick={onClose}>
+                        {cancelTextButton}
+                    </Button> : <Box/>}
+                    
+                    {/* <Button onClick={onClose}>{cancelTextButton}</Button> */}
                 </ModalFooter>
             </ModalContent>
         </Modal>

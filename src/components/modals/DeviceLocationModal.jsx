@@ -1,17 +1,38 @@
 // components/ModalContentComponent.js
-import { SimpleModal } from '@components/modals/SimpleModal';
 import GenericForm from '@components/forms/GenericForm';
-import { TabPanel, Text } from '@chakra-ui/react';
+import { TabPanel, Text, Box, Flex } from '@chakra-ui/react';
+import { SimpleModal } from '@components/modals/SimpleModal';
+import {
+  MapComponent
+} from '@components/maps/MapComponent';
 
-const ModalContentComponent = ({ isOpen, onClose }) => {
+
+const ModalContentComponent = ({ isOpen, onClose, device, setCloseModal }) => {
+  const onUpdate = () => {
+    console.log("Regresar / salir del pop up")
+    setCloseModal(null) // cierra el pop luego de la solicitud http
+  };
+
+
   return (
     <SimpleModal
       isOpen={isOpen}
+      onUpdate={onUpdate}
       onClose={onClose}
-      onUpdate={() => { }}
-      tabLabels={['One', 'Two']}
+      modalTitle={`Ubicación del dispositivo ${device.modelName}`}
+      cancelTextButton={undefined}
+      confirmTextButton={"Regresar"}
     >
       <>
+        <Box h="5" />
+        <Flex align="center" width="100%">
+          <MapComponent position={[-12.007172935393886, -77.06031303157475]} />
+        </Flex>
+        <Box h="5" />
+      </>
+
+
+      {/* <>
         <Text fontSize="sm" color="gray.500" mb={4}>
           {JSON.stringify(isOpen)}
         </Text>
@@ -26,12 +47,7 @@ const ModalContentComponent = ({ isOpen, onClose }) => {
           }}
           options={['Angular', 'React', 'Vue']}
         />
-      </>
-      {/* <TabPanel>
-      </TabPanel>
-      <TabPanel>
-        <p>Contenido del segundo tab</p>
-      </TabPanel> */}
+      </> */}
     </SimpleModal>
   );
 };
