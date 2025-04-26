@@ -35,7 +35,7 @@ const SimpleModal = ({
                     { (confirmTextButton != null && confirmTextButton != undefined) ? <Button colorScheme="brand" mr={3} onClick={onUpdate}>
                         {confirmTextButton}
                     </Button> : <Box/>}
-                    { (cancelTextButton != null && cancelTextButton != undefined) ? <Button colorScheme="brand" mr={3} onClick={onClose}>
+                    { (cancelTextButton != null && cancelTextButton != undefined) ? <Button mr={3} onClick={onClose}>
                         {cancelTextButton}
                     </Button> : <Box/>}
                     

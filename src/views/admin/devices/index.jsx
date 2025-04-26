@@ -48,6 +48,7 @@ import { useState, useCallback } from 'react';
 import ModalContentComponent from "@/components/tables/general/ModalContentComponent";
 import DeviceLocationModal from "@components/modals/DeviceLocationModal";
 import PolicyEditionModal from "@components/modals/PolicyEditionModal";
+import DeviceDeleteModal from "@components/modals/DeviceDeleteModal";
 import { FaMapMarkerAlt, FaInfoCircle } from "react-icons/fa";
 import { IoIosAddCircle } from "react-icons/io";
 
@@ -56,7 +57,6 @@ const useDeviceTableColumns = () => {
   // hooks 
   const [selectedPolicy, setSelectPolicy] = useState(null);
   const [selectedMap, setSelectMap] = useState(null);
-  const [selectedInfo, setSelectInfo] = useState(null);
   const [selectedEdit, setSelectEdit] = useState(null);
   const [selectedDelete, setSelectDelete] = useState(null);
 
@@ -164,9 +164,9 @@ const useDeviceTableColumns = () => {
       headerText: 'POLITICA',
       renderCell: (info) => (
         <Flex align="center" alignItems={"center"}>
-          {info.getValue().policyName ? (<Button fontWeight={400} onClick={() => setSelectPolicy(info.getValue())}>
+          {info.getValue().policyName ? (<Text variant={"listItemTitle"}>
             {info.getValue().policyName}
-          </Button>) : (<IconButton variant="solid" onClick={() => setSelectPolicy( info.getValue() )}>
+          </Text>) : (<IconButton variant="solid" onClick={() => setSelectPolicy(info.getValue())}>
             <IoIosAddCircle />
           </IconButton>)}
 
@@ -197,16 +197,17 @@ const useDeviceTableColumns = () => {
         id: row.id,
         modelName: row.modelName,
         brandName: row.brandName,
+        policyName: row.policyName,
       }),
       id: 'actions',
       headerText: 'ACCIONES',
       renderCell: (info) => (
 
         <Flex direction={"row"}>
-          <IconButton variant="solid" onClick={() => setSelectInfo(info.getValue())}>
+          {/* <IconButton variant="solid" onClick={() => setSelectInfo(info.getValue())}>
             <FaInfoCircle />
-          </IconButton>
-          <IconButton variant="solid" onClick={() => setSelectEdit(info.getValue())}>
+          </IconButton> */}
+          <IconButton variant="solid" onClick={() => setSelectPolicy(info.getValue())}>
             <MdModeEditOutline />
           </IconButton>
           <IconButton variant="solid" onClick={() => setSelectDelete(info.getValue())}>
@@ -219,8 +220,8 @@ const useDeviceTableColumns = () => {
   ];
 
   return {
-    columns, selected: { selectedPolicy, selectedMap, selectedInfo, selectedEdit, selectedDelete }, setSelect: {
-      setSelectPolicy, setSelectMap, setSelectInfo, setSelectEdit, setSelectDelete
+    columns, selected: { selectedPolicy, selectedMap, selectedEdit, selectedDelete }, setSelect: {
+      setSelectPolicy, setSelectMap, setSelectEdit, setSelectDelete
     }
   };
 }
@@ -240,16 +241,16 @@ export default function Settings() {
         spacing={{ base: "20px", xl: "20px" }}>
         <GeneralTable tableData={devicesTableDevelopment} columns={columns}>
 
-{/* const ModalContentComponent = ({ setCloseModal, isOpen, onClose, currentPolicy }) => {
+          {/* const ModalContentComponent = ({ setCloseModal, isOpen, onClose, currentPolicy }) => {
  */}
-          {/*           {/* <MapComponent position={[-12.007172935393886, -77.06031303157475]} /> */} 
+          {/*           {/* <MapComponent position={[-12.007172935393886, -77.06031303157475]} /> */}
           {/* <PolicyEditionModal currentPolicy={{key : selectePolicyId, policyName : selectePolicyName}} setCloseModal={setSelect.setSelectPolicy} isOpen={selected.selectedPolicy} onClose={() => setSelect.setSelectPolicy(null)} /> */}
           <PolicyEditionModal currentPolicy={selected.selectedPolicy} setCloseModal={setSelect.setSelectPolicy} isOpen={selected.selectedPolicy} onClose={() => setSelect.setSelectPolicy(null)} />
-          <DeviceLocationModal setCloseModal={setSelect.setSelectMap} 
-                              location={{latitude : -12.007172935393886, longitude : -77.06031303157475}}
-                              device={selected.selectedMap || {}}
-                              isOpen={selected.selectedMap} onClose={() => setSelect.setSelectMap(null)} />
-
+          <DeviceLocationModal setCloseModal={setSelect.setSelectMap}
+            location={{ latitude: -12.007172935393886, longitude: -77.06031303157475 }}
+            device={selected.selectedMap || {}}
+            isOpen={selected.selectedMap} onClose={() => setSelect.setSelectMap(null)} />
+          <DeviceDeleteModal currentDevice={selected.selectedDelete} setCloseModal={setSelect.setSelectDelete} isOpen={selected.selectedDelete} onClose={() => setSelect.setSelectDelete(null)} />
           {/* <ModalContentComponent isOpen={selected.selectedInfo} onClose={() => setSelect.setSelectInfo(null)} /> */}
         </GeneralTable>
       </SimpleGrid>
