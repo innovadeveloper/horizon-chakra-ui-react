@@ -31,6 +31,7 @@ const ModalContentComponent = ({ setCloseModal, isOpen, onClose, currentPolicy }
     console.log("Seleccionaste:", policy);
     setSelectedPolicy({ policyName: policy.value, id: policy.key });
   };
+  console.log(`selectedPolicy ${JSON.stringify(selectedPolicy)}`)
 
   return (
     <SimpleModal
@@ -44,7 +45,7 @@ const ModalContentComponent = ({ setCloseModal, isOpen, onClose, currentPolicy }
       <Box h="5" />
       <Flex align="center" width="100%">
         <Text flex="8" fontSize="lg">
-          {selectedPolicy ? selectedPolicy.policyName : "No tiene ninguna política actual"}
+          {(selectedPolicy && (selectedPolicy.policyName != undefined && selectedPolicy.policyName != null) ) ? selectedPolicy.policyName : "No tiene ninguna política actual"}
         </Text>
         <SimpleMenu
           textMenu={selectedPolicy ? "Cambiar" : "Seleccionar"}

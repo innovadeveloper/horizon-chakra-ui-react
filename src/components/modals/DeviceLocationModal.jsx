@@ -7,7 +7,7 @@ import {
 } from '@components/maps/MapComponent';
 
 
-const ModalContentComponent = ({ isOpen, onClose, device, setCloseModal }) => {
+const ModalContentComponent = ({ isOpen, onClose, device, setCloseModal, location }) => {
   const onUpdate = () => {
     console.log("Regresar / salir del pop up")
     setCloseModal(null) // cierra el pop luego de la solicitud http
@@ -26,28 +26,11 @@ const ModalContentComponent = ({ isOpen, onClose, device, setCloseModal }) => {
       <>
         <Box h="5" />
         <Flex align="center" width="100%">
-          <MapComponent position={[-12.007172935393886, -77.06031303157475]} />
+          {/* <MapComponent position={[-12.007172935393886, -77.06031303157475]} /> */}
+          <MapComponent position={[location.latitude, location.longitude]} />
         </Flex>
         <Box h="5" />
       </>
-
-
-      {/* <>
-        <Text fontSize="sm" color="gray.500" mb={4}>
-          {JSON.stringify(isOpen)}
-        </Text>
-        <GenericForm
-          inputLabel="Your Email"
-          inputPlaceholder="Enter your email"
-          onInputChange={(e) => {
-            console.log('Input value:', e.target.value);
-          }}
-          onRadioChange={(value) => {
-            console.log('Selected framework:', value);
-          }}
-          options={['Angular', 'React', 'Vue']}
-        />
-      </> */}
     </SimpleModal>
   );
 };

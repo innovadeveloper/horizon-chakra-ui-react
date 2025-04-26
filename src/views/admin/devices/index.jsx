@@ -164,9 +164,9 @@ const useDeviceTableColumns = () => {
       headerText: 'POLITICA',
       renderCell: (info) => (
         <Flex align="center" alignItems={"center"}>
-          {info.getValue().policyName ? (<Text variant={"listItemCaption"}>
+          {info.getValue().policyName ? (<Button fontWeight={400} onClick={() => setSelectPolicy(info.getValue())}>
             {info.getValue().policyName}
-          </Text>) : (<IconButton variant="solid" onClick={() => setSelectPolicy(info.getValue())}>
+          </Button>) : (<IconButton variant="solid" onClick={() => setSelectPolicy( info.getValue() )}>
             <IoIosAddCircle />
           </IconButton>)}
 
@@ -229,7 +229,8 @@ const useDeviceTableColumns = () => {
 export default function Settings() {
   const { columns, selected, setSelect } = useDeviceTableColumns();
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const selectePolicyId = (selected.selectedPolicy ? selected.selectedPolicy.id : null)
+  const selectePolicyName = (selected.selectedPolicy ? selected.selectedPolicy.policyName : null)
   // Chakra Color Mode
   return (
     <Box pt={{ base: "130px", md: "80px", xl: "80px" }}>
@@ -238,8 +239,16 @@ export default function Settings() {
         columns={{ sm: 1, md: 1 }}
         spacing={{ base: "20px", xl: "20px" }}>
         <GeneralTable tableData={devicesTableDevelopment} columns={columns}>
-          <PolicyEditionModal setCloseModal={setSelect.setSelectPolicy} isOpen={selected.selectedPolicy} onClose={() => setSelect.setSelectPolicy(null)} />
-          <DeviceLocationModal setCloseModal={setSelect.setSelectMap} device={selected.selectedMap || {}} isOpen={selected.selectedMap} onClose={() => setSelect.setSelectMap(null)} />
+
+{/* const ModalContentComponent = ({ setCloseModal, isOpen, onClose, currentPolicy }) => {
+ */}
+          {/*           {/* <MapComponent position={[-12.007172935393886, -77.06031303157475]} /> */} 
+          {/* <PolicyEditionModal currentPolicy={{key : selectePolicyId, policyName : selectePolicyName}} setCloseModal={setSelect.setSelectPolicy} isOpen={selected.selectedPolicy} onClose={() => setSelect.setSelectPolicy(null)} /> */}
+          <PolicyEditionModal currentPolicy={selected.selectedPolicy} setCloseModal={setSelect.setSelectPolicy} isOpen={selected.selectedPolicy} onClose={() => setSelect.setSelectPolicy(null)} />
+          <DeviceLocationModal setCloseModal={setSelect.setSelectMap} 
+                              location={{latitude : -12.007172935393886, longitude : -77.06031303157475}}
+                              device={selected.selectedMap || {}}
+                              isOpen={selected.selectedMap} onClose={() => setSelect.setSelectMap(null)} />
 
           {/* <ModalContentComponent isOpen={selected.selectedInfo} onClose={() => setSelect.setSelectInfo(null)} /> */}
         </GeneralTable>
