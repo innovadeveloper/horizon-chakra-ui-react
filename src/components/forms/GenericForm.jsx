@@ -21,7 +21,7 @@ const MiFormulario = () => {
         <>
             {/* <MapComponent position={[-12.007172935393886, -77.06031303157475]}/> */}
             <Box height="10" />
-            <SimpleInputField disabled = {true} label="Correo" placeholder="Escribe tu correo xd" helperText="Nunca compartiremos tu correo" type="email" />
+            <SimpleInputField value={"kbaltazar.abx@gmail.com"} disabled = {true} label="Correo" placeholder="Escribe tu correo xd" helperText="Nunca compartiremos tu correo" type="email" />
             <Box height="10" />
             <SimpleRadioGroupField label="Framework favorito" options={['React', 'Vue', 'Svelte']} onChange={(val) => console.log(val)} />
             <Box height="10" />

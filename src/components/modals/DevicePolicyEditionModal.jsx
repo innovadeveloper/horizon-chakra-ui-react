@@ -3,7 +3,7 @@ import { SimpleModal } from '@components/modals/SimpleModal';
 import GenericForm from '@components/forms/GenericForm';
 import { Menu, MenuButton, MenuList, MenuItem, MenuDivider, Text, Button, Flex, Box, useDisclosure } from '@chakra-ui/react';
 import { IoIosAddCircle } from "react-icons/io";
-import { SimpleMenu } from '@components/forms';
+import { SimpleMenu, SimpleInputField } from '@components/forms';
 import { useState, useEffect } from "react";
 
 const policies = [
@@ -44,9 +44,12 @@ const ModalContentComponent = ({ setCloseModal, isOpen, onClose, currentPolicy }
     >
       <Box h="5" />
       <Flex align="center" width="100%">
-        <Text flex="8" fontSize="lg">
+        {/* <Text flex="8" fontSize="lg">
           {(selectedPolicy && (selectedPolicy.policyName != undefined && selectedPolicy.policyName != null) ) ? selectedPolicy.policyName : "No tiene ninguna política actual"}
-        </Text>
+        </Text> */}
+
+        <SimpleInputField flex="8" fontSize="lg" value={(selectedPolicy && (selectedPolicy.policyName != undefined && selectedPolicy.policyName != null) ) ? selectedPolicy.policyName : "No tiene ninguna política actual"} disabled = {true}  type="text" />
+
         <SimpleMenu
           textMenu={selectedPolicy ? "Cambiar" : "Seleccionar"}
           items={policies}
