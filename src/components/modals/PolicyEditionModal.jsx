@@ -43,7 +43,18 @@ const ModalContentComponent = ({ setCloseModal, isOpen, onClose, currentPolicy }
       cancelTextButton={"Cancelar"}
     >
       <Box h="5" />
-      <Flex align="center" width="100%">
+      <GenericForm
+        inputLabel="Your Email"
+        inputPlaceholder="Enter your email"
+        onInputChange={(e) => {
+          console.log('Input value:', e.target.value);
+        }}
+        onRadioChange={(value) => {
+          console.log('Selected framework:', value);
+        }}
+        options={['Angular', 'React', 'Vue']}
+      />
+      {/* <Flex align="center" width="100%">
         <Text flex="8" fontSize="lg">
           {(selectedPolicy && (selectedPolicy.policyName != undefined && selectedPolicy.policyName != null) ) ? selectedPolicy.policyName : "No tiene ninguna política actual"}
         </Text>
@@ -53,7 +64,7 @@ const ModalContentComponent = ({ setCloseModal, isOpen, onClose, currentPolicy }
           onSelect={handlePolicySelect}
           flex="2" // Opcional, depende cómo lo definiste adentro
         />
-      </Flex>
+      </Flex> */}
       <Box h="5" />
     </SimpleModal>
   );
