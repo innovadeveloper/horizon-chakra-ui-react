@@ -3,8 +3,14 @@ import { SimpleModal } from '@components/modals/SimpleModal';
 import GenericForm from '@components/forms/GenericForm';
 import { Menu, MenuButton, MenuList, MenuItem, MenuDivider, Text, Button, Flex, Box, useDisclosure } from '@chakra-ui/react';
 import { IoIosAddCircle } from "react-icons/io";
-import { SimpleMenu } from '@components/forms';
 import { useState, useEffect } from "react";
+import {
+    SimpleTextareaField,
+    SimpleNumberInputFieldComponent,
+    SimpleSliderField,
+    SimpleRadioGroupField,
+    SimpleInputField,
+} from '@components/forms/index';
 
 const policies = [
   { key: "1", value: "Kiosko" },
@@ -27,44 +33,21 @@ const ModalContentComponent = ({ setCloseModal, isOpen, onClose, currentPolicy }
     setCloseModal(null) // cierra el pop luego de la solicitud http
   };
 
-  const handlePolicySelect = (policy) => {
-    console.log("Seleccionaste:", policy);
-    setSelectedPolicy({ policyName: policy.value, id: policy.key });
+  const handlePolicyNameChange = (e) => {
+    setSelectedPolicy({...currentPolicy, policyName: e.target.value})
   };
-  console.log(`selectedPolicy ${JSON.stringify(selectedPolicy)}`)
 
   return (
     <SimpleModal
       isOpen={isOpen}
       onUpdate={onUpdate}
       onClose={onClose}
-      modalTitle={"Edición Política 2"}
-      confirmTextButton={"Guardar"}
+      modalTitle={"Edición Política"}
+      confirmTextButton={"Actualizar"}
       cancelTextButton={"Cancelar"}
     >
       <Box h="5" />
-      <GenericForm
-        inputLabel="Your Email"
-        inputPlaceholder="Enter your email"
-        onInputChange={(e) => {
-          console.log('Input value:', e.target.value);
-        }}
-        onRadioChange={(value) => {
-          console.log('Selected framework:', value);
-        }}
-        options={['Angular', 'React', 'Vue']}
-      />
-      {/* <Flex align="center" width="100%">
-        <Text flex="8" fontSize="lg">
-          {(selectedPolicy && (selectedPolicy.policyName != undefined && selectedPolicy.policyName != null) ) ? selectedPolicy.policyName : "No tiene ninguna política actual"}
-        </Text>
-        <SimpleMenu
-          textMenu={selectedPolicy ? "Cambiar" : "Seleccionar"}
-          items={policies}
-          onSelect={handlePolicySelect}
-          flex="2" // Opcional, depende cómo lo definiste adentro
-        />
-      </Flex> */}
+      <SimpleInputField onChange={handlePolicyNameChange} value={(selectedPolicy != null) ? selectedPolicy.policyName : ""} label="Nombre" helperText="El nombre de la política se considera solamente un alias representativo." type="text" />
       <Box h="5" />
     </SimpleModal>
   );

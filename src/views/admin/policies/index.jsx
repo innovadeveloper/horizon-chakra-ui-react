@@ -49,7 +49,7 @@ import { useState, useCallback } from 'react';
 import { FaMapMarkerAlt, FaInfoCircle } from "react-icons/fa";
 
 import PolicyEditionModal from "@/components/modals/PolicyEditionModal";
-import DeviceDeleteModal from "@components/modals/DeviceDeleteModal";
+import PolicyDeleteModal from "@components/modals/PolicyDeleteModal";
 
 const useDeviceTableColumns = () => {
   // hooks 
@@ -114,7 +114,15 @@ const useDeviceTableColumns = () => {
     }),
 
     createColumn({
-      accessor: 'id',
+      // accessor: 'id',
+      // id: 'actions',
+      // headerText: 'ACCIONES',
+
+      accessor: row => ({
+        id: row.id,
+        createAt: row.createAt,
+        policyName: row.policyName,
+      }),
       id: 'actions',
       headerText: 'ACCIONES',
       renderCell: (info) => (
@@ -147,16 +155,9 @@ export default function Settings() {
         mb='20px'
         columns={{ sm: 1, md: 1 }}
         spacing={{ base: "20px", xl: "20px" }}>
-        {/* <GeneralTable
-          tableData={policiesTableDevelopment}
-          useDeviceTableColumns={useDeviceTableColumns}
-          ModalComponent={ModalContentComponent}
-          DeviceLocationModal={DeviceLocationModal}
-        /> */}
-
         <GeneralTable tableData={policiesTableDevelopment} columns={columns}>
           <PolicyEditionModal currentPolicy={selected.selectedEdit} setCloseModal={setSelect.setSelectEdit} isOpen={selected.selectedEdit} onClose={() => setSelect.setSelectEdit(null)} />
-          <DeviceDeleteModal currentDevice={selected.selectedDelete} setCloseModal={setSelect.setSelectDelete} isOpen={selected.selectedDelete} onClose={() => setSelect.setSelectDelete(null)} />
+          <PolicyDeleteModal currentPolicy={selected.selectedDelete} setCloseModal={setSelect.setSelectDelete} isOpen={selected.selectedDelete} onClose={() => setSelect.setSelectDelete(null)} />
         </GeneralTable>
       </SimpleGrid>
     </Box>
