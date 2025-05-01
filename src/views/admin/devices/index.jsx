@@ -44,13 +44,14 @@ import { AndroidLogo } from '@components/icons/Icons';
 import { createColumn } from '@components/tables/ColumnHelper';
 import { MdModeEditOutline, MdDeleteForever } from "react-icons/md";
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo, useEffect } from 'react';
 import ModalContentComponent from "@/components/tables/general/ModalContentComponent";
 import DeviceLocationModal from "@components/modals/DeviceLocationModal";
 import DevicePolicyEditionModal from "@/components/modals/DevicePolicyEditionModal";
 import DeviceDeleteModal from "@components/modals/DeviceDeleteModal";
 import { FaMapMarkerAlt, FaInfoCircle } from "react-icons/fa";
 import { IoIosAddCircle } from "react-icons/io";
+import { useMqttClient } from "@/helpers/hooks/useMqtt";
 
 
 const useDeviceTableColumns = () => {
@@ -226,12 +227,35 @@ const useDeviceTableColumns = () => {
   };
 }
 
+// mosquitto_pub -h serverdevops.abexa.pe -p 1883 -t react/mqtt/demo -u admin -P admin -m "hola"
 
 export default function Settings() {
   const { columns, selected, setSelect } = useDeviceTableColumns();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const selectePolicyId = (selected.selectedPolicy ? selected.selectedPolicy.id : null)
   const selectePolicyName = (selected.selectedPolicy ? selected.selectedPolicy.policyName : null)
+
+  const { message, isConnected, publish, connect, disconnect } = useMqttClient({
+    brokerUrl: 'wss://mosquitto-websocket.abexa.pe'
+  });
+
+  useEffect(() => {
+    // Conectar con un userId específico
+    connect('kbaltazar');
+
+    // Opcional: desconectar al salir del componente
+    return () => disconnect();
+  }, []);
+
+  const handleSend = () => {
+    if (input.trim() !== '') {
+      publish(input);
+      setInput('');
+    }
+  };
+
+  console.log(`[MQTT] message ${message} , isConnected ${isConnected}`)
+
   // Chakra Color Mode
   return (
     <Box pt={{ base: "130px", md: "80px", xl: "80px" }}>
