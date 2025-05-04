@@ -182,7 +182,7 @@
 // export default GeneralTable;
 
 // pages/ComplexTable.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TableComponent from '@components/tables/general/Table';
 import ModalContentComponent from '@components/tables/general/ModalContentComponent';
 
@@ -251,6 +251,11 @@ const GeneralTable = ({ tableData, columns, children }) => {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   // const { columns, selectedRow, setSelectedRow, selectedMap, setMapSelected } = useDeviceTableColumns();
+
+  // Este useEffect actualizará el estado cuando `tableData` cambie
+  useEffect(() => {
+    setData(tableData);
+  }, [tableData]);
 
   const table = useReactTable({
     data,

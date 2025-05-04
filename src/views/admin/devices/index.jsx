@@ -36,7 +36,7 @@ import {
 import FetchHelper from "@/helpers/utils/FetchHelper";
 import tableDataDevelopment from "@views/admin/dataTables/variables/tableDataDevelopment.json";
 // import devicesTableDevelopment from "@views/admin/dataTables/variables/devices-table-data.json";
-import devicesTableDevelopment from "@views/admin/dataTables/variables/my-devices-data.json";
+import devicesTableDevelopment2 from "@views/admin/dataTables/variables/my-devices-data.json";
 // import tableDataCheck from "@views/admin/dataTables/variables/tableDataCheck.json";
 // import tableDataColumns from "@views/admin/dataTables/variables/tableDataColumns.json";
 // import tableDataComplex from "@views/admin/dataTables/variables/tableDataComplex.json";
@@ -62,8 +62,6 @@ const useDeviceTableColumns = () => {
   const [selectedMap, setSelectMap] = useState(null);
   const [selectedEdit, setSelectEdit] = useState(null);
   const [selectedDelete, setSelectDelete] = useState(null);
-
-
 
   // const [selectedRow, setSelectedRow] = useState(null); // Para saber qué fila se clickeó
 
@@ -236,7 +234,7 @@ export default function Settings() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const selectePolicyId = (selected.selectedPolicy ? selected.selectedPolicy.id : null)
   const selectePolicyName = (selected.selectedPolicy ? selected.selectedPolicy.policyName : null)
-  const [jsonDevices, setJSONDevices] = useState(null);
+  const [devicesTableDevelopment, setDevicesTableDevelopment] = useState([]);
 
   const { message, isConnected, publish, connect, disconnect } = useMqttClient({
     brokerUrl: 'wss://mosquitto-websocket.abexa.pe'
@@ -253,10 +251,15 @@ export default function Settings() {
 
 
   useEffect(() => {
-    if(loading) console.log('loading')
-    if(data) console.log('data', data)
-    if(error) console.log('error')
-  }, [loading, data, error]); // Este useEffect se ejecutará solo cuando 'data' cambie y esté cargado sin error
+    // if (loading) console.log('loading')
+    // if (data) console.log('data', data)
+    // if (error) console.log('error')
+    if (data && data.isValid) {
+      const builtData = buildDevicesTable(data);
+      setDevicesTableDevelopment(builtData);
+      // console.log("data setted")
+    }
+  }, [data]); // Este useEffect se ejecutará solo cuando 'data' cambie y esté cargado sin error
 
 
   const handleSend = () => {
@@ -266,8 +269,71 @@ export default function Settings() {
     }
   };
 
+  /**
+   * {
+      "id": 1,
+      "policy": "Kiosko",
+      "isOnline": true,
+      "createAt": "23/04/18",
+      "deviceType": "Android",
+      "device": {
+        "modelName": "H20",
+        "brandName": "Honor"
+      }
+    }
+
+    http
+
+                {
+                "_id": "6813f471bd8e60241efcba60",
+                "modelName": "Pixel 6",
+                "androidVersion": 13,
+                "createAt": 1746138225723,
+                "updateAt": 1746138254924,
+                "email": "kbaltazar.abx@gmai.com",
+                "brandName": "Google",
+                "policyId": "6813f3510798b52348ddcc55",
+                "uid": "abcd1234-5678-efgh-ijkl-9876mnopqrst",
+                "online": false
+            }
+
+    {
+        "id": "c3565db0-28fe-432e-9de6-2a7a7553467d",
+        "modelName": "Galaxy Z Flip",
+        "androidVersion": 10,
+        "createAt": "04-09-2018 00:00:00",
+        "policyName": "Kiosko",
+        "brandName": "Samsung",
+        "isOnline": false,
+        "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
+    },
+            
+   */
+  const formatDate = (timestamp) => {
+    const date = new Date(timestamp);
+    const pad = (n) => n.toString().padStart(2, '0');
+    return `${pad(date.getDate())}-${pad(date.getMonth() + 1)}-${date.getFullYear()} ${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}`;
+  };
+
+  const buildDevicesTable = (response) => {
+    const content = (response.isValid) ? response.content : [];
+
+    return content.map((device, index) => ({
+      id: device.uid,
+      modelName: device.modelName,
+      androidVersion: device.androidVersion,
+      createAt: formatDate(device.createAt),
+      policyName: device.policyId, // Valor fijo porque no está en el objeto original
+      brandName: device.brandName,
+      isOnline: device.online,
+      policyId: device.policyId
+    }));
+  }
+
+  // const devicesTableDevelopment = buildDevicesTable(data || []);
+
   // console.log(`[MQTT] message ${message} , isConnected ${isConnected}`)
-  console.log(`[Devices] Ready`)
+  console.log(`[Devices] Ready`, devicesTableDevelopment)
 
   // Chakra Color Mode
   return (

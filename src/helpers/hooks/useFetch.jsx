@@ -42,7 +42,7 @@ const useFetch = (url, method = 'GET', body = null, headers = {}) => {
                 body: method === 'POST' && body ? JSON.stringify(body) : null, // Agregar el cuerpo solo para POST
             };
             
-            console.log('options ', options);
+            // console.log('options ', options);
 
             try {
                 const response = await fetch(url, options);
@@ -52,7 +52,7 @@ const useFetch = (url, method = 'GET', body = null, headers = {}) => {
                 }
 
                 const result = await response.json(); // Parsear la respuesta a JSON
-                setData(result); // Guardar los datos en el estado
+                setData(Array.isArray(result) ? result[0] : result); // Guardar los datos en el estado
             } catch (err) {
                 setData(err); // Guardar los datos en el estado
                 setError(err.message); // Guardar el error
