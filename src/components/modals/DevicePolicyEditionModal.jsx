@@ -31,7 +31,7 @@ const ModalContentComponent = ({ setCloseModal, isOpen, onClose, currentPolicy }
     console.log("Seleccionaste:", policy);
     setSelectedPolicy({ policyName: policy.value, id: policy.key });
   };
-  console.log(`selectedPolicy ${JSON.stringify(selectedPolicy)}`)
+  // console.log(`selectedPolicy ${JSON.stringify(selectedPolicy)}`)
 
   return (
     <SimpleModal

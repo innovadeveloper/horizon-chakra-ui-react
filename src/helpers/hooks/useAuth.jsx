@@ -28,13 +28,34 @@ export const useAuth = () => {
     return info;
   };
 
+  const getAccessTokenInvoke  = async () => {
+    if (isAuthenticated) {
+      const decoded = await getDecodedIDToken();
+      const now = Math.floor(Date.now() / 1000); // tiempo actual en segundos
+      const isExpired = decoded?.exp && decoded.exp < now;
+      // console.log("decoded " , decoded);
+      if (isExpired) {
+        console.warn("La sesión ha expirado. Cerrando sesión...");
+        signOut();
+        return null;
+      }
+
+      try {
+        return await getAccessToken();;
+      } catch (error) {
+        console.error("Error obteniendo el access token", error);
+      }
+    }
+    return null;
+  };
+
   return {
     state, 
     login, 
     logout, 
     isAuthenticated, 
     getBasicUserInfo, 
-    getAccessToken, 
+    getAccessTokenInvoke, 
     refreshAccessToken,
     getUser,
     userInfo

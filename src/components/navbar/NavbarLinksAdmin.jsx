@@ -52,7 +52,7 @@ export default function HeaderLinks(props) {
       getUser()
     }
   }, []);
-  { console.log("user info => " + JSON.stringify(userInfo)) }
+  // { console.log("user info => " + JSON.stringify(userInfo)) }
 
   
 

@@ -21,7 +21,7 @@ export const identityServerConfig = {
   signOutRedirectURL: "http://localhost:5173/auth/callback",
   clientID: "_4zrHrSTi9FpZe64ejSEHAkyELYa",
   baseUrl: "https://wso2is-service-7.abexa.pe",
-  scope: ["openid", "profile"]
+  scope: ["openid", "email", "profile", "mobiledevicemanagement.write",  "mobiledevicemanagement.read"] // 
 };
 
 // https://wso2is-service-7.abexa.pe/oauth2/token/.well-known/openid-configuration

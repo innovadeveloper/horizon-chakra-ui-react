@@ -33,6 +33,7 @@ import {
   columnsDataColumns,
   columnsDataComplex,
 } from "@views/admin/dataTables/variables/columnsData";
+import FetchHelper from "@/helpers/utils/FetchHelper";
 import tableDataDevelopment from "@views/admin/dataTables/variables/tableDataDevelopment.json";
 // import devicesTableDevelopment from "@views/admin/dataTables/variables/devices-table-data.json";
 import devicesTableDevelopment from "@views/admin/dataTables/variables/my-devices-data.json";
@@ -44,7 +45,7 @@ import { AndroidLogo } from '@components/icons/Icons';
 import { createColumn } from '@components/tables/ColumnHelper';
 import { MdModeEditOutline, MdDeleteForever } from "react-icons/md";
 
-import { useState, useCallback, useMemo, useEffect } from 'react';
+import { useState, useRef, useCallback, useMemo, useEffect } from 'react';
 import ModalContentComponent from "@/components/tables/general/ModalContentComponent";
 import DeviceLocationModal from "@components/modals/DeviceLocationModal";
 import DevicePolicyEditionModal from "@/components/modals/DevicePolicyEditionModal";
@@ -52,6 +53,7 @@ import DeviceDeleteModal from "@components/modals/DeviceDeleteModal";
 import { FaMapMarkerAlt, FaInfoCircle } from "react-icons/fa";
 import { IoIosAddCircle } from "react-icons/io";
 import { useMqttClient } from "@/helpers/hooks/useMqtt";
+import useFetch from '@helpers/hooks/useFetch'; // Importa el hook
 
 
 const useDeviceTableColumns = () => {
@@ -234,18 +236,28 @@ export default function Settings() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const selectePolicyId = (selected.selectedPolicy ? selected.selectedPolicy.id : null)
   const selectePolicyName = (selected.selectedPolicy ? selected.selectedPolicy.policyName : null)
+  const [jsonDevices, setJSONDevices] = useState(null);
 
   const { message, isConnected, publish, connect, disconnect } = useMqttClient({
     brokerUrl: 'wss://mosquitto-websocket.abexa.pe'
   });
 
-  useEffect(() => {
-    // Conectar con un userId específico
-    connect('kbaltazar');
+  // MQTT HOOK
+  // useEffect(() => {
+  //   connect('kbaltazar');
+  //   return () => disconnect();
+  // }, []);
 
-    // Opcional: desconectar al salir del componente
-    return () => disconnect();
-  }, []);
+  const { data, loading, error } = useFetch('http://localhost:9002/context/api/device', 'GET');
+
+
+
+  useEffect(() => {
+    if(loading) console.log('loading')
+    if(data) console.log('data', data)
+    if(error) console.log('error')
+  }, [loading, data, error]); // Este useEffect se ejecutará solo cuando 'data' cambie y esté cargado sin error
+
 
   const handleSend = () => {
     if (input.trim() !== '') {
@@ -254,7 +266,8 @@ export default function Settings() {
     }
   };
 
-  console.log(`[MQTT] message ${message} , isConnected ${isConnected}`)
+  // console.log(`[MQTT] message ${message} , isConnected ${isConnected}`)
+  console.log(`[Devices] Ready`)
 
   // Chakra Color Mode
   return (
