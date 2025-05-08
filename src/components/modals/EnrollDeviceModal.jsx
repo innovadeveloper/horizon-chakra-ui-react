@@ -2,6 +2,7 @@
 import GenericForm from '@components/forms/GenericForm';
 import { TabPanel, Text, Box, Flex } from '@chakra-ui/react';
 import { SimpleModal } from '@components/modals/SimpleModal';
+import QRCode from 'react-qr-code';
 
 
 const ModalContentComponent = ({ isOpen, onClose, device, setCloseModal, location }) => {
@@ -19,13 +20,13 @@ const ModalContentComponent = ({ isOpen, onClose, device, setCloseModal, locatio
       modalTitle={`Enrolamiento del nuevo dispositivo`}
       cancelTextButton={undefined}
       confirmTextButton={"Regresar"}
-      modalContentProps = {{ width:"30%"}}
+      modalContentProps={{ width: "30%" }}
     >
       <>
         <Box h="5" />
-        <Flex align="center" width="100%">
-          {/* <MapComponent position={[-12.007172935393886, -77.06031303157475]} /> */}
-          {/* <MapComponent position={[location.latitude, location.longitude]} /> */}
+        <Flex direction={"column"} align="center" justifyContent="center" width="100%">
+          <QRCode value="https://www.ejemplo.com" />
+          <Text fontSize={"lg"} mt={"20px"} variant={"classic"}>Escanea el QR con la app <b>INFINITIX</b></Text>
         </Flex>
         <Box h="5" />
       </>
