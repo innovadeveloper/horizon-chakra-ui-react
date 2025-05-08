@@ -16,7 +16,8 @@ export default function CallbackPage() {
         await getUser();
       };
       fetchUser();
-      navigate(RoutePaths.DASHBOARD.URI);
+      // navigate(RoutePaths.DASHBOARD.URI);
+      navigate(RoutePaths.MY_DEVICES.URI);
     } else if (!state.isLoading && !state.isAuthenticated)
       navigate(RoutePaths.LOGIN.URI);
   }, [state, navigate]);

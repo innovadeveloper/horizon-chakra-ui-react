@@ -12,6 +12,9 @@ const RoutePaths = Object.freeze({
     },
     // ADMIN
     DASHBOARD: {
+        // LAYOUT : "/admin",
+        // PATH : "/default",
+        // URI : "/admin/default"
         LAYOUT : "/admin",
         PATH : "/default",
         URI : "/admin/default"

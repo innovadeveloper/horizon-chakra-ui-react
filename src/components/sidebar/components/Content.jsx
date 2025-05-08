@@ -1,4 +1,5 @@
 // chakra imports
+import { RoutePaths } from "@/variables/constants";
 import { Box, Flex, Stack } from "@chakra-ui/react";
 //   Custom components
 import Brand from "@components/sidebar/components/Brand";
@@ -16,7 +17,7 @@ function SidebarContent(props) {
       <Brand />
       <Stack direction='column' mb='auto' mt='8px'>
         <Box ps='20px' pe={{ md: "16px", "2xl": "1px" }}>
-          <Links routes={routes} />
+          <Links routes={routes.filter((element) => element.layout != RoutePaths.LOGIN.LAYOUT)} />
         </Box>
       </Stack>
 

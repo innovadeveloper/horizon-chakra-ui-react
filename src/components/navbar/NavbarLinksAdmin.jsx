@@ -114,6 +114,7 @@ export default function HeaderLinks(props) {
       {/* </Flex> */}
 
       {/* BUTTON ADD QR */}
+      <SidebarResponsive routes={routes} />
 
       <Button variant="classic" ml={"20px"} mr={"20px"}>
         Agregar

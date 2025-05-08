@@ -67,20 +67,20 @@ const routes = [
   //   icon: <Icon as={FaUsersCog} width="20px" height="20px" color="inherit" />,
   //   component: <Profile />,
   // },
-  // {
-  //   name: 'Auth',
-  //   layout: RoutePaths.LOGIN.LAYOUT,
-  //   path: RoutePaths.LOGIN.PATH,
-  //   icon: <Icon as={MdSms} width="20px" height="20px" color="inherit" />,
-  //   component: <SignInCentered />,
-  // },
-  // {
-  //   name: 'AuthCallback',
-  //   layout: RoutePaths.AUTH_CALLBACK.LAYOUT,
-  //   path: RoutePaths.AUTH_CALLBACK.PATH,
-  //   icon: <Icon as={MdSms} width="20px" height="20px" color="inherit" />,
-  //   component: <CallbackPage />,
-  // },
+  {
+    name: 'Auth',
+    layout: RoutePaths.LOGIN.LAYOUT,
+    path: RoutePaths.LOGIN.PATH,
+    icon: <Icon as={MdSms} width="20px" height="20px" color="inherit" />,
+    component: <SignInCentered />,
+  },
+  {
+    name: 'AuthCallback',
+    layout: RoutePaths.AUTH_CALLBACK.LAYOUT,
+    path: RoutePaths.AUTH_CALLBACK.PATH,
+    icon: <Icon as={MdSms} width="20px" height="20px" color="inherit" />,
+    component: <CallbackPage />,
+  },
 ];
 
 export default routes;
