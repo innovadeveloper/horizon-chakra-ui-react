@@ -19,7 +19,7 @@ import { ItemContent } from '@/components/menu/ItemContent';
 import { SearchBar } from '@/components/navbar/searchBar/SearchBar';
 import { SidebarResponsive } from '@/components/sidebar/Sidebar';
 import PropTypes from 'prop-types';
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 // Assets
 import navImage from '@assets/img/layout/Navbar.png'; //  '@assets/img/layout/Navbar.png';
 import { MdNotificationsNone, MdInfoOutline } from 'react-icons/md';
@@ -48,13 +48,13 @@ export default function HeaderLinks(props) {
   const borderButton = useColorModeValue('secondaryGray.500', 'whiteAlpha.200');
 
   useEffect(() => {
-    if(userInfo == null){
+    if (userInfo == null) {
       getUser()
     }
   }, []);
   // { console.log("user info => " + JSON.stringify(userInfo)) }
 
-  
+
 
   return (
     // <></>
@@ -68,7 +68,7 @@ export default function HeaderLinks(props) {
       borderRadius="30px"
       boxShadow={shadow}
     >
-      <SearchBar
+      {/* <SearchBar
         mb={() => {
           if (secondary) {
             return { base: '10px', md: 'unset' };
@@ -77,8 +77,8 @@ export default function HeaderLinks(props) {
         }}
         me="10px"
         borderRadius="30px"
-      />
-      <Flex
+      /> */}
+      {/* <Flex
         bg={ethBg}
         display={secondary ? 'flex' : 'none'}
         borderRadius="30px"
@@ -86,8 +86,8 @@ export default function HeaderLinks(props) {
         p="6px"
         align="center"
         me="6px"
-      >
-        <Flex
+      > */}
+      {/* <Flex
           align="center"
           justify="center"
           bg={ethBox}
@@ -97,8 +97,8 @@ export default function HeaderLinks(props) {
           me="7px"
         >
           <Icon color={ethColor} w="9px" h="14px" as={FaEthereum} />
-        </Flex>
-        <Text
+        </Flex> */}
+      {/* <Text
           w="max-content"
           color={ethColor}
           fontSize="sm"
@@ -110,9 +110,15 @@ export default function HeaderLinks(props) {
             {' '}
             ETH
           </Text>
-        </Text>
-      </Flex>
-      <SidebarResponsive routes={routes} />
+        </Text> */}
+      {/* </Flex> */}
+
+      {/* BUTTON ADD QR */}
+
+      <Button variant="classic" ml={"20px"} mr={"20px"}>
+        Agregar
+      </Button>
+      {/* <SidebarResponsive routes={routes} />
       <Menu>
         <MenuButton p="0px">
           <Icon
@@ -251,7 +257,8 @@ export default function HeaderLinks(props) {
           color={navbarIcon}
           as={colorMode === 'light' ? IoMdMoon : IoMdSunny}
         />
-      </Button>
+      </Button> */}
+
       <Menu>
         <MenuButton p="0px">
           <Avatar
@@ -284,7 +291,7 @@ export default function HeaderLinks(props) {
               fontWeight="700"
               color={textColor}
             >
-              👋&nbsp; {`Hey ${ (userInfo != null) ? userInfo.username : '' }`}
+              👋&nbsp; {`Hey ${(userInfo != null) ? userInfo.username : ''}`}
             </Text>
           </Flex>
           <Flex flexDirection="column" p="10px">
