@@ -55,6 +55,7 @@ export function useMqttClient({ brokerUrl }) {
       clientRef.current.end(true, () => {
         console.log('🔌 Desconectado manualmente');
         clientRef.current = null;
+        setMessage(null);
         setIsConnected(false);
         setCurrentTopic(null);
       });
@@ -74,5 +75,5 @@ export function useMqttClient({ brokerUrl }) {
     };
   }, [disconnect]);
 
-  return { message, isConnected, publish, connect, disconnect };
+  return { message, isConnected, publish, connect, disconnect, setMessage };
 }

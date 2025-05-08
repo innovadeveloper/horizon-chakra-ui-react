@@ -324,7 +324,7 @@ export default function HeaderLinks(props) {
               <Text fontSize="sm" onClick={() => logout()}>Log out</Text>
             </MenuItem>
 
-            <EnrollDeviceModal setCloseModal={setOpenQR}
+            <EnrollDeviceModal setOpenModal={setOpenQR}
               location={{ latitude: -12.007172935393886, longitude: -77.06031303157475 }}
               device={{}}
               isOpen={isOpenQR} onClose={() => setOpenQR(false)} />

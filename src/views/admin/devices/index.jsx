@@ -161,8 +161,13 @@ const useDeviceTableColumns = () => {
 
     createColumn({
       accessor: row => ({
-        id: row.id,
+        // id: row.id,
+        // policyName: row.policyName,
+        _id: row._id,
+        modelName: row.modelName,
+        brandName: row.brandName,
         policyName: row.policyName,
+        policyId: row.policyId,
       }),
       id: 'policyName',
       headerText: 'POLITICA',
