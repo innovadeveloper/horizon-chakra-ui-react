@@ -260,7 +260,7 @@ export default function Settings() {
 
   useEffect(() => {
     refetchDevices();
-  }, [selected?.selectedPolicy]);
+  }, [selected?.selectedPolicy, selected?.selectedDelete]);
 
   useEffect(() => {
     if (contentDevices && contentDevices.isValid) {

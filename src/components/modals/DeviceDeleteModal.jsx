@@ -5,16 +5,26 @@ import { Menu, MenuButton, MenuList, MenuItem, MenuDivider, Text, Button, Flex, 
 import { IoIosAddCircle } from "react-icons/io";
 import { SimpleMenu } from '@components/forms';
 import { useState, useEffect } from "react";
-
+import { useDeleteDevice } from "@helpers/hooks/useDevices";
 
 const ModalContentComponent = ({ setCloseModal, isOpen, onClose, currentDevice }) => {
 
-  const onConfirm = () => {
-    console.log("guardando la política " + JSON.stringify(currentDevice))
-    setCloseModal(null) // cierra el pop luego de la solicitud http
+  const { data: deviceDeleted, error: errorDeviceDeleted, mutateAsync: refetchDeviceDeleted } = useDeleteDevice();
+
+  const onConfirm = async () => {
+    // console.log("current device ", currentDevice)
+    const response = await refetchDeviceDeleted({
+      _id: currentDevice._id,
+    })
+    if (response && response.isValid) {
+      setCloseModal(null)
+    } else {
+      alert(response.exceptions[0]?.description || "Ocurrió un error, volver a intentarlo luego")
+    }
+    // setCloseModal(null) // cierra el pop luego de la solicitud http
   };
   const onCancel = () => {
-    console.log("cancelando la operación " + JSON.stringify(currentDevice))
+    // console.log("cancelando la operación " + JSON.stringify(currentDevice))
     setCloseModal(null) // cierra el pop luego de la solicitud http
   };
 
