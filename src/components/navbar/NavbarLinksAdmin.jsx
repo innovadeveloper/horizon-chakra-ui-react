@@ -20,6 +20,7 @@ import { SearchBar } from '@/components/navbar/searchBar/SearchBar';
 import { SidebarResponsive } from '@/components/sidebar/Sidebar';
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
+import EnrollDeviceModal from "@components/modals/EnrollDeviceModal";
 // Assets
 import navImage from '@assets/img/layout/Navbar.png'; //  '@assets/img/layout/Navbar.png';
 import { MdNotificationsNone, MdInfoOutline } from 'react-icons/md';
@@ -30,6 +31,7 @@ import { useAuth } from "@helpers/hooks/useAuth"
 
 export default function HeaderLinks(props) {
   const { state, logout, userInfo, getUser } = useAuth();
+  const [isOpenQR, setOpenQR] = useState(false);
   const { secondary } = props;
   const { colorMode, toggleColorMode } = useColorMode();
   // Chakra Color Mode
@@ -116,7 +118,7 @@ export default function HeaderLinks(props) {
       {/* BUTTON ADD QR */}
       <SidebarResponsive routes={routes} />
 
-      <Button variant="classic" ml={"20px"} mr={"20px"}>
+      <Button variant="classic" ml={"20px"} mr={"20px"} onClick={(e) => setOpenQR(true)}>
         Agregar
       </Button>
       {/* <SidebarResponsive routes={routes} />
@@ -321,6 +323,11 @@ export default function HeaderLinks(props) {
             >
               <Text fontSize="sm" onClick={() => logout()}>Log out</Text>
             </MenuItem>
+
+            <EnrollDeviceModal setCloseModal={setOpenQR}
+              location={{ latitude: -12.007172935393886, longitude: -77.06031303157475 }}
+              device={{}}
+              isOpen={isOpenQR} onClose={() => setOpenQR(false)} />
           </Flex>
         </MenuList>
       </Menu>

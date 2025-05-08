@@ -15,7 +15,8 @@ const SimpleModal = ({
     children,
     modalTitle,
     confirmTextButton,
-    cancelTextButton
+    cancelTextButton,
+    modalContentProps = { maxWidth:"100%", width:"50%"}
 }) => {
     const labelColor = useColorModeValue('dark.secondary.500', 'light.secondary.500');
     const modalBgColor = useColorModeValue('light.primary.500', 'dark.primary.900');
@@ -25,7 +26,8 @@ const SimpleModal = ({
     return (
         <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
             <ModalOverlay />
-            <ModalContent bg={modalBgColor} maxWidth="100%" width="50%">
+            {/* <ModalContent bg={modalBgColor} maxWidth="100%" width="50%"> */}
+            <ModalContent bg={modalBgColor} {...modalContentProps}>
                 <ModalHeader>{modalTitle}</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody pb={6}>
