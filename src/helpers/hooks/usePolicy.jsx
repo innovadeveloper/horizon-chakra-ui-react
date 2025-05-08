@@ -9,10 +9,6 @@ const defaultProps = {
   staleTime: 0,   
 }
 
-// const wrapResponse = (response) => {
-//   const content = Array.isArray(response.data) ? {...response?.data[0], timestamp: Date.now()} : response.data;
-//   return content;
-// }
 
 export function useReadPolicies() {
   return useQuery({
@@ -25,6 +21,15 @@ export function useReadPolicies() {
   });
 }
 
+export function useAddPolicy() {
+  return useMutation({
+    mutationFn: async (payload) => {
+      const response = await api.post("/device", payload);
+      return wrapResponse(response)
+    },
+    ...defaultProps   
+  });
+}
 
 export function useUpdateDetailPolicy() {
   return useMutation({
@@ -35,3 +40,16 @@ export function useUpdateDetailPolicy() {
     ...defaultProps   
   });
 }
+
+export function useDeletePolicy() {
+  return useMutation({
+    mutationFn: async (payload) => {
+      const response = await api.delete("/policy", {data : payload});
+      return wrapResponse(response)
+    },
+    ...defaultProps   
+  });
+}
+
+// #####
+

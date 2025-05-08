@@ -45,11 +45,15 @@ import { AndroidLogo } from '@components/icons/Icons';
 import { createColumn } from '@components/tables/ColumnHelper';
 import { MdModeEditOutline, MdDeleteForever } from "react-icons/md";
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { FaMapMarkerAlt, FaInfoCircle } from "react-icons/fa";
 
 import PolicyEditionModal from "@/components/modals/PolicyEditionModal";
 import PolicyDeleteModal from "@components/modals/PolicyDeleteModal";
+
+import { useReadPolicies } from "@helpers/hooks/usePolicy";
+import { formatDate } from '@helpers/utils/DateUtils'
+
 
 const useDeviceTableColumns = () => {
   // hooks 
@@ -119,9 +123,12 @@ const useDeviceTableColumns = () => {
       // headerText: 'ACCIONES',
 
       accessor: row => ({
-        id: row.id,
+        _id: row._id,
         createAt: row.createAt,
         policyName: row.policyName,
+        disabledPackages: row.disabledPackages,
+        quantity: row.quantity,
+        email: row.email,
       }),
       id: 'actions',
       headerText: 'ACCIONES',
@@ -139,7 +146,7 @@ const useDeviceTableColumns = () => {
   ];
 
   return {
-    columns, selected: { selectedEdit, selectedDelete }, setSelect: { setSelectEdit, setSelectDelete}
+    columns, selected: { selectedEdit, selectedDelete }, setSelect: { setSelectEdit, setSelectDelete }
   };
 }
 
@@ -147,6 +154,35 @@ const useDeviceTableColumns = () => {
 export default function Settings() {
 
   const { columns, selected, setSelect } = useDeviceTableColumns();
+  const [policies, setPolicies] = useState([]);
+
+  const buildPoliciesTable = (response) => {
+    // console.log("response ", response)
+    const content = (response.isValid) ? response.content : [];
+
+    return content.map((policy, index) => ({
+      _id: policy._id,
+      policyName: policy.policyName,
+      createAt: formatDate(policy.createAt),
+      email: policy.email,
+      disabledPackages: policy.disabledPackages,
+      quantity: policy.deviceCount,
+    }));
+  }
+
+  const { data: contentPolicies, error: errorGetPolicies, refetch: refetchPolicies } = useReadPolicies();
+  useEffect(() => {
+    if (contentPolicies && contentPolicies.isValid) {
+      const buildData = buildPoliciesTable(contentPolicies);
+      setPolicies(buildData);
+    } else
+      console.log(contentPolicies?.exceptions[0]?.description || "Ocurrió un error, volver a intentarlo luego")
+  }, [contentPolicies?.timestamp]); // Este useEffect se ejecutará solo cuando 'data' cambie y esté cargado sin error
+
+
+  useEffect(() => {
+    refetchPolicies();
+  }, [selected.selectedDelete, selected.selectedEdit]);
 
   // Chakra Color Mode
   return (
@@ -155,9 +191,9 @@ export default function Settings() {
         mb='20px'
         columns={{ sm: 1, md: 1 }}
         spacing={{ base: "20px", xl: "20px" }}>
-        <GeneralTable tableData={policiesTableDevelopment} columns={columns}>
-          <PolicyEditionModal currentPolicy={selected.selectedEdit} setCloseModal={setSelect.setSelectEdit} isOpen={selected.selectedEdit} onClose={() => setSelect.setSelectEdit(null)} />
-          <PolicyDeleteModal currentPolicy={selected.selectedDelete} setCloseModal={setSelect.setSelectDelete} isOpen={selected.selectedDelete} onClose={() => setSelect.setSelectDelete(null)} />
+        <GeneralTable tableData={policies} columns={columns}>
+          <PolicyEditionModal currentPolicy={selected.selectedEdit} setCloseModal={setSelect.setSelectEdit} isOpen={selected.selectedEdit != null} onClose={() => setSelect.setSelectEdit(null)} />
+          <PolicyDeleteModal currentPolicy={selected.selectedDelete} setCloseModal={setSelect.setSelectDelete} isOpen={selected.selectedDelete != null} onClose={() => setSelect.setSelectDelete(null)} />
         </GeneralTable>
       </SimpleGrid>
     </Box>

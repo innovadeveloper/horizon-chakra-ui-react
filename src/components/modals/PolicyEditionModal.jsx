@@ -5,22 +5,20 @@ import { Menu, MenuButton, MenuList, MenuItem, MenuDivider, Text, Button, Flex, 
 import { IoIosAddCircle } from "react-icons/io";
 import { useState, useEffect } from "react";
 import {
-    SimpleTextareaField,
-    SimpleNumberInputFieldComponent,
-    SimpleSliderField,
-    SimpleRadioGroupField,
-    SimpleInputField,
+  SimpleTextareaField,
+  SimpleNumberInputFieldComponent,
+  SimpleSliderField,
+  SimpleRadioGroupField,
+  SimpleInputField,
 } from '@components/forms/index';
 
-const policies = [
-  { key: "1", value: "Kiosko" },
-  { key: "2", value: "Restaurante" },
-  { key: "3", value: "Oficina" },
-];
+import { useUpdateDetailPolicy } from "@helpers/hooks/usePolicy";
+
 
 const ModalContentComponent = ({ setCloseModal, isOpen, onClose, currentPolicy }) => {
 
   const [selectedPolicy, setSelectedPolicy] = useState(currentPolicy || null);
+  const { data: policyUpdated, error: errorPolicyUpdated, mutateAsync: refetchUpdateDetailPolicy } = useUpdateDetailPolicy();
 
   useEffect(() => {
     if (isOpen) {
@@ -28,13 +26,28 @@ const ModalContentComponent = ({ setCloseModal, isOpen, onClose, currentPolicy }
     }
   }, [isOpen, currentPolicy]);
 
-  const onUpdate = () => {
-    console.log("guardando la política " + JSON.stringify(selectedPolicy))
-    setCloseModal(null) // cierra el pop luego de la solicitud http
+
+  const onUpdate = async () => {
+    const response = await refetchUpdateDetailPolicy({
+      _id: selectedPolicy._id,
+      policyName: selectedPolicy.policyName,
+      email: selectedPolicy.email,
+      disabledPackages: selectedPolicy.disabledPackages
+    })
+    if (response && response.isValid) {
+      setCloseModal(null)
+    } else {
+      alert(response.exceptions[0]?.description || "Ocurrió un error, volver a intentarlo luego")
+    }
+    // console.log("guardando la política " + JSON.stringify(selectedPolicy))
+    // setCloseModal(null) // cierra el pop luego de la solicitud http
   };
 
   const handlePolicyNameChange = (e) => {
-    setSelectedPolicy({...currentPolicy, policyName: e.target.value})
+    setSelectedPolicy({ ...selectedPolicy, policyName: e.target.value })
+  };
+  const handleDisabledPackagesChange = (e) => {
+    setSelectedPolicy({ ...selectedPolicy, disabledPackages: e.target.value })
   };
 
   return (
@@ -48,6 +61,8 @@ const ModalContentComponent = ({ setCloseModal, isOpen, onClose, currentPolicy }
     >
       <Box h="5" />
       <SimpleInputField onChange={handlePolicyNameChange} value={(selectedPolicy != null) ? selectedPolicy.policyName : ""} label="Nombre" helperText="El nombre de la política se considera solamente un alias representativo." type="text" />
+      <Box h="5" />
+      <SimpleTextareaField onChange={handleDisabledPackagesChange} value={(selectedPolicy != null) ? selectedPolicy.disabledPackages : ""} label="Paquetes deshabilitados" placeholder="com.sample.app, com.demo.app" type="text" />
       <Box h="5" />
     </SimpleModal>
   );
