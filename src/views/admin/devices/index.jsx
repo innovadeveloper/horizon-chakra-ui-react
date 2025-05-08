@@ -54,7 +54,7 @@ import { FaMapMarkerAlt, FaInfoCircle } from "react-icons/fa";
 import { IoIosAddCircle } from "react-icons/io";
 import { useMqttClient } from "@/helpers/hooks/useMqtt";
 import useFetch from '@helpers/hooks/useFetch'; // Importa el hook
-
+import { formatDate } from '@helpers/utils/DateUtils'
 
 const useDeviceTableColumns = () => {
   // hooks 
@@ -195,10 +195,11 @@ const useDeviceTableColumns = () => {
 
     createColumn({
       accessor: row => ({
-        id: row.id,
+        _id: row._id,
         modelName: row.modelName,
         brandName: row.brandName,
         policyName: row.policyName,
+        policyId: row.policyId,
       }),
       id: 'actions',
       headerText: 'ACCIONES',
@@ -246,14 +247,13 @@ export default function Settings() {
   //   return () => disconnect();
   // }, []);
 
-  const { data, loading, error } = useFetch('http://localhost:9002/context/api/device', 'GET');
-
-
+  const { data, loading, error, refetch } = useFetch('http://localhost:9002/context/api/device', 'GET');
 
   useEffect(() => {
-    // if (loading) console.log('loading')
-    // if (data) console.log('data', data)
-    // if (error) console.log('error')
+    refetch();
+  }, []);
+
+  useEffect(() => {
     if (data && data.isValid) {
       const builtData = buildDevicesTable(data);
       setDevicesTableDevelopment(builtData);
@@ -309,21 +309,16 @@ export default function Settings() {
     },
             
    */
-  const formatDate = (timestamp) => {
-    const date = new Date(timestamp);
-    const pad = (n) => n.toString().padStart(2, '0');
-    return `${pad(date.getDate())}-${pad(date.getMonth() + 1)}-${date.getFullYear()} ${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}`;
-  };
 
   const buildDevicesTable = (response) => {
     const content = (response.isValid) ? response.content : [];
 
     return content.map((device, index) => ({
-      id: device.uid,
+      _id: device._id,
       modelName: device.modelName,
       androidVersion: device.androidVersion,
       createAt: formatDate(device.createAt),
-      policyName: device.policyId, // Valor fijo porque no está en el objeto original
+      policyName: device.policyName,
       brandName: device.brandName,
       isOnline: device.online,
       policyId: device.policyId
@@ -343,7 +338,8 @@ export default function Settings() {
         columns={{ sm: 1, md: 1 }}
         spacing={{ base: "20px", xl: "20px" }}>
         <GeneralTable tableData={devicesTableDevelopment} columns={columns}>
-          <DevicePolicyEditionModal currentPolicy={selected.selectedPolicy} setCloseModal={setSelect.setSelectPolicy} isOpen={selected.selectedPolicy} onClose={() => setSelect.setSelectPolicy(null)} />
+          {/* <DevicePolicyEditionModal currentPolicy={selected.selectedPolicy} setCloseModal={setSelect.setSelectPolicy} isOpen={selected.selectedPolicy != null} device={selected.selectedPolicy} onClose={() => setSelect.setSelectPolicy(null)} /> */}
+          <DevicePolicyEditionModal currentPolicy={(selected.selectedPolicy) ? { key: selected.selectedPolicy.policyId, value: selected.selectedPolicy.policyName } : null} setCloseModal={setSelect.setSelectPolicy} isOpen={selected.selectedPolicy != null} device={selected.selectedPolicy} onClose={() => setSelect.setSelectPolicy(null)} />
           <DeviceLocationModal setCloseModal={setSelect.setSelectMap}
             location={{ latitude: -12.007172935393886, longitude: -77.06031303157475 }}
             device={selected.selectedMap || {}}
