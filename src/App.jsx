@@ -32,12 +32,12 @@ export default function Main() {
               // <AdminLayout theme={currentTheme} setTheme={setCurrentTheme} />
             }
           />
-          <Route
+          {/* <Route
             path="rtl/*"
             element={
               <RTLLayout theme={currentTheme} setTheme={setCurrentTheme} />
             }
-          />
+          /> */}
           {/* <Route path="/" element={<Navigate to="/admin" replace />} /> */}
           <Route path="/" element={<Navigate to="/auth/sign-in/default" replace />} />
         </Routes>

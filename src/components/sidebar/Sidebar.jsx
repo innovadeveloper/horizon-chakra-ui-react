@@ -104,7 +104,8 @@ export function SidebarResponsive(props) {
               autoHide
               renderTrackVertical={renderTrack}
               renderThumbVertical={renderThumb}
-              renderView={renderView}>
+              renderView={renderView}
+              >
               <Content routes={routes} />
             </Scrollbars>
           </DrawerBody>

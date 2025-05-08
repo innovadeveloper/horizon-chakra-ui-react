@@ -8,6 +8,7 @@ import { SidebarContext } from '@contexts/SidebarContext';
 import React, { useState } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import routes from '@/routes';
+import { RoutePaths } from '@/variables/constants';
 
 // Custom Chakra theme
 export default function Dashboard(props) {
@@ -142,7 +143,7 @@ export default function Dashboard(props) {
               <Box>
                 <Navbar
                   onOpen={onOpen}
-                  logoText={'Horizon UI Dashboard PRO'}
+                  logoText={'INFINITIX'}
                   brandText={getActiveRoute(routes)}
                   secondary={getActiveNavbar(routes)}
                   message={getActiveNavbarText(routes)}
@@ -164,7 +165,8 @@ export default function Dashboard(props) {
                   {getRoutes(routes)}
                   <Route
                     path="/"
-                    element={<Navigate to="/admin/default" replace />}
+                    // element={<Navigate to="/admin/default" replace />}
+                    element={<Navigate to={RoutePaths.MY_DEVICES.URI} replace />}
                   />
                 </Routes>
               </Box>
