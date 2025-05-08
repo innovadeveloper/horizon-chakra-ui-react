@@ -269,7 +269,7 @@ const GeneralTable = ({ tableData, columns, children }) => {
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
-    debugTable: true,
+    debugTable: false,
   });
 
   return (

@@ -8,46 +8,53 @@ import { useState, useEffect } from "react";
 import useFetch from '@helpers/hooks/useFetch'; // Importa el hook
 import clientFetch from '@helpers/utils/FetchHelper'; // Importa el hook
 import { useAuth } from "@helpers/hooks/useAuth";
+import { useReadDevices, useUpdatePolicyDevice } from "@helpers/hooks/useDevices";
+import { useReadPolicies, useUpdateDetailPolicy } from "@helpers/hooks/usePolicy";
+
+
 
 const ModalContentComponent = ({ setCloseModal, isOpen, device, onClose, currentPolicy }) => {
-  const { data, refetch } = useFetch('http://localhost:9002/context/api/policy', 'GET');
+  // const { data, refetch } = useFetch('http://localhost:9002/context/api/policy', 'GET');
   const [selectedPolicy, setSelectedPolicy] = useState(currentPolicy || null);
   const [policies, setPolicies] = useState([])
   const { getAccessTokenInvoke } = useAuth();
+  const { data: devicePolicyUpdated, error: errorPolicityUpdated, mutateAsync: refetchUpdatePolicy } = useUpdatePolicyDevice();
+  const { data: policiesLoaded, error: errorPoliciesLoaded, refetch: refetchPolicies } = useReadPolicies();
 
   useEffect(() => {
-    if (data && data.isValid) {
+    if (policiesLoaded && policiesLoaded.isValid) {
       const buildPolicies = (response) => {
         return response.map((policy, index) => ({
           key: policy._id,
           value: policy.policyName
         }));
       }
-      setPolicies(buildPolicies(data.content))
-      // console.log("data setted policies ", data.content)
+      setPolicies(buildPolicies(policiesLoaded.content))
     }
     // else
     //   console.log("policies none")
-  }, [data]);
+  }, [policiesLoaded?.timestamp]);
 
 
   useEffect(() => {
     if (isOpen) {
-      refetch();
+      refetchPolicies();
       setSelectedPolicy(currentPolicy || null);
     }
-  }, [isOpen, currentPolicy]);
+    console.log("[] refetchPolicies ", isOpen, currentPolicy)
+  }, [isOpen]);
 
+  // actualiza la política PUT
   const onUpdate = async () => {
-    const token = await getAccessTokenInvoke();
-    const data = await clientFetch('http://localhost:9002/context/api/device',
-      'PUT', {
+    const response = await refetchUpdatePolicy({
       _id: device._id,
       policyId: selectedPolicy.key
-    }, { "Authorization": `Bearer ${token}` });
-    if (data.isValid) {
-      console.log("guardando la nueva política " + JSON.stringify(data))
-      setCloseModal(null) // cierra el pop luego de la solicitud http
+    })
+    if (response && response.isValid) {
+      console.log("devicePolicyUpdated", response)
+      setCloseModal(null)
+    }else {
+      alert(response.exceptions[0]?.description || "Ocurrió un error, volver a intentarlo luego")
     }
   };
 
@@ -55,7 +62,6 @@ const ModalContentComponent = ({ setCloseModal, isOpen, device, onClose, current
     console.log("Seleccionaste:", policy.value);
     setSelectedPolicy({ value: policy.value, key: policy.key });
   };
-  // console.log(`selectedPolicy ${JSON.stringify(selectedPolicy)}`)
   // console.log(`isopen ${isOpen}`)
 
   return (

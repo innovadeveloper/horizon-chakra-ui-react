@@ -56,6 +56,9 @@ import { useMqttClient } from "@/helpers/hooks/useMqtt";
 import useFetch from '@helpers/hooks/useFetch'; // Importa el hook
 import { formatDate } from '@helpers/utils/DateUtils'
 
+import { useReadDevices } from "@helpers/hooks/useDevices";
+
+
 const useDeviceTableColumns = () => {
   // hooks 
   const [selectedPolicy, setSelectPolicy] = useState(null);
@@ -236,6 +239,7 @@ export default function Settings() {
   const selectePolicyId = (selected.selectedPolicy ? selected.selectedPolicy.id : null)
   const selectePolicyName = (selected.selectedPolicy ? selected.selectedPolicy.policyName : null)
   const [devicesTableDevelopment, setDevicesTableDevelopment] = useState([]);
+  const { data: contentDevices, error: errorGetDevices, refetch: refetchDevices } = useReadDevices();
 
   const { message, isConnected, publish, connect, disconnect } = useMqttClient({
     brokerUrl: 'wss://mosquitto-websocket.abexa.pe'
@@ -247,20 +251,19 @@ export default function Settings() {
   //   return () => disconnect();
   // }, []);
 
-  const { data, loading, error, refetch } = useFetch('http://localhost:9002/context/api/device', 'GET');
+  // const { data, loading, error, refetch } = useFetch('http://localhost:9002/context/api/device', 'GET');
 
   useEffect(() => {
-    refetch();
-  }, []);
+    refetchDevices();
+  }, [selected?.selectedPolicy]);
 
   useEffect(() => {
-    if (data && data.isValid) {
-      const builtData = buildDevicesTable(data);
+    if (contentDevices && contentDevices.isValid) {
+      const builtData = buildDevicesTable(contentDevices);
       setDevicesTableDevelopment(builtData);
-      // console.log("data setted")
-    }
-  }, [data]); // Este useEffect se ejecutará solo cuando 'data' cambie y esté cargado sin error
-
+    }else
+      console.log(contentDevices?.exceptions[0]?.description || "Ocurrió un error, volver a intentarlo luego")
+  }, [contentDevices?.timestamp]); // Este useEffect se ejecutará solo cuando 'data' cambie y esté cargado sin error
 
   const handleSend = () => {
     if (input.trim() !== '') {
@@ -268,47 +271,6 @@ export default function Settings() {
       setInput('');
     }
   };
-
-  /**
-   * {
-      "id": 1,
-      "policy": "Kiosko",
-      "isOnline": true,
-      "createAt": "23/04/18",
-      "deviceType": "Android",
-      "device": {
-        "modelName": "H20",
-        "brandName": "Honor"
-      }
-    }
-
-    http
-
-                {
-                "_id": "6813f471bd8e60241efcba60",
-                "modelName": "Pixel 6",
-                "androidVersion": 13,
-                "createAt": 1746138225723,
-                "updateAt": 1746138254924,
-                "email": "kbaltazar.abx@gmai.com",
-                "brandName": "Google",
-                "policyId": "6813f3510798b52348ddcc55",
-                "uid": "abcd1234-5678-efgh-ijkl-9876mnopqrst",
-                "online": false
-            }
-
-    {
-        "id": "c3565db0-28fe-432e-9de6-2a7a7553467d",
-        "modelName": "Galaxy Z Flip",
-        "androidVersion": 10,
-        "createAt": "04-09-2018 00:00:00",
-        "policyName": "Kiosko",
-        "brandName": "Samsung",
-        "isOnline": false,
-        "policyId": "2a4f44d1-72aa-4d86-81f8-4d725a0c659b"
-    },
-            
-   */
 
   const buildDevicesTable = (response) => {
     const content = (response.isValid) ? response.content : [];
@@ -328,7 +290,7 @@ export default function Settings() {
   // const devicesTableDevelopment = buildDevicesTable(data || []);
 
   // console.log(`[MQTT] message ${message} , isConnected ${isConnected}`)
-  console.log(`[Devices] Ready`, devicesTableDevelopment)
+  // console.log(`[Devices] Ready`, devicesTableDevelopment)
 
   // Chakra Color Mode
   return (
