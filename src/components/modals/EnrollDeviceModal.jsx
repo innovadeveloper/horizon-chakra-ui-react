@@ -10,7 +10,7 @@ import { useState, useRef, useCallback, useMemo, useEffect } from 'react';
 import { useUpdateConfirmPendingDevice } from "@helpers/hooks/usePendingDevice";
 
 
-const ModalContentComponent = ({ isOpen, onClose, device, setOpenModal, location }) => {
+const ModalContentComponent = ({ isOpen, onClose, device, setOpenModal }) => {
   const onUpdate = () => {
     console.log("Regresar / salir del pop up")
     setOpenModal(false) // cierra el pop luego de la solicitud http

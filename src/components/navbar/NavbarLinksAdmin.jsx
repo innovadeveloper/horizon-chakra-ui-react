@@ -21,6 +21,8 @@ import { SidebarResponsive } from '@/components/sidebar/Sidebar';
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import EnrollDeviceModal from "@components/modals/EnrollDeviceModal";
+import RegisterPolicyModal from "@components/modals/RegisterPolicyModal";
+
 // Assets
 import navImage from '@assets/img/layout/Navbar.png'; //  '@assets/img/layout/Navbar.png';
 import { MdNotificationsNone, MdInfoOutline } from 'react-icons/md';
@@ -28,10 +30,14 @@ import { IoMdMoon, IoMdSunny } from 'react-icons/io';
 import { FaEthereum } from 'react-icons/fa';
 import routes from '@/routes';
 import { useAuth } from "@helpers/hooks/useAuth"
+import { useLocation } from "react-router-dom";
+import { RoutePaths } from '@/variables/constants';
 
 export default function HeaderLinks(props) {
+  let location = useLocation();
   const { state, logout, userInfo, getUser } = useAuth();
   const [isOpenQR, setOpenQR] = useState(false);
+  const [isOpenPolicyForm, setOpenPolicyForm] = useState(false);
   const { secondary } = props;
   const { colorMode, toggleColorMode } = useColorMode();
   // Chakra Color Mode
@@ -49,6 +55,8 @@ export default function HeaderLinks(props) {
   );
   const borderButton = useColorModeValue('secondaryGray.500', 'whiteAlpha.200');
 
+  const [isDevicePage, setIsDevicePage] = useState(false);
+
   useEffect(() => {
     if (userInfo == null) {
       getUser()
@@ -56,6 +64,10 @@ export default function HeaderLinks(props) {
   }, []);
   // { console.log("user info => " + JSON.stringify(userInfo)) }
 
+  useEffect(() => {
+    setIsDevicePage((location.pathname == RoutePaths.MY_DEVICES.URI))
+    // console.log("path name changed ", location.pathname)
+  }, [location.pathname]);
 
 
   return (
@@ -118,7 +130,10 @@ export default function HeaderLinks(props) {
       {/* BUTTON ADD QR */}
       <SidebarResponsive routes={routes} />
 
-      <Button variant="classic" ml={"20px"} mr={"20px"} onClick={(e) => setOpenQR(true)}>
+      <Button variant="classic" ml={"20px"} mr={"20px"} onClick={(e) => {
+        if (isDevicePage) setOpenQR(true)
+        else setOpenPolicyForm(true)
+      }}>
         Agregar
       </Button>
       {/* <SidebarResponsive routes={routes} />
@@ -325,9 +340,10 @@ export default function HeaderLinks(props) {
             </MenuItem>
 
             <EnrollDeviceModal setOpenModal={setOpenQR}
-              location={{ latitude: -12.007172935393886, longitude: -77.06031303157475 }}
               device={{}}
               isOpen={isOpenQR} onClose={() => setOpenQR(false)} />
+            <RegisterPolicyModal setOpenModal={setOpenPolicyForm}
+              isOpen={isOpenPolicyForm} onClose={() => setOpenPolicyForm(false)} />
           </Flex>
         </MenuList>
       </Menu>

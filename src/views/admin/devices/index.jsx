@@ -279,7 +279,7 @@ export default function Settings() {
 
   const buildDevicesTable = (response) => {
     const content = (response.isValid) ? response.content : [];
-
+    console.log("devices ", response)
     return content.map((device, index) => ({
       _id: device._id,
       modelName: device.modelName,
