@@ -24,13 +24,24 @@ const ModalContentComponent = ({ isOpen, onClose, setOpenModal }) => {
       isOpen={isOpen}
       onUpdate={onUpdate}
       onClose={onClose}
-      modalTitle={`Enrolamiento del nuevo dispositivo`}
+      modalTitle={`Registro de nueva política`}
       cancelTextButton={undefined}
       confirmTextButton={undefined}
-      modalContentProps={{ width: "30%" }}
+      modalContentProps={{ maxWidth: "50%"}}
     >
       <>
         <Box h="5" />
+        <GenericForm
+          inputLabel="Your Email"
+          inputPlaceholder="Enter your email"
+          onInputChange={(e) => {
+            console.log('Input value:', e.target.value);
+          }}
+          onRadioChange={(value) => {
+            console.log('Selected framework:', value);
+          }}
+          options={['Angular', 'React', 'Vue']}
+        />
         {/* {buildContent(message)} */}
         <Box h="5" />
       </>
