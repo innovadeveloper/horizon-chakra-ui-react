@@ -36,10 +36,8 @@ export default function Footer() {
         }}
         mb={{ base: "20px", xl: "0px" }}>
         {" "}
-        &copy; {1900 + new Date().getYear()}
-        <Text as='span' fontWeight='500' ms='4px'>
-          InoovaAppStar. Todos los derechos reservados. Hecho con
-          {/* Horizon UI. All Rights Reserved. Made with love by */}
+        {/* <Text as='span' fontWeight='500' ms='4px'>
+          Infinitix. Todos los derechos reservados. Hecho con
           <Link
             mx='3px'
             color={textColor}
@@ -48,7 +46,12 @@ export default function Footer() {
             fontWeight='700'>
             Chakra UI!
           </Link>
+        </Text> */}
+
+        <Text as='span' fontWeight='500' ms='4px'>
+          © {new Date().getFullYear()} <b>Infinitix</b>. Todos los derechos reservados.
         </Text>
+        
       </Text>
       <List display='flex'>
         <ListItem

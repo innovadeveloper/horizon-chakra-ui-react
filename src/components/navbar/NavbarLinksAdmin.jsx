@@ -130,7 +130,7 @@ export default function HeaderLinks(props) {
       {/* BUTTON ADD QR */}
       <SidebarResponsive routes={routes} />
 
-      <Button variant="classic" ml={"20px"} mr={"20px"} onClick={(e) => {
+      <Button variant="classic" ml={"50px"} mr={"80px"} onClick={(e) => {
         if (isDevicePage) setOpenQR(true)
         else setOpenPolicyForm(true)
       }}>
@@ -282,7 +282,7 @@ export default function HeaderLinks(props) {
           <Avatar
             _hover={{ cursor: 'pointer' }}
             color="white"
-            name="Adela Parkson"
+            name={userInfo?.username}
             bg="#11047A"
             size="sm"
             w="40px"
@@ -313,7 +313,7 @@ export default function HeaderLinks(props) {
             </Text>
           </Flex>
           <Flex flexDirection="column" p="10px">
-            <MenuItem
+            {/* <MenuItem
               _hover={{ bg: 'none' }}
               _focus={{ bg: 'none' }}
               borderRadius="8px"
@@ -328,7 +328,7 @@ export default function HeaderLinks(props) {
               px="14px"
             >
               <Text fontSize="sm">Newsletter Settings</Text>
-            </MenuItem>
+            </MenuItem> */}
             <MenuItem
               _hover={{ bg: 'none' }}
               _focus={{ bg: 'none' }}
@@ -336,7 +336,7 @@ export default function HeaderLinks(props) {
               borderRadius="8px"
               px="14px"
             >
-              <Text fontSize="sm" onClick={() => logout()}>Log out</Text>
+              <Text fontSize="sm" onClick={() => logout()}>Cerrar sesión</Text>
             </MenuItem>
 
             <EnrollDeviceModal setOpenModal={setOpenQR}

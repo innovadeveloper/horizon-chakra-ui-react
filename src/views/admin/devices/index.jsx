@@ -80,7 +80,7 @@ const useDeviceTableColumns = () => {
   // Este será tu "closure" para editar
   const onEdit = useCallback((rowData) => {
     setSelectedRow(rowData); // Guardas los datos que quieras
-    console.log('Editando fila:', rowData);
+    // console.log('Editando fila:', rowData);
   }, []);
 
   const onMap = useCallback((info) => {

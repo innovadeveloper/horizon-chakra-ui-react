@@ -5,19 +5,50 @@ import { SimpleModal } from '@components/modals/SimpleModal';
 import { useAuth } from "@helpers/hooks/useAuth";
 import { useState, useRef, useCallback, useMemo, useEffect } from 'react';
 
-import { useUpdateConfirmPendingDevice } from "@helpers/hooks/usePendingDevice";
-
+import {
+  SimpleTextareaField,
+  SimpleNumberInputFieldComponent,
+  SimpleSliderField,
+  SimpleRadioGroupField,
+  SimpleInputField,
+} from '@components/forms/index';
+import { useAddPolicy } from "@helpers/hooks/usePolicy";
 
 const ModalContentComponent = ({ isOpen, onClose, setOpenModal }) => {
-  const onUpdate = () => {
-    console.log("Regresar / salir del pop up")
-    setOpenModal(false) // cierra el pop luego de la solicitud http
+
+  const { data: policyAdded, error: errorPolicyAdded, mutateAsync: refetchAddPolicy } = useAddPolicy();
+  const { userInfo, getUser } = useAuth();
+  const [selectedPolicy, setSelectedPolicy] = useState({});
+
+  const onUpdate = async () => {
+    const response = await refetchAddPolicy({
+      email: userInfo.email,
+      createAt : new Date().getTime(),
+      policyName: selectedPolicy.policyName,
+      disabledPackages: selectedPolicy.disabledPackages
+    })
+    if (response && response.isValid) {
+      setOpenModal(false)
+    } else {
+      alert(response.exceptions[0]?.description || "Ocurrió un error, volver a intentarlo luego")
+    }
   };
-  // const { getAccessTokenInvoke } = useAuth();
   // const { data: pendingDeviceUpdated, error: errorDeviceUpdated, mutateAsync: refetchUpdatePendingDevice } = useUpdateConfirmPendingDevice();
+  useEffect(() => {
+    if (isOpen && userInfo == null) {
+      getUser()
+    }
+  }, [isOpen]);
 
+  // console.log(`[RegisterPolicyModal] userInfo`, userInfo)
 
-  // console.log(`[MQTT] message ${message} , isConnected ${isConnected}`)
+  const handlePolicyNameChange = (e) => {
+    setSelectedPolicy({ ...selectedPolicy, policyName: e.target.value })
+  };
+  const handleDisabledPackagesChange = (e) => {
+    setSelectedPolicy({ ...selectedPolicy, disabledPackages: e.target.value })
+  };
+
 
   return (
     <SimpleModal
@@ -25,24 +56,16 @@ const ModalContentComponent = ({ isOpen, onClose, setOpenModal }) => {
       onUpdate={onUpdate}
       onClose={onClose}
       modalTitle={`Registro de nueva política`}
-      cancelTextButton={undefined}
-      confirmTextButton={undefined}
-      modalContentProps={{ maxWidth: "50%"}}
+      cancelTextButton={"Cancelar"}
+      confirmTextButton={"Registrar"}
+      modalContentProps={{ maxWidth: "50%" }}
     >
       <>
         <Box h="5" />
-        <GenericForm
-          inputLabel="Your Email"
-          inputPlaceholder="Enter your email"
-          onInputChange={(e) => {
-            console.log('Input value:', e.target.value);
-          }}
-          onRadioChange={(value) => {
-            console.log('Selected framework:', value);
-          }}
-          options={['Angular', 'React', 'Vue']}
-        />
-        {/* {buildContent(message)} */}
+        <SimpleInputField onChange={handlePolicyNameChange} label="Nombre de Política" placeholder="ej. Kiosko" helperText="Luego podrás cambiarlo" type="text" />
+        <Box h="5" />
+        <SimpleTextareaField onChange={handleDisabledPackagesChange} label="Paquetes deshabilitados" placeholder="ej. com.sample.app" type="text" />
+        {/* <SimpleTextareaField onChange={handleDisabledPackagesChange} value={(selectedPolicy != null) ? selectedPolicy.disabledPackages : ""} label="Paquetes deshabilitados" placeholder="com.sample.app, com.demo.app" type="text" /> */}
         <Box h="5" />
       </>
     </SimpleModal>

@@ -15,7 +15,6 @@ import {
 import { Box } from '@chakra-ui/react'; // Componentes de Chakra UI
 
 
-
 const MiFormulario = () => {
     return (
         <>

@@ -24,7 +24,7 @@ export function useReadPolicies() {
 export function useAddPolicy() {
   return useMutation({
     mutationFn: async (payload) => {
-      const response = await api.post("/device", payload);
+      const response = await api.post("/policy", payload);
       return wrapResponse(response)
     },
     ...defaultProps   

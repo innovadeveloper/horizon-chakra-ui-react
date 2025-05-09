@@ -34,21 +34,23 @@ export default function Footer() {
         }}
         mb={{ base: "20px", lg: "0px" }}>
         {" "}
-        &copy; {1900 + new Date().getYear()}
+        {/* <Text as='span' fontWeight='500' ms='4px'>
+                  Infinitix. Todos los derechos reservados. Hecho con
+                  <Link
+                    mx='3px'
+                    color={textColor}
+                    href='https://www.simmmple.com?ref=horizon-chakra-free'
+                    target='_blank'
+                    fontWeight='700'>
+                    Chakra UI!
+                  </Link>
+                </Text> */}
+
         <Text as='span' fontWeight='500' ms='4px'>
-          InoovaAppStar. Todos los derechos reservados. Hecho con
-          {/* Horizon UI. All Rights Reserved. Made with love by */}
-          <Link
-            mx='3px'
-            color={textColor}
-            href='https://www.simmmple.com?ref=horizon-chakra-free'
-            target='_blank'
-            fontWeight='700'>
-            Chakra UI!
-          </Link>
+          © {new Date().getFullYear()} <b>Infinitix</b>. Todos los derechos reservados.
         </Text>
       </Text>
-      <List display='flex'>
+      {/* <List display='flex'>
         <ListItem
           me={{
             base: "20px",
@@ -93,7 +95,7 @@ export default function Footer() {
             Blog
           </Link>
         </ListItem>
-      </List>
+      </List> */}
     </Flex>
   );
 }

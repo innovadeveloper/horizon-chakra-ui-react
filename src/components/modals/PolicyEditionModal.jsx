@@ -39,8 +39,6 @@ const ModalContentComponent = ({ setCloseModal, isOpen, onClose, currentPolicy }
     } else {
       alert(response.exceptions[0]?.description || "Ocurrió un error, volver a intentarlo luego")
     }
-    // console.log("guardando la política " + JSON.stringify(selectedPolicy))
-    // setCloseModal(null) // cierra el pop luego de la solicitud http
   };
 
   const handlePolicyNameChange = (e) => {

@@ -70,7 +70,7 @@ const useDeviceTableColumns = () => {
   // Este será tu "closure" para editar
   const onEdit = useCallback((rowData) => {
     setSelectEdit(rowData); // Guardas los datos que quieras
-    console.log('Editando fila:', rowData);
+    // console.log('Editando fila:', rowData);
   }, []);
 
   const onDelete = useCallback((info) => {
@@ -183,6 +183,7 @@ export default function Settings() {
   useEffect(() => {
     refetchPolicies();
   }, [selected.selectedDelete, selected.selectedEdit]);
+
 
   // Chakra Color Mode
   return (
